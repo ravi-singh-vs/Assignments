@@ -1,14 +1,25 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {SafeAreaView, StatusBar, StyleSheet, ViewStyle} from 'react-native';
+import Notifications from './src/screens/notifications/Notifications';
+import {COLORS} from './src/theme/theme';
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
-  )
+    <SafeAreaView style={styles.mainContainer}>
+      <StatusBar backgroundColor={'white'} barStyle="dark-content" />
+       <Notifications/>
+    </SafeAreaView>
+  );
+};
+
+interface Style {
+  mainContainer: ViewStyle;
 }
 
-export default App
+const styles = StyleSheet.create<Style>({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: COLORS.neutralWhite,
+  },
+});
 
-const styles = StyleSheet.create({})
+export default App;
