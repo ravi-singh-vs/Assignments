@@ -4,7 +4,7 @@ import DActive from './src/screens/D-active/DActive';
 import {COLORS} from './src/theme/theme';
 
 const App = () => {
-  const showNotificationsScreen = false;
+  const showNotificationsScreen = true;
   return (
     <SafeAreaView style={styles.mainContainer}>
       <StatusBar backgroundColor={'white'} barStyle="dark-content" />
