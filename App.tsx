@@ -1,12 +1,14 @@
 import {SafeAreaView, StatusBar, StyleSheet, ViewStyle} from 'react-native';
 import Notifications from './src/screens/notifications/Notifications';
+import DActive from './src/screens/D-active/DActive';
 import {COLORS} from './src/theme/theme';
 
 const App = () => {
+  const showNotificationsScreen = false;
   return (
     <SafeAreaView style={styles.mainContainer}>
       <StatusBar backgroundColor={'white'} barStyle="dark-content" />
-       <Notifications/>
+      {showNotificationsScreen ? <Notifications /> : <DActive />}
     </SafeAreaView>
   );
 };
