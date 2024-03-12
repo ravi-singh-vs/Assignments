@@ -1,79 +1,65 @@
-import { useState, useEffect } from 'react';
-import {
-  FlatList,
-  Image,
-  Text,
-  View,
-} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {FlatList, Image, Text, View} from 'react-native';
+
 import NotificationCard from '../../components/notification-card/NotificationCard';
-import EmptyNotification from '../../components/empty-notification/EmptyNotification';
-import { NotificationDataType } from '../../types/general-types';
-import { getData } from '../../services/get-data';
-import { styles } from './notifications-styles';
-import Loader from '../../components/loader/Loader';
-import Error from '../../components/error/Error';
-const settingsIcon = require('../../assets/icons/settings.png');
-const arrowIcon = require('../../assets/icons/arrow.png');
+import EmptyView from '../../components/empty-view/EmptyView';
+import {getData} from '../../services/get-data';
+import {NotificationDataType} from '../../types/notification-types';
 
-const Notifications:React.FC = () => {
-  const [notificationsData , setNotificationsData] = useState<NotificationDataType[]>([]);
-  const [loading,setLoading] = useState<boolean>(true);
-  const [error,setError] = useState<string>('')
-  const [refreshing,setRefreshing] = useState<boolean>(false)
+import {API} from '../../constants/api-constants';
+import {settingsIcon} from '../../constants/notification-constants';
 
-  const getNotificationsData = async()  =>{
-    const res = await getData('https://ravi-singh-vs.github.io/api/notifications.json');
-    if(res.success){
+import {styles} from './notifications-styles';
+
+const Notifications = () => {
+  const [notificationsData, setNotificationsData] = useState<
+    NotificationDataType[]
+  >([]);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
+
+  const getNotificationsData = async () => {
+    const res = await getData(API.NOTIFICATIONS_API);
+    if (res.success) {
       setNotificationsData(res.data);
+    } else {
+      console.error(res.error);
     }
-    else{
-      setError('Error in fetching notifications')
-    }
-    setLoading(false)
-  }
-  useEffect(()=>{
+  };
+  useEffect(() => {
     getNotificationsData();
-  },[])
+  }, []);
 
-  const onRefresh = async() =>{
+  const onRefresh = async () => {
     setRefreshing(true);
     await getNotificationsData();
-    setRefreshing(false)
-  }
+    setRefreshing(false);
+  };
 
   return (
     <>
       <View style={styles.header}>
-        <Image source={arrowIcon} style={styles.icon} />
+        <View style={styles.icon} />
         <Text style={styles.title}>Notifications</Text>
         <Image source={settingsIcon} style={styles.icon} />
       </View>
       <View style={styles.container}>
         {
-          loading ? (<Loader/>) :
-          (
-            error ? (<Error error={error}/>) :  
-            <FlatList
+          <FlatList
             showsVerticalScrollIndicator={false}
-            contentContainerStyle={styles.listContainer}
-            ListEmptyComponent={<EmptyNotification />}
+            contentContainerStyle={styles.subContainer}
+            ListEmptyComponent={<EmptyView />}
             data={notificationsData}
             renderItem={({item}: {item: NotificationDataType}) => (
               <NotificationCard item={item} />
             )}
-            keyExtractor={(item: NotificationDataType) =>
-              item ? item?.id : `${Date.now()}`
-            }
+            keyExtractor={(item: NotificationDataType) => item?.id}
             refreshing={refreshing}
             onRefresh={onRefresh}
           />
-          )
         }
       </View>
     </>
   );
 };
-
-
 
 export default Notifications;

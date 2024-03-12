@@ -1,6 +1,7 @@
 import {ImageStyle, StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {COLORS} from '../../theme/colors';
+
 import {FONT_FAMILY} from '../../theme/typography';
+import {COLORS} from '../../theme/colors';
 import {SPACING} from '../../theme/spacing';
 
 interface Styles {
@@ -8,18 +9,16 @@ interface Styles {
   icon: ImageStyle;
   title: TextStyle;
   container: ViewStyle;
-  subContainer: ViewStyle;
 }
-
 export const styles = StyleSheet.create<Styles>({
   header: {
     alignItems: 'center',
-    backgroundColor: COLORS.neutralWhite,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: SPACING.space_16,
+    marginBottom: SPACING.space_24,
     paddingVertical: SPACING.space_16,
   },
+
   icon: {
     height: SPACING.space_24,
     marginHorizontal: SPACING.space_24,
@@ -33,10 +32,8 @@ export const styles = StyleSheet.create<Styles>({
     textAlign: 'center',
   },
   container: {
-    justifyContent: 'center',
     flex: SPACING.space_1,
-  },
-  subContainer: {
-    flexGrow: SPACING.space_1,
+    justifyContent: 'center',
+    paddingHorizontal: SPACING.space_20,
   },
 });

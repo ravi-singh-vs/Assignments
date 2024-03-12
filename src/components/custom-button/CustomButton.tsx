@@ -1,12 +1,9 @@
-import {Text, TouchableOpacity} from 'react-native';
-import React from 'react';
+import {Text, TouchableOpacity, ViewStyle} from 'react-native';
 
-const CustomButton = ({time, style}: {time: number; style: any}) => {
+const CustomButton = ({time, style}: {time: string; style: ViewStyle}) => {
   return (
     <TouchableOpacity>
-      <Text style={style}>
-        {time}min
-      </Text>
+      <Text style={style}>{time}</Text>
     </TouchableOpacity>
   );
 };

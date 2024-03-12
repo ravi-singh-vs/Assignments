@@ -1,11 +1,13 @@
-import {Image, Text, View} from 'react-native';
 import React from 'react';
-import {styles} from './EmptyNotification-styles';
+import {Image, Text, View} from 'react-native';
 
-const notificationIcon = require('../../assets/icons/notification.png');
-const EmptyNotification = () => {
+import {notificationIcon} from '../../constants/notification-constants';
+
+import {styles} from './EmptyView-styles';
+
+const EmptyView = () => {
   return (
-    <View style={styles.container} >
+    <View style={styles.container}>
       <View style={styles.subContainer}>
         <Image source={notificationIcon} style={styles.icon} />
         <View>
@@ -19,4 +21,4 @@ const EmptyNotification = () => {
   );
 };
 
-export default EmptyNotification;
+export default EmptyView;
