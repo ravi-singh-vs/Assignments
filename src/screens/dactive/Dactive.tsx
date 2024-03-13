@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react'
-import { FlatList, Text, View } from 'react-native'
+import { FlatList,View } from 'react-native'
 
-import Header from '../../components/header/Header'
-import DactiveCard from '../../components/dactive-card/DactiveCard'
-import { getData } from '../../services/get-data'
-import { DactiveDataType } from '../../types/dactive-types'
+import Header from '../../components/header/ASHeader'
+import ASDActiveCard from '../../components/dactive-card/ASDactiveCard'
+import { getNotificationsDativeData } from '../../services/api/get-notifications-dactive-data'
+import { IDactiveDataType } from '../../types/dactive-types'
 
-import { API } from '../../constants/api-constants'
+import { API_ENDPOINTS } from '../../constants/api-constants'
 
 import { styles } from './dactive-styles'
 
 const Dactive = () => {
-  const [DActiveData, setDActiveData] = useState<DactiveDataType[]>([])
+  const [DActiveData, setDActiveData] = useState<IDactiveDataType[]>([])
 
   const getDActiveData = async () => {
-    const res = await getData(API.DACTIVE_API)
+    const res = await getNotificationsDativeData(API_ENDPOINTS.DACTIVE_API_ENDPOINT)
     if (res.success) {
       setDActiveData(res.data)
     } else {
@@ -32,8 +32,8 @@ const Dactive = () => {
           <FlatList
             showsVerticalScrollIndicator={false}
             data={DActiveData}
-            renderItem={({ item }: { item: DactiveDataType }) => <DactiveCard {...item} />}
-            keyExtractor={(item: DactiveDataType) => item.id}
+            renderItem={({ item }: { item: IDactiveDataType }) => <ASDActiveCard {...item} />}
+            keyExtractor={(item: IDactiveDataType) => item.id}
           />
         }
       </View>

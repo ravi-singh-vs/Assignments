@@ -2,6 +2,7 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { Typography } from '../../theme/typography'
 import { Spacing } from '../../theme/spacing'
+
 interface Styles {
   container: ViewStyle
   subContainer: ViewStyle

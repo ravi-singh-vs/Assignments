@@ -1,10 +1,10 @@
 import { Image, Text, View } from 'react-native'
 
-import { notificationIcon } from '../../constants/notification-constants'
+import { notificationIcon } from '../../constants/notifications-constants'
 
-import { styles } from './EmptyView-styles'
+import { styles } from './asEmptyView-styles'
 
-const EmptyView = () => {
+const ASEmptyView = () => {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
@@ -20,4 +20,4 @@ const EmptyView = () => {
   )
 }
 
-export default EmptyView
+export default ASEmptyView

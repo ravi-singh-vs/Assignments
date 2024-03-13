@@ -1,10 +1,7 @@
 import { COLORS } from '../theme/colors'
+import { IDActiveCardInfoType } from '../types/dactive-types'
 
-interface DActiveCardInfoType {
-  imageSource: number
-  textColor: string
-}
-export const dactiveCardInfo: { [key: string]: DActiveCardInfoType } = {
+export const DACTIVE_CARD_INFO: { [key: string]: IDActiveCardInfoType } = {
   'Outer Ring': {
     imageSource: require('../assets/images/outer-ring.png'),
     textColor: COLORS.secondary[600],
@@ -27,15 +24,15 @@ export const dactiveCardInfo: { [key: string]: DActiveCardInfoType } = {
   },
 }
 
-export const dactiveCardTitleGradientLocations: number[] = [0, 0.8792, 1]
+export const DACTIVE_CARD_TITLE_GRADIENT_LOCATIONS: number[] = [0, 0.8792, 1]
 
-export const dactiveCardButtonContainerGradientStart: { x: number; y: number } = {
+export const DACTIVE_CARD_BUTTON_CONTAINER_GRADIENT_START: { x: number; y: number } = {
   x: 0.5,
   y: 0,
 }
-export const dactiveCardButtonContainerGradientEnd: { x: number; y: number } = {
+export const DACTIVE_CARD_BUTTON_CONTAINER_GRADIENT_END: { x: number; y: number } = {
   x: 0.5,
   y: 1,
 }
 
-export const dactiveCardButtonTimeData: number[] = [2, 4, 8]
+export const DACTIVE_CARD_BUTTON_TIME_DATA: number[] = [2, 4, 8]

@@ -1,4 +1,4 @@
-export interface NotificationDataType {
+export interface INotificationDataType {
   id: string
   image: string
   text: string

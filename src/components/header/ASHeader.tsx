@@ -1,19 +1,19 @@
 import { Image, Text, View } from 'react-native'
 
-import { styles } from './Header-styles'
+import { styles } from './asHeader-styles'
 
-interface IHeaderProps {
+interface IASHeaderProps {
   headerTitle: string
-  imageSource?: number
+  image?: number
 }
-const Header = (props: IHeaderProps) => {
-  const { headerTitle, imageSource } = props
+const ASHeader = (props: IASHeaderProps) => {
+  const { headerTitle, image } = props
   return (
     <View style={styles.header}>
       <View style={styles.emptyContainer} />
       <Text style={styles.title}>{headerTitle}</Text>
-      {imageSource ? (
-        <Image source={imageSource} style={styles.icon} />
+      {image ? (
+        <Image source={image} style={styles.icon} />
       ) : (
         <View style={styles.emptyContainer} />
       )}
@@ -21,4 +21,4 @@ const Header = (props: IHeaderProps) => {
   )
 }
 
-export default Header
+export default ASHeader

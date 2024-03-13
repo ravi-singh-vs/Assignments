@@ -1,4 +1,4 @@
-export const getData = async (url: string) => {
+export const getNotificationsDativeData = async (url: string) => {
   try {
     const res = await fetch(url)
 
