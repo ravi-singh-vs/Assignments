@@ -1,31 +1,28 @@
-import {SafeAreaView, StatusBar, StyleSheet, ViewStyle} from 'react-native';
-import Notifications from './src/screens/notifications/Notifications';
-import Dactive from './src/screens/dactive/Dactive';
-import {COLORS} from './src/theme/colors';
-import {SPACING} from './src/theme/spacing';
+import { SafeAreaView, StatusBar, StyleSheet, ViewStyle } from 'react-native'
+import Notifications from './src/screens/notifications/Notifications'
+import Dactive from './src/screens/dactive/Dactive'
+import { COLORS } from './src/theme/colors'
+import { Spacing } from './src/theme/spacing'
 
 const App = () => {
   const showNotificationsScreen = true;
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar
-        backgroundColor={COLORS.neutralWhite}
-        barStyle="dark-content"
-      />
+      <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
       {showNotificationsScreen ? <Notifications /> : <Dactive />}
     </SafeAreaView>
-  );
-};
+  )
+}
 
 interface Style {
-  container: ViewStyle;
+  container: ViewStyle
 }
 
 const styles = StyleSheet.create<Style>({
   container: {
-    flex: SPACING.space_1,
-    backgroundColor: COLORS.neutralWhite,
+    flex: Spacing.space_1,
+    backgroundColor: COLORS.white,
   },
-});
+})
 
-export default App;
+export default App

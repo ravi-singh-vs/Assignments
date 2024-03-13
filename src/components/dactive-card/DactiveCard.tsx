@@ -1,45 +1,48 @@
-import {ImageBackground, Text, View} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { ImageBackground, Text, View } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 
-import CustomButton from '../custom-button/CustomButton';
+import CustomButton from '../custom-button/CustomButton'
+import { dactiveCardButtonContainerGradient, dactiveCardTitleGradient } from '../../theme/colors'
+
 import {
-  DactiveCardImageSource,
-  DactiveCardTitleColor,
-  buttonContainerGradientColors,
-  textGradientColors,
-  buttonTimeData,
-} from '../../constants/dactive-constants';
+  dactiveCardButtonContainerGradientEnd,
+  dactiveCardButtonContainerGradientStart,
+  dactiveCardButtonTimeData,
+  dactiveCardInfo,
+  dactiveCardTitleGradientLocations,
+} from '../../constants/dactive-constants'
 
-import {styles} from './DactiveCard-styles';
+import { styles } from './DactiveCard-styles'
 
-const DActiveCard = ({title}: {title: string}) => {
-  const color: string = DactiveCardTitleColor[title];
-  const imageSource: number = DactiveCardImageSource[title];
+interface IDactiveCardProps {
+  title: string
+}
+const DActiveCard = (props: IDactiveCardProps) => {
+  const { title } = props
+  const color: string = dactiveCardInfo[title].textColor
+  const imageSource: number = dactiveCardInfo[title].imageSource
 
   return (
     <View style={styles.container}>
       <ImageBackground source={imageSource} style={styles.image}>
-        <LinearGradient locations={[0, 0.8792, 1]} colors={textGradientColors}>
-          <Text style={[styles.title, {color: color}]}>{title}</Text>
-        </LinearGradient>
-
         <LinearGradient
-          colors={buttonContainerGradientColors}
-          start={{x: 0.5, y: 0}}
-          end={{x: 0.5, y: 1}}>
+          locations={dactiveCardTitleGradientLocations}
+          colors={dactiveCardTitleGradient}>
+          <Text style={[styles.title, { color }]}>{title}</Text>
+        </LinearGradient>
+        <LinearGradient
+          colors={dactiveCardButtonContainerGradient}
+          start={dactiveCardButtonContainerGradientStart}
+          end={dactiveCardButtonContainerGradientEnd}>
           <View style={styles.btnContainer}>
-            {buttonTimeData.map(time => (
-              <CustomButton
-                key={time}
-                time={`${time}min`}
-                style={styles.button}
-              />
+            {dactiveCardButtonTimeData.map(time => (
+              <CustomButton key={time} time={`${time}min`} style={styles.button} />
             ))}
           </View>
         </LinearGradient>
       </ImageBackground>
     </View>
-  );
-};
+  )
+}
 
-export default DActiveCard;
+export default DActiveCard

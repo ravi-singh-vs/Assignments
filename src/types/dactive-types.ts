@@ -1,5 +1,4 @@
 export interface DactiveDataType {
-  id: string;
-  title: string;
+  id: string
+  title: string
 }
-

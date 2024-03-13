@@ -1,23 +1,29 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
-import { Typography } from '../../theme/typography'
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
+import { Typography } from '../../theme/typography'
+
 interface Styles {
+  emptyContainer: ViewStyle
   header: ViewStyle
   icon: ImageStyle
   title: TextStyle
-  container: ViewStyle
 }
 export const styles = StyleSheet.create<Styles>({
+  emptyContainer: {
+    height: Spacing.space_24,
+    marginHorizontal: Spacing.space_24,
+    width: Spacing.space_24,
+  },
   header: {
     alignItems: 'center',
+    backgroundColor: COLORS.white,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: Spacing.space_24,
+    marginBottom: Spacing.space_16,
     paddingVertical: Spacing.space_16,
   },
-
   icon: {
     height: Spacing.space_24,
     marginHorizontal: Spacing.space_24,
@@ -29,10 +35,5 @@ export const styles = StyleSheet.create<Styles>({
     fontFamily: Typography['secondary'].bold,
     fontSize: Spacing.space_18,
     textAlign: 'center',
-  },
-  container: {
-    flex: Spacing.space_1,
-    justifyContent: 'center',
-    paddingHorizontal: Spacing.space_20,
   },
 })

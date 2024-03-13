@@ -1,22 +1,41 @@
-import {COLORS} from '../theme/colors';
+import { COLORS } from '../theme/colors'
 
-export const DactiveCardImageSource: {[key: string]: number} = {
-  'Outer Ring': require('../assets/images/outer-ring.png'),
-  Focus: require('../assets/images/focus.png'),
-  Follow: require('../assets/images/follow.png'),
-  Scan: require('../assets/images/scan.png'),
-  Square: require('../assets/images/square.png'),
-};
+interface DActiveCardInfoType {
+  imageSource: number
+  textColor: string
+}
+export const dactiveCardInfo: { [key: string]: DActiveCardInfoType } = {
+  'Outer Ring': {
+    imageSource: require('../assets/images/outer-ring.png'),
+    textColor: COLORS.secondary[600],
+  },
+  'Focus': {
+    imageSource: require('../assets/images/focus.png'),
+    textColor: COLORS.primary[700],
+  },
+  'Follow': {
+    imageSource: require('../assets/images/follow.png'),
+    textColor: COLORS.neutral[600],
+  },
+  'Scan': {
+    imageSource: require('../assets/images/scan.png'),
+    textColor: COLORS.accent[700],
+  },
+  'Square': {
+    imageSource: require('../assets/images/square.png'),
+    textColor: COLORS.primary[700],
+  },
+}
 
-export const buttonTimeData: number[] = [2, 4, 8];
+export const dactiveCardTitleGradientLocations: number[] = [0, 0.8792, 1]
 
-export const DactiveCardTitleColor: {[key: string]: string} = {
-  'Outer Ring': COLORS.secondary600,
-  Focus: COLORS.primary700,
-  Follow: COLORS.neutral700,
-  Scan: COLORS.accent700,
-  Square: COLORS.primary700,
-};
+export const dactiveCardButtonContainerGradientStart: { x: number; y: number } = {
+  x: 0.5,
+  y: 0,
+}
+export const dactiveCardButtonContainerGradientEnd: { x: number; y: number } = {
+  x: 0.5,
+  y: 1,
+}
 
-export const buttonContainerGradientColors = ['#FFFFFF00', '#FFFFFFCC'];
-export const textGradientColors = ['#FFFFFF8F', '#FFFFFF1E', '#FFFFFF00'];
+export const dactiveCardButtonTimeData: number[] = [2, 4, 8]

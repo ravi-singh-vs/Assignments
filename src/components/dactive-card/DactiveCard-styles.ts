@@ -1,55 +1,53 @@
-import {ImageStyle, StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
-import {COLORS} from '../../theme/colors';
-import {FONT_FAMILY} from '../../theme/typography';
-import {SPACING} from '../../theme/spacing';
+import { COLORS } from '../../theme/colors'
+import { Typography } from '../../theme/typography'
+import { Spacing } from '../../theme/spacing'
 
 interface Styles {
-  container: ViewStyle;
-  image: ImageStyle;
-  title: TextStyle;
-  btnContainer: ViewStyle;
-  button: TextStyle;
+  container: ViewStyle
+  image: ImageStyle
+  title: TextStyle
+  btnContainer: ViewStyle
+  button: TextStyle
 }
 export const styles = StyleSheet.create<Styles>({
   container: {
-    backgroundColor: 'plum',
-    borderRadius: SPACING.space_16,
-    height: SPACING.space_148,
-    marginBottom: SPACING.space_20,
+    borderRadius: Spacing.space_16,
+    height: Spacing.space_148,
+    marginBottom: Spacing.space_20,
     overflow: 'hidden',
   },
   image: {
     height: '100%',
     justifyContent: 'space-between',
-    resizeMode: 'cover',
     width: '100%',
   },
   title: {
-    color: COLORS.secondary600,
-    fontFamily: FONT_FAMILY.fraunces,
-    fontSize: SPACING.space_18,
-    paddingVertical: SPACING.space_8,
+    color: COLORS.secondary[600],
+    fontFamily: Typography['secondary'].bold,
+    fontSize: Spacing.space_18,
+    paddingVertical: Spacing.space_8,
     textAlign: 'center',
   },
 
   btnContainer: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    paddingVertical: SPACING.space_12,
+    paddingVertical: Spacing.space_12,
   },
 
   button: {
-    backgroundColor: COLORS.neutralWhite,
-    borderRadius: SPACING.space_8,
-    color: COLORS.neutral700,
-    elevation: SPACING.space_8,
-    fontFamily: FONT_FAMILY.quickSandMedium,
+    backgroundColor: COLORS.white,
+    borderRadius: Spacing.space_8,
+    color: COLORS.neutral[700],
+    elevation: Spacing.space_8,
+    fontFamily: Typography['primary'].medium,
     overflow: 'hidden',
-    paddingHorizontal: SPACING.space_16,
-    paddingVertical: SPACING.space_12,
+    paddingHorizontal: Spacing.space_16,
+    paddingVertical: Spacing.space_12,
     shadowColor: COLORS.tundora,
     textAlign: 'center',
-    width: SPACING.space_93,
+    width: Spacing.space_93,
   },
-});
+})

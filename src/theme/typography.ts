@@ -1,13 +1,12 @@
-interface FontFamily {
-  fraunces: string;
-  quickSandBold: string;
-  quickSandMedium: string;
-  quickSandSemiBold: string;
+const typography = {
+  primary: {
+    bold: 'Quicksand-Bold',
+    semiBold: 'Quicksand-SemiBold',
+    medium: 'Quicksand-Medium',
+  },
+  secondary: {
+    bold: 'Fraunces_72pt-Bold',
+  },
 }
 
-export const FONT_FAMILY: FontFamily = {
-  fraunces: 'Fraunces_72pt-Bold',
-  quickSandBold: 'Quicksand-Bold',
-  quickSandMedium: 'Quicksand-Medium',
-  quickSandSemiBold: 'Quicksand-SemiBold',
-};
+export const Typography = typography

@@ -1,15 +1,14 @@
-import React from 'react';
-import {Image, Text, View} from 'react-native';
+import { Image, Text, View } from 'react-native'
 
-import {notificationIcon} from '../../constants/notification-constants';
+import { notificationIcon } from '../../constants/notification-constants'
 
-import {styles} from './EmptyView-styles';
+import { styles } from './EmptyView-styles'
 
 const EmptyView = () => {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
-        <Image source={notificationIcon} style={styles.icon} />
+        <Image source={notificationIcon} style={styles.image} />
         <View>
           <Text style={styles.text}>No notifications yet!</Text>
           <Text style={styles.subText}>
@@ -18,7 +17,7 @@ const EmptyView = () => {
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default EmptyView;
+export default EmptyView
