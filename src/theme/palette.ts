@@ -2,7 +2,7 @@ export const palette = {
   green: {
     '50': '#F1FCFA',
     '100': '#D0F7F1',
-    '200': '#A0EFFE4',
+    '200': '#AEFFE4',
     '300': '#69DFD3',
     '400': '#39C8BE',
     '500': '#20ACA4',
@@ -12,7 +12,7 @@ export const palette = {
   pink: {
     '50': '#FDF2F7',
     '100': '#FBE8F2',
-    '200': '#FADOE5',
+    '200': '#FAD0E5',
     '300': '#F7AACE',
     '400': '#F175AC',
     '500': '#E84C8D',
@@ -44,6 +44,6 @@ export const palette = {
   tundora: '#454545',
   black: '#000000',
   //TODO : Use colors from palette
-  dActiveCardButtonContainerGradient: ['#FFFFFF00', '#FFFFFFCC'],
+  dActiveCardButtonGradient: ['#FFFFFF00', '#FFFFFFCC'],
   dActiveCardTitleGradient: ['#FFFFFF8F', '#FFFFFF1E', '#FFFFFF00'],
 }

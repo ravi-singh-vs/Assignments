@@ -24,15 +24,4 @@ export const DACTIVE_CARD_INFO: { [key: string]: IDActiveCardInfoType } = {
   },
 }
 
-export const DACTIVE_CARD_TITLE_GRADIENT_LOCATIONS: number[] = [0, 0.8792, 1]
-
-export const DACTIVE_CARD_BUTTON_CONTAINER_GRADIENT_START: { x: number; y: number } = {
-  x: 0.5,
-  y: 0,
-}
-export const DACTIVE_CARD_BUTTON_CONTAINER_GRADIENT_END: { x: number; y: number } = {
-  x: 0.5,
-  y: 1,
-}
-
 export const DACTIVE_CARD_BUTTON_TIME_DATA: number[] = [2, 4, 8]

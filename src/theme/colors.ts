@@ -10,7 +10,7 @@ const Colors = {
   white: palette.white,
   tundora: palette.tundora,
   dark: palette.black,
-  dactiveCardButtonContainerGradient: palette.dActiveCardButtonContainerGradient,
+  dactiveCardButtonGradient: palette.dActiveCardButtonGradient,
   dactiveCardTitleGradient: palette.dActiveCardTitleGradient,
 }
 

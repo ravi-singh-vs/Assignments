@@ -7,7 +7,7 @@ import { COLORS } from './src/theme/colors'
 import { Spacing } from './src/theme/spacing'
 
 const App = () => {
-  const showNotificationsScreen = false;
+  const showNotificationsScreen = true;
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />

@@ -7,9 +7,10 @@ import { Typography } from '../../theme/typography'
 interface Styles {
   emptyContainer: ViewStyle
   header: ViewStyle
-  icon: ImageStyle
+  image: ImageStyle
   title: TextStyle
 }
+
 export const styles = StyleSheet.create<Styles>({
   emptyContainer: {
     height: Spacing.space_24,
@@ -24,7 +25,7 @@ export const styles = StyleSheet.create<Styles>({
     marginBottom: Spacing.space_16,
     paddingVertical: Spacing.space_16,
   },
-  icon: {
+  image: {
     height: Spacing.space_24,
     marginHorizontal: Spacing.space_24,
     width: Spacing.space_24,

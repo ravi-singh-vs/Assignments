@@ -1,14 +1,14 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS } from '../../theme/colors'
-import { Typography } from '../../theme/typography'
 import { Spacing } from '../../theme/spacing'
+import { Typography } from '../../theme/typography'
 
 interface Styles {
   container: ViewStyle
   image: ImageStyle
   title: TextStyle
-  btnContainer: ViewStyle
+  buttonContainer: ViewStyle
 }
 
 export const styles = StyleSheet.create<Styles>({
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create<Styles>({
     borderRadius: Spacing.space_16,
     height: Spacing.space_148,
     marginBottom: Spacing.space_20,
-    overflow: 'hidden',
+    overflow: 'hidden', // to hide overflow of image for setting border radius
   },
   image: {
     height: '100%',
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create<Styles>({
     textAlign: 'center',
   },
 
-  btnContainer: {
+  buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     paddingVertical: Spacing.space_12,

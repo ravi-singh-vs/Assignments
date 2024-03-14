@@ -3,14 +3,15 @@ import { Text, TouchableOpacity } from 'react-native'
 import { styles } from './asButton-styles'
 
 interface IASButtonProps {
-  time: string
+  label: string
   onPress?: () => void
 }
+
 const ASButton = (props: IASButtonProps) => {
-  const { time, onPress } = props
+  const { label, onPress } = props
   return (
-    <TouchableOpacity onPress={onPress}>
-      <Text style={styles.button}>{time}</Text>
+    <TouchableOpacity onPress={onPress} style={styles.button}>
+      <Text style={styles.label}>{label}</Text>
     </TouchableOpacity>
   )
 }

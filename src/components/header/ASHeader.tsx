@@ -6,6 +6,7 @@ interface IASHeaderProps {
   headerTitle: string
   image?: number
 }
+
 const ASHeader = (props: IASHeaderProps) => {
   const { headerTitle, image } = props
   return (
@@ -13,7 +14,7 @@ const ASHeader = (props: IASHeaderProps) => {
       <View style={styles.emptyContainer} />
       <Text style={styles.title}>{headerTitle}</Text>
       {image ? (
-        <Image source={image} style={styles.icon} />
+        <Image source={image} style={styles.image} />
       ) : (
         <View style={styles.emptyContainer} />
       )}

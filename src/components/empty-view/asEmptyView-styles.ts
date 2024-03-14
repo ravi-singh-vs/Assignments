@@ -10,6 +10,7 @@ interface Styles {
   text: TextStyle
   subText: TextStyle
 }
+
 export const styles = StyleSheet.create<Styles>({
   container: {
     alignItems: 'center',

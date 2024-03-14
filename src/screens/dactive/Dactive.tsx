@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FlatList,View } from 'react-native'
+import { FlatList, View } from 'react-native'
 
 import Header from '../../components/header/ASHeader'
 import ASDActiveCard from '../../components/dactive-card/ASDactiveCard'
