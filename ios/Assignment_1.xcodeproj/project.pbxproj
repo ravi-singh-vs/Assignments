@@ -18,6 +18,8 @@
 		9066357E00C7417194CCD78D /* Fraunces_72pt-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 864A6E620FCB4D9888ECE37B /* Fraunces_72pt-Bold.ttf */; };
 		CCFDB29A275341DC9D61FDF7 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC961CB5E6054F5F9A40D0FF /* Quicksand-SemiBold.ttf */; };
 		F15E49A760D2465695170926 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5389D0FAACC94482B5214C58 /* Quicksand-Bold.ttf */; };
+		451937BCB7624D8D967FFD5F /* Fraunces_72pt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3552561701A949519B753B9E /* Fraunces_72pt-Regular.ttf */; };
+		81D7B6BB563D4024B0E3F6C7 /* Fraunces_72pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACEE3C8EB4FF470F830658BF /* Fraunces_72pt-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-Assignment_1-Assignment_1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment_1-Assignment_1Tests.release.xcconfig"; path = "Target Support Files/Pods-Assignment_1-Assignment_1Tests/Pods-Assignment_1-Assignment_1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EC961CB5E6054F5F9A40D0FF /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Quicksand-SemiBold.ttf"; path = "../src/assets/fonts/Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		3552561701A949519B753B9E /* Fraunces_72pt-Regular.ttf */ = {isa = PBXFileReference; name = "Fraunces_72pt-Regular.ttf"; path = "../src/assets/fonts/Fraunces_72pt-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ACEE3C8EB4FF470F830658BF /* Fraunces_72pt-SemiBold.ttf */ = {isa = PBXFileReference; name = "Fraunces_72pt-SemiBold.ttf"; path = "../src/assets/fonts/Fraunces_72pt-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 				5389D0FAACC94482B5214C58 /* Quicksand-Bold.ttf */,
 				82B238A5D473480E925CABEE /* Quicksand-Medium.ttf */,
 				EC961CB5E6054F5F9A40D0FF /* Quicksand-SemiBold.ttf */,
+				3552561701A949519B753B9E /* Fraunces_72pt-Regular.ttf */,
+				ACEE3C8EB4FF470F830658BF /* Fraunces_72pt-SemiBold.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -268,6 +274,8 @@
 				F15E49A760D2465695170926 /* Quicksand-Bold.ttf in Resources */,
 				12A52343523448F0980F90AA /* Quicksand-Medium.ttf in Resources */,
 				CCFDB29A275341DC9D61FDF7 /* Quicksand-SemiBold.ttf in Resources */,
+				451937BCB7624D8D967FFD5F /* Fraunces_72pt-Regular.ttf in Resources */,
+				81D7B6BB563D4024B0E3F6C7 /* Fraunces_72pt-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
