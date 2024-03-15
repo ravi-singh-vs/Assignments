@@ -1,15 +1,29 @@
-import { View, Text, ImageBackground } from 'react-native'
+import { View, Text, ImageBackground, Image } from 'react-native'
 import React from 'react'
+import { styles } from './asDashboardHeader-styles'
+import { getCurrentDate } from '../../utils/common-utils'
 
 const ASDashboardHeader = () => {
-  const imageSource = require('../../assets/images/profile-hero.png')
+  const imageSource = require('../../assets/images/hero.png')
+  const calendarIcon = require('../../assets/icons/calendar.png')
+  const overthinker = require('../../assets/icons/overthinker-white.png')
+  const currentDate = getCurrentDate()
   return (
-    <View style={{ flex: 1, borderWidth: 5, borderColor: 'red' }}>
-      <ImageBackground
-        source={imageSource}
-        style={{ width: '100%', height: 247, borderWidth: 5 }}
-        imageStyle={{ width: '100%' }}></ImageBackground>
-    </View>
+    <ImageBackground source={imageSource} style={styles.imageBackground} resizeMode="cover">
+      <View style={styles.container}>
+        <View style={styles.subContainer}>
+          <Image source={calendarIcon} style={styles.image} />
+          <Text style={styles.text}>{currentDate}</Text>
+        </View>
+        <View style={styles.bottomSubContainer}>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Overthinker</Text>
+            <Text style={styles.days}>Day 1 of 24</Text>
+          </View>
+          <Image source={overthinker} style={styles.heroImage} />
+        </View>
+      </View>
+    </ImageBackground>
   )
 }
 
