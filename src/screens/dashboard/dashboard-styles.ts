@@ -4,7 +4,11 @@ import { Spacing } from '../../theme/spacing'
 
 export const styles = StyleSheet.create({
   container: {
-    flexGrow: Spacing.space_1,
-    marginHorizontal: Spacing.space_20,
+    flex: 1,
+    marginBottom: 88,
+  },
+  subContainer: {
+    flexGrow: 1,
+    gap: 12,
   },
 })

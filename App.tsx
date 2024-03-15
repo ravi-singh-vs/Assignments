@@ -11,7 +11,6 @@ const App = () => {
   const showNotificationsScreen = true
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="transparent" translucent barStyle="light-content" />
       <Dashboard />
     </SafeAreaView>
   )
