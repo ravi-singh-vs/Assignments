@@ -25,9 +25,9 @@ const Dactive = () => {
     getDActiveData()
   }, [])
   return (
-    <>
+    <View style={styles.container}>
       <Header headerTitle="D-active" />
-      <View style={styles.container}>
+      <View style={styles.subContainer}>
         {
           <FlatList
             showsVerticalScrollIndicator={false}
@@ -37,7 +37,7 @@ const Dactive = () => {
           />
         }
       </View>
-    </>
+    </View>
   )
 }
 
