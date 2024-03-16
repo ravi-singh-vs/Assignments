@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FlatList } from 'react-native'
+import { FlatList, View } from 'react-native'
 
 import Header from '../../components/header/ASHeader'
 import ASNotificationCard from '../../components/notification-card/ASNotificationCard'
@@ -34,7 +34,7 @@ const Notifications = () => {
     setRefreshing(false)
   }
   return (
-    <>
+    <View style={styles.container}>
       <Header headerTitle="Notifications" image={settingsIcon} />
       <FlatList
         showsVerticalScrollIndicator={false}
@@ -46,7 +46,7 @@ const Notifications = () => {
         refreshing={refreshing}
         onRefresh={onRefresh}
       />
-    </>
+    </View>
   )
 }
 

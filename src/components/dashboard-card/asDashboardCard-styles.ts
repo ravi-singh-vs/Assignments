@@ -6,10 +6,10 @@ import { palette } from '../../theme/palette'
 
 export const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: 'center',
     padding: Spacing.space_16,
     borderRadius: Spacing.space_16,
-    borderWidth: 1,
     gap: 16,
   },
   detailContainer: {

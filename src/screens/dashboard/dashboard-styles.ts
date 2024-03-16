@@ -5,10 +5,12 @@ import { Spacing } from '../../theme/spacing'
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom: 88,
+    marginBottom: 96,
+    alignItems: 'center',
   },
   subContainer: {
-    flexGrow: 1,
+    marginTop: 12,
     gap: 12,
+    width: 336,
   },
 })
