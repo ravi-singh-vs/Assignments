@@ -1,31 +1,31 @@
-import { View, StyleSheet } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { View } from 'react-native'
 import ASScoreCard from './score-card/ASScoreCard'
 import ASTopWreckers from './top-wreckers/ASTopWreckers'
 
-interface Wrecker {
-  id: string;
-  title: string;
-  progress: string; 
-  description: string;
-}
+import { styles } from './assessment-styles'
 
+interface Wrecker {
+  id: string
+  title: string
+  progress: string
+  description: string
+}
 
 const Assessment = () => {
   const URL = 'https://65f3d975105614e654a14328.mockapi.io/progress/getWreckers'
-  
-  const [top3Wreckers, setTop3Wreckers] = useState<Wrecker[]>([]);
-  const [averageProgress, setAverageProgress] = useState<number>(0);
 
+  const [top3Wreckers, setTop3Wreckers] = useState<Wrecker[]>([])
+  const [averageProgress, setAverageProgress] = useState<number>(0)
 
-  const getTop3Wreckers = (data:Wrecker[]) => {
+  const getTop3Wreckers = (data: Wrecker[]) => {
     const sortedWreckers = data.sort((a, b) => parseInt(b.progress) - parseInt(a.progress))
     const top3Wreckers = sortedWreckers.slice(0, 3)
     setTop3Wreckers(top3Wreckers)
   }
 
-  const getAverageProgressValue = (data:Wrecker[]) => {
-    if (data.length === 0) return 0;
+  const getAverageProgressValue = (data: Wrecker[]) => {
+    if (data.length === 0) return 0
     const totalProgress = data.reduce((acc, data) => acc + Number(data.progress), 0)
     const average = totalProgress / data.length
     setAverageProgress(Math.floor(average))
@@ -35,7 +35,6 @@ const Assessment = () => {
     try {
       const response = await fetch(URL)
       const data = await response.json()
-
       getTop3Wreckers(data)
       getAverageProgressValue(data)
     } catch (error) {
@@ -50,20 +49,9 @@ const Assessment = () => {
   return (
     <View style={styles.container}>
       <ASScoreCard average={averageProgress} />
-      <ASTopWreckers wreckers={top3Wreckers}/>
+      <ASTopWreckers wreckers={top3Wreckers} />
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: 857,
-    marginTop: 30,
-    paddingVertical: 32,
-    borderTopRightRadius: 16,
-    borderTopLeftRadius: 16,
-    backgroundColor: '#20ACA4',
-  },
-})
 
 export default Assessment
