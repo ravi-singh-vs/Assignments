@@ -1,13 +1,16 @@
-import { View, Text, FlatList, ListRenderItem, ScrollView, SafeAreaView } from 'react-native'
+import { FlatList, SafeAreaView } from 'react-native'
 import React, { useEffect, useState } from 'react'
+
 import ASDashboardHeader from '../../components/dashboard-header/ASDashboardHeader'
 import ASDashboardMasteryCard from '../../components/dashboard-mastery-card/ASDashboardMasteryCard'
-import { styles } from './dashboard-styles'
 import ASDashboardCard from '../../components/dashboard-card/ASDashboardCard'
+
 import { getDashboardData } from '../../services/api/get-dashboard-data'
 import { API_ENDPOINTS } from '../../constants/api-constants'
+import { IDashboardData } from '../../types/dashboard-types'
+import { styles } from './dashboard-styles'
 
-const renderItem: ListRenderItem<any> = ({ item }) => <ASDashboardCard data={item} />
+const renderItem = (item: IDashboardData): JSX.Element => <ASDashboardCard data={item} />
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState([])
 
@@ -21,12 +24,12 @@ const Dashboard = () => {
   }, [])
   return (
     <SafeAreaView style={styles.container}>
-      <ASDashboardHeader />
+      <ASDashboardHeader title="Overthinker" />
       <ASDashboardMasteryCard />
       <FlatList
         data={dashboardData}
-        keyExtractor={item => item.id.toString()}
-        renderItem={renderItem}
+        keyExtractor={(item: IDashboardData) => item.id.toString()}
+        renderItem={({ item }) => renderItem(item)}
         scrollEnabled
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.subContainer}

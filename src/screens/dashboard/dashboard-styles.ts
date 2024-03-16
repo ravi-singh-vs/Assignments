@@ -1,16 +1,22 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ViewStyle } from 'react-native'
 
 import { Spacing } from '../../theme/spacing'
 
-export const styles = StyleSheet.create({
+interface IStyles {
+  container: ViewStyle
+  subContainer: ViewStyle
+}
+export const styles: IStyles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginBottom: 96,
+    flex: Spacing.space_1,
     alignItems: 'center',
+    marginBottom: Spacing.space_88,
   },
   subContainer: {
-    marginTop: 12,
-    gap: 12,
-    width: 336,
+    marginTop: Spacing.space_12,
+    gap: Spacing.space_12,
+    width: Spacing.space_336,
+    flexGrow: Spacing.space_1,
+    paddingBottom: Spacing.space_16,
   },
 })

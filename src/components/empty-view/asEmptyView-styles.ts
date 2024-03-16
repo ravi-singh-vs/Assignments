@@ -3,7 +3,7 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Typography } from '../../theme/typography'
 import { Spacing } from '../../theme/spacing'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
   image: ImageStyle
@@ -11,7 +11,7 @@ interface Styles {
   subText: TextStyle
 }
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IStyles>({
   container: {
     alignItems: 'center',
     flex: Spacing.space_1,

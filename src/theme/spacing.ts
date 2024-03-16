@@ -4,6 +4,7 @@ export enum Spacing {
   space_2 = 2,
   space_4 = 4,
   space_8 = 8,
+  space_9 = 9,
   space_12 = 12,
   space_14 = 14,
   space_16 = 16,
@@ -32,4 +33,6 @@ export enum Spacing {
   space_148 = 148,
   space_154 = 154,
   space_200 = 200,
+  space_248 = 248,
+  space_336 = 336,
 }

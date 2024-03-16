@@ -1,9 +1,23 @@
-import { StyleSheet } from 'react-native'
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
 
-export const styles = StyleSheet.create({
+interface IStyles {
+  container: ViewStyle
+  imageContainer: ViewStyle
+  image: ImageStyle
+  detailContainer: ViewStyle
+  detailTopContainer: ViewStyle
+  listenIconContainer: ViewStyle
+  listenContainer: ViewStyle
+  listenText: TextStyle
+  icon: ImageStyle
+  title: TextStyle
+  detailBottomContainer: ViewStyle
+  time: TextStyle
+}
+export const styles: IStyles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     paddingVertical: Spacing.space_24,

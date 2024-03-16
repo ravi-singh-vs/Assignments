@@ -1,13 +1,24 @@
-import { Platform, StatusBar, StyleSheet } from 'react-native'
+import { ImageStyle, StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Spacing } from '../../theme/spacing'
 import { Typography } from '../../theme/typography'
 import { COLORS } from '../../theme/colors'
 
-export const styles = StyleSheet.create({
+interface IStyles {
+  container: ViewStyle
+  subContainer: ViewStyle
+  imageBackground: ImageStyle
+  image: ImageStyle
+  text: TextStyle
+  bottomSubContainer: ViewStyle
+  textContainer: ViewStyle
+  title: TextStyle
+  days: TextStyle
+  heroImage: ImageStyle
+}
+export const styles: IStyles = StyleSheet.create({
   imageBackground: {
-    flexDirection: 'column',
     width: '100%',
-    height: 247,
+    height: Spacing.space_248,
     justifyContent: 'space-between',
   },
 

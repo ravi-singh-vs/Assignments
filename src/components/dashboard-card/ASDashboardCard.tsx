@@ -1,36 +1,40 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
+
+import { DASHBOARD_LIST_DATA } from '../../constants/dashboard-constants'
+import ASPlayButton from '../play-button/ASPlayButton'
+import { IDashboardData } from '../../types/dashboard-types'
 import { styles } from './asDashboardCard-styles'
 
+const PLAY_BUTTON = require('../../assets/icons/audio.png')
+const COMPLETED_TICK = require('../../assets/icons/complete.png')
+const BOOKMARK = require('../../assets/icons/marked-favourite.png')
+const REMOVE_BOOKMARK = require('../../assets/icons/not-marked-favourite.png')
+
 interface IASDashboardCardProps {
-  data: {
-    id: number
-    title: string
-    startingTime: string
-    endingTime: string
-  }
+  data: IDashboardData
 }
+
 const ASDashboardCard = ({ data }: IASDashboardCardProps) => {
   const { id, title, startingTime, endingTime } = data
-  const PLAY_BUTTON = require('../../assets/icons/audio.png')
-  const COMPLETED_TICK = require('../../assets/icons/complete.png')
-  const BOOKMARK = require('../../assets/icons/marked-favourite.png')
-  const REMOVE_BOOKMARK = require('../../assets/icons/not-marked-favourite.png')
-  const REMINDER = require('../../assets/icons/reminder.png')
+
+  const imageSrc = DASHBOARD_LIST_DATA[title as keyof typeof DASHBOARD_LIST_DATA].image
+  const backgroundColor =
+    DASHBOARD_LIST_DATA[title as keyof typeof DASHBOARD_LIST_DATA].backgroundColor
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor }]}>
       <View style={styles.subContainer}>
         <View style={styles.imageContainer}>
-          <Image source={REMINDER} style={styles.image} />
+          <Image source={imageSrc} style={styles.image} />
         </View>
         <View style={styles.detailContainer}>
           <View style={styles.headerContainer}>
             <View style={styles.headerSubContainer}>
-              <View style={styles.headerSubContainerTitle}>
+              <View style={styles.headerSubContainerLeft}>
                 <Text style={styles.challengeText}>Challenge {id}</Text>
-                <Image source={COMPLETED_TICK} style={styles.headerSubContainerTitleImage} />
+                <Image source={COMPLETED_TICK} style={styles.tickIcon} />
               </View>
-              <Image source={REMOVE_BOOKMARK} style={styles.headerSubContainerImage} />
+              <Image source={REMOVE_BOOKMARK} style={styles.bookmarkIcon} />
             </View>
             <Text style={styles.title}>{title}</Text>
           </View>
@@ -38,9 +42,7 @@ const ASDashboardCard = ({ data }: IASDashboardCardProps) => {
             <Text style={styles.duration}>
               {startingTime} to {endingTime}
             </Text>
-            <View style={styles.bottomSubContainer}>
-              <Image source={PLAY_BUTTON} style={styles.bottomSubContainerImage} />
-            </View>
+            <ASPlayButton />
           </View>
         </View>
       </View>

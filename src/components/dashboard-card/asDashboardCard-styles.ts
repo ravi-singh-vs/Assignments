@@ -1,37 +1,53 @@
-import { StyleSheet } from 'react-native'
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
 import { palette } from '../../theme/palette'
+interface IStyles {
+  container: ViewStyle
+  subContainer: ViewStyle
+  imageContainer: ViewStyle
+  image: ImageStyle
+  detailContainer: ViewStyle
+  headerContainer: ViewStyle
+  headerSubContainer: ViewStyle
+  headerSubContainerLeft: ViewStyle
+  bookmarkIcon: ImageStyle
+  challengeText: TextStyle
+  tickIcon: ImageStyle
+  title: TextStyle
+  bottomContainer: ViewStyle
+  duration: TextStyle
+}
 
-export const styles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: Spacing.space_1,
     justifyContent: 'center',
     padding: Spacing.space_16,
     borderRadius: Spacing.space_16,
-    gap: 16,
+    gap: Spacing.space_16,
+  },
+  subContainer: {
+    flexDirection: 'row',
+    gap: Spacing.space_12,
   },
   detailContainer: {
     flex: Spacing.space_1,
   },
-  duration: {
-    color: COLORS.neutral['500'],
-    fontFamily: Typography.primary.medium,
-    fontSize: 12,
-    lineHeight: 18,
+  headerContainer: {
+    gap: Spacing.space_4,
   },
-  headerContainer: {},
   headerSubContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  headerSubContainerImage: {
+  bookmarkIcon: {
     height: Spacing.space_16,
     width: Spacing.space_16,
   },
-  headerSubContainerTitle: {
+  headerSubContainerLeft: {
     flexDirection: 'row',
     gap: Spacing.space_8,
     alignItems: 'center',
@@ -40,7 +56,7 @@ export const styles = StyleSheet.create({
     fontFamily: Typography.primary.bold,
     color: palette.shark['500'],
   },
-  headerSubContainerTitleImage: {
+  tickIcon: {
     height: Spacing.space_16,
     width: Spacing.space_16,
   },
@@ -54,18 +70,26 @@ export const styles = StyleSheet.create({
     paddingHorizontal: Spacing.space_8,
     paddingVertical: Spacing.space_16,
   },
-  subContainer: {
-    flexDirection: 'row',
-    gap: Spacing.space_12,
-  },
   title: {
     fontSize: Spacing.space_16,
     fontFamily: Typography.secondary.bold,
     color: COLORS.neutral['700'],
     lineHeight: Spacing.space_24,
   },
+  bottomContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  duration: {
+    color: COLORS.neutral['500'],
+    fontFamily: Typography.primary.medium,
+    fontSize: Spacing.space_12,
+    lineHeight: Spacing.space_18,
+  },
   bottomSubContainer: {
-    elevation: 5,
+    elevation: Spacing.space_4,
+    shadowColor: COLORS.neutral[600],
     borderRadius: Spacing.space_50,
     backgroundColor: COLORS.white,
   },
@@ -73,10 +97,5 @@ export const styles = StyleSheet.create({
     height: Spacing.space_12,
     width: Spacing.space_12,
     margin: Spacing.space_12,
-  },
-  bottomContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
 })

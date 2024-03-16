@@ -1,7 +1,9 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-import { styles } from './asDashboardMasteryCard-styles'
+
 import ASPlayButton from '../play-button/ASPlayButton'
+
+import { styles } from './asDashboardMasteryCard-styles'
 
 const ASDashboardMasteryCard = () => {
   const imageSource = require('../../assets/icons/overthinker-grey.png')

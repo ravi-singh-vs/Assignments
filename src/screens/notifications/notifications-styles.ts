@@ -3,12 +3,12 @@ import { StyleSheet, ViewStyle } from 'react-native'
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
 }
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IStyles>({
   container: {
     marginBottom: Spacing.space_88,
     flex: Spacing.space_1,
@@ -16,5 +16,6 @@ export const styles = StyleSheet.create<Styles>({
   },
   subContainer: {
     flexGrow: Spacing.space_1,
+    marginTop: Spacing.space_16,
   },
 })
