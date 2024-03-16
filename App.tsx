@@ -5,13 +5,16 @@ import Dactive from './src/screens/dactive/Dactive'
 
 import { COLORS } from './src/theme/colors'
 import { Spacing } from './src/theme/spacing'
+import Profile from './src/screens/profile/Profile'
 
 const App = () => {
-  const showNotificationsScreen = true;
+  const showNotificationsScreen = false;
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
-      {showNotificationsScreen ? <Notifications /> : <Dactive />}
+      <StatusBar backgroundColor={'transparent'} barStyle="light-content" translucent/>
+      {/* {showNotificationsScreen ? <Notifications /> : <Dactive />}
+       */}
+       <Profile/>
     </SafeAreaView>
   )
 }
