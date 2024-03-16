@@ -7,13 +7,15 @@ import Dactive from '../../screens/dactive/Dactive'
 import Activity from '../../screens/activity/Activity'
 import Notifications from '../../screens/notifications/Notifications'
 import Profile from '../../screens/profile/Profile'
+import { TabNavigatorParams } from '../../types/tabNavigator-types'
 
 import { COLORS } from '../../theme/colors'
 import { ResizeMode } from '../../constants/common-constants'
 
 import { styles } from './tabNavigator-styles'
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator<TabNavigatorParams>()
+
 const TabNavigator = () => {
   return (
     <Tab.Navigator
@@ -22,7 +24,8 @@ const TabNavigator = () => {
         tabBarShowLabel: false,
         tabBarActiveBackgroundColor: COLORS.primary[100],
         headerShown: false,
-      }}>
+      }}
+      initialRouteName="Activity">
       <Tab.Screen
         name="Dashboard"
         component={Dashboard}

@@ -4,6 +4,7 @@ export enum Spacing {
   space_2 = 2,
   space_4 = 4,
   space_8 = 8,
+  space_9 = 9,
   space_12 = 12,
   space_14 = 14,
   space_16 = 16,

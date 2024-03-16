@@ -4,14 +4,14 @@ import { COLORS } from '../../theme/colors'
 import { Spacing } from '../../theme/spacing'
 import { Typography } from '../../theme/typography'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   image: ImageStyle
   title: TextStyle
   buttonContainer: ViewStyle
 }
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IStyles>({
   container: {
     borderRadius: Spacing.space_16,
     height: Spacing.space_148,
