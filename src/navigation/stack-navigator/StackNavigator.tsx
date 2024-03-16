@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack'
 
 import TabNavigator from '../tab-navigator/TabNavigator'
-import MyReflections from '../../screens/activity/progress/my-reflections/MyReflections'
+import Reflection from '../../screens/activity/progress/reflection/Reflection'
 import { StackNavigatorParams } from '../../types/stackNavigator-types'
 
 const Stack = createStackNavigator<StackNavigatorParams>()
@@ -19,7 +19,7 @@ const StackNavigator = () => {
       />
       <Stack.Screen
         name="MyReflections"
-        component={MyReflections}
+        component={Reflection}
         options={{ animationEnabled: true, gestureDirection: 'horizontal' }}
       />
     </Stack.Navigator>

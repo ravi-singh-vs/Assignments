@@ -1,19 +1,20 @@
-import { ImageBackground, View } from 'react-native'
-import { styles } from './my-reflections'
+import React from 'react'
+import { View, ImageBackground } from 'react-native'
+
 import ASHeader from '../../../../components/header/ASHeader'
 
-const MyReflections = () => {
+const Reflection = () => {
   return (
     <View>
       <ImageBackground source={require('../../../../assets/images/my-reflection.png')}>
         <ASHeader
           headerTitle="My Reflections"
           backButtonImage={require('../../../../assets/icons/backGreen.png')}
-          canGoToPreviousScreen = {true}
+          canGoToPreviousScreen={true}
         />
       </ImageBackground>
     </View>
   )
 }
 
-export default MyReflections
+export default Reflection
