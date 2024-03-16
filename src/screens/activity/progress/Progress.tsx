@@ -10,11 +10,7 @@ import { progressData } from '../../../constants/activity-constants'
 
 import { styles } from './progress-styles'
 
-
-
-
 const Progress = () => {
-  
   const navigation = useNavigation<StackNavigationProp<StackNavigatorParams>>()
 
   const topProgressData: IProgressDataType[] = progressData
