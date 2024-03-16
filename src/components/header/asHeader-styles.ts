@@ -4,14 +4,17 @@ import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
 
-interface Styles {
+import { ResizeMode } from '../../constants/common-constants'
+
+interface IStyles {
   emptyContainer: ViewStyle
   header: ViewStyle
   image: ImageStyle
   title: TextStyle
+  backButtonImage: ImageStyle
 }
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IStyles>({
   emptyContainer: {
     height: Spacing.space_24,
     marginHorizontal: Spacing.space_24,
@@ -22,8 +25,13 @@ export const styles = StyleSheet.create<Styles>({
     backgroundColor: COLORS.white,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: Spacing.space_16,
     paddingVertical: Spacing.space_16,
+  },
+  backButtonImage: {
+    width: Spacing.space_9,
+    height: Spacing.space_18,
+    resizeMode: ResizeMode.Contain,
+    marginHorizontal: Spacing.space_24,
   },
   image: {
     height: Spacing.space_24,

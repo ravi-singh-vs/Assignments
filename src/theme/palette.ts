@@ -17,6 +17,7 @@ export const palette = {
     '400': '#F175AC',
     '500': '#E84C8D',
     '600': '#D72B6A',
+    '700': '#F275AD',
   },
   yellow: {
     '50': '#FFFEEA',

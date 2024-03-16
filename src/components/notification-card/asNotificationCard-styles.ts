@@ -4,7 +4,7 @@ import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
 import { Spacing } from '../../theme/spacing'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
   icon: ImageStyle
@@ -13,7 +13,7 @@ interface Styles {
   timeText: TextStyle
 }
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IStyles>({
   container: {
     borderBottomColor: COLORS.neutral[100],
     borderBottomWidth: Spacing.space_1,

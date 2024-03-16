@@ -6,6 +6,8 @@ const typography = {
   },
   secondary: {
     bold: 'Fraunces_72pt-Bold',
+    semiBold : 'Fraunces_72pt-SemiBold',
+    regular : 'Fraunces_72pt-Regular'
   },
 }
 
