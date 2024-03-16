@@ -11,18 +11,18 @@ interface IProfileNavigationProps {
 }
 
 const ASProfileNavigation = ({ title, arrowRight }: IProfileNavigationProps) => {
-    const [showModal,setShowModal]=useState(false);
+    
 
   const handleOnPress = () => {
-    // Alert.alert('onPress:-use WebView')
-    setShowModal(true);
+    Alert.alert('onPress:-use WebView')
+    
   }
 
   
 
   return (
     <View>
-    <ASModal showModal={showModal} setShowModal={setShowModal}/>
+    
     <TouchableOpacity style={styles.container} onPress={handleOnPress}>
       <Text style={styles.text}>{title}</Text>
       <Image style={styles.icon} source={arrowRight} />

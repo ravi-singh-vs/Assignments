@@ -1,33 +1,16 @@
-import { SafeAreaView, StatusBar, StyleSheet, ViewStyle } from 'react-native'
+import { StatusBar } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
 
-import Notifications from './src/screens/notifications/Notifications'
-import Dactive from './src/screens/dactive/Dactive'
-
+import StackNavigator from './src/navigation/stack-navigator/StackNavigator'
 import { COLORS } from './src/theme/colors'
-import { Spacing } from './src/theme/spacing'
-import Profile from './src/screens/profile/Profile'
 
 const App = () => {
-  const showNotificationsScreen = false;
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={'transparent'} barStyle="light-content" translucent/>
-      {/* {showNotificationsScreen ? <Notifications /> : <Dactive />}
-       */}
-       <Profile/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <StatusBar backgroundColor={COLORS.white}  barStyle="dark-content" />
+      <StackNavigator />
+    </NavigationContainer>
   )
 }
-
-interface Style {
-  container: ViewStyle
-}
-
-const styles = StyleSheet.create<Style>({
-  container: {
-    flex: Spacing.space_1,
-    backgroundColor: COLORS.white,
-  },
-})
 
 export default App

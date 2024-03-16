@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
   Alert,
+  
 } from 'react-native'
 import profileImage from '../../assets/images/profile-hero.png'
 import ASProfileNavigation from './profile-components/ASProfileNavigation'
@@ -23,9 +24,9 @@ const Profile = () => {
   const handleBackArrowOnPress = () => {
     Alert.alert('Back Button Functionality !')
   }
-
   return (
     <View>
+    
       <ImageBackground source={profileImage} style={styles.background} resizeMode="cover">
         <View style={styles.header}>
           <TouchableOpacity onPress={handleBackArrowOnPress}>
