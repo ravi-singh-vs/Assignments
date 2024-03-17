@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { Image, Pressable, Text } from 'react-native'
 
-import { Typography } from '../../theme/typography'
-import ASLoadingBar from '../loading-bar/ASLoadingBar'
-
 import compassion from '../../assets/icons/compassion.png'
 import courage from '../../assets/icons/courage.png'
 import curiosity from '../../assets/icons/curiosity.png'
 import distractor from '../../assets/icons/distractor.png'
 import overthinker from '../../assets/icons/overthinker-grey.png'
 import procrastinator from '../../assets/icons/procrastinator.png'
+import ASLoadingBar from '../loading-bar/ASLoadingBar'
 import ASModal from '../modal/ASModal'
+
+import { Typography } from '../../theme/typography'
+
 import { styles } from './asTopWreckerCard-styles'
 
 interface IASTopWreckerCardProps {

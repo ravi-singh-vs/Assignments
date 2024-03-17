@@ -1,9 +1,22 @@
-import { StyleSheet } from "react-native";
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from "react-native";
+
 import { Spacing } from "../../theme/spacing";
 import {COLORS} from '../../theme/colors'
 import { Typography } from "../../theme/typography";
 
-export const styles = StyleSheet.create({
+interface IStyles{
+  overlay:ViewStyle,
+  container:ViewStyle,
+  subContainer:ViewStyle,
+  wreckerContainer:ViewStyle,
+  loadingContainer:ViewStyle
+  title:TextStyle,
+  message:TextStyle
+  percentageText:TextStyle,
+  icon:ImageStyle
+}
+
+export const styles = StyleSheet.create<IStyles>({
     overlay: {
       backgroundColor: '#00000066',
       flex: Spacing.space_1,
@@ -18,6 +31,20 @@ export const styles = StyleSheet.create({
       position: 'absolute',
       top: Spacing.space_148,
       width: 325,
+    },
+    subContainer: {
+      justifyContent: 'space-between',
+      paddingVertical: Spacing.space_12,
+    },
+    wreckerContainer: {
+      marginHorizontal:Spacing.space_9,
+      paddingVertical: Spacing.space_8,
+    },
+    loadingContainer: {
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      marginHorizontal: Spacing.space_90,
     },
     title: {
       color: COLORS.neutral['700'],
@@ -40,20 +67,7 @@ export const styles = StyleSheet.create({
       fontSize: Spacing.space_14,
       lineHeight: Spacing.space_22,
     },
-    subContainer: {
-      justifyContent: 'space-between',
-      paddingVertical: Spacing.space_12,
-    },
-    wreckerContainer: {
-      marginHorizontal:Spacing.space_9,
-      paddingVertical: Spacing.space_8,
-    },
-    loadingContainer: {
-      alignItems: 'center',
-      flexDirection: 'row',
-      justifyContent: 'space-evenly',
-      marginHorizontal: Spacing.space_90,
-    },
+    
     icon: {
       height: '50%',
       width: Spacing.space_200,

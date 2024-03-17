@@ -12,6 +12,7 @@ const Colors = {
   dark: palette.black,
   dactiveCardButtonGradient: palette.dActiveCardButtonGradient,
   dactiveCardTitleGradient: palette.dActiveCardTitleGradient,
+  progressBarGradient:palette.progressBarGradient
 }
 
 export const COLORS = Colors

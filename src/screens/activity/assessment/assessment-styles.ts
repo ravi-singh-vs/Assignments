@@ -1,8 +1,13 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ViewStyle } from 'react-native'
+
 import { COLORS } from '../../../theme/colors'
 import { Spacing } from '../../../theme/spacing'
 
-export const styles = StyleSheet.create({
+interface IStyles{
+  container:ViewStyle
+}
+
+export const styles = StyleSheet.create<IStyles>({
   container: {
     backgroundColor: COLORS.primary['500'],
     borderTopLeftRadius: Spacing.space_16,

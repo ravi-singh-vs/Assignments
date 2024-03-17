@@ -47,4 +47,6 @@ export const palette = {
   //TODO : Use colors from palette
   dActiveCardButtonGradient: ['#FFFFFF00', '#FFFFFFCC'],
   dActiveCardTitleGradient: ['#FFFFFF8F', '#FFFFFF1E', '#FFFFFF00'],
+  progressBarGradient:['#FFB800', '#FCCF79', '#FC9DB8', '#E84C8D', '#73EEE9', '#20ACA4']
+
 }

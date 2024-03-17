@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { View } from 'react-native'
+
 import ASScoreCard from './score-card/ASScoreCard'
 import ASTopWreckers from './top-wreckers/ASTopWreckers'
+
+import { URL } from '.././../../constants/api-constants'
 
 import { styles } from './assessment-styles'
 
@@ -13,8 +16,6 @@ interface Wrecker {
 }
 
 const Assessment = () => {
-  const URL = 'https://65f3d975105614e654a14328.mockapi.io/progress/getWreckers'
-
   const [top3Wreckers, setTop3Wreckers] = useState<Wrecker[]>([])
   const [averageProgress, setAverageProgress] = useState<number>(0)
 
@@ -33,7 +34,7 @@ const Assessment = () => {
 
   const fetchWreckers = async () => {
     try {
-      const response = await fetch(URL)
+      const response = await fetch(`${URL}/getWreckers`)
       const data = await response.json()
       getTop3Wreckers(data)
       getAverageProgressValue(data)

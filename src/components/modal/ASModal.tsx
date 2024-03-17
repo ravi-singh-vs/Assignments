@@ -7,7 +7,9 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native'
+
 import ASLoadingBar from '../loading-bar/ASLoadingBar'
+
 import { styles } from './asModal-style'
 
 interface IASModalProps {

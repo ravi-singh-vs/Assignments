@@ -1,10 +1,13 @@
+import LinearGradient from 'react-native-linear-gradient'
+
 import React from 'react'
 import { Image, Text, View } from 'react-native'
+
 import Survivng from '../../../../assets/icons/surviving.png'
 import thriving from '../../../../assets/icons/thriving.png'
-import ASLoadingBar from '../../../../components/loading-bar/ASLoadingBar'
-
 import { COLORS } from '../../../../theme/colors'
+import { palette } from '../../../../theme/palette'
+
 import { styles } from './asScoreCard-styles'
 
 interface IASScoreCardProps {
@@ -21,7 +24,16 @@ const ASScoreCard = ({ average }: IASScoreCardProps) => {
         </View>
         <View style={styles.scoreContainer}>
           <Text style={[styles.scoreText, { color: COLORS.white }]}>{average}/100</Text>
-          <ASLoadingBar loadingLevel={50} />
+          <View style={styles.outerContainer}>
+            <View style={{ width: `${average}%` }}>
+              <LinearGradient
+                colors={palette.progressBarGradient}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.innerContainer}
+              />
+            </View>
+          </View>
         </View>
         <View style={styles.iconContainer}>
           <Image style={styles.icon} source={thriving} />

@@ -1,6 +1,13 @@
-import { StyleSheet } from "react-native";
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from "react-native";
+
 import { COLORS } from "../../theme/colors";
 import { Spacing } from "../../theme/spacing";
+
+interface IStyles{
+  container:ViewStyle,
+  icon:ImageStyle,
+  text:TextStyle
+}
 
 export const styles = StyleSheet.create({
     container: {
