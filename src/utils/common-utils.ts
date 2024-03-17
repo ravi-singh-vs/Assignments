@@ -31,6 +31,7 @@ export const getTimeInfo = (timestamp: number) => {
   return timeAgo
 }
 
+
 export function getCurrentDate() {
   const date = new Date()
   const formattedDate = date

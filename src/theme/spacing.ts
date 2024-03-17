@@ -34,5 +34,7 @@ export enum Spacing {
   space_154 = 154,
   space_200 = 200,
   space_248 = 248,
+  space_325=325,
   space_336 = 336,
+  space_450=450
 }
