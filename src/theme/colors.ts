@@ -10,6 +10,7 @@ const Colors = {
   white: palette.white,
   tundora: palette.tundora,
   dark: palette.black,
+  modalOverlay:palette.modalOverlay,
   dactiveCardButtonGradient: palette.dActiveCardButtonGradient,
   dactiveCardTitleGradient: palette.dActiveCardTitleGradient,
   progressBarGradient:palette.progressBarGradient

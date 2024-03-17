@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View } from 'react-native'
 
+import { IWreckerDataType } from '../../../types/activity-types'
 import ASScoreCard from './score-card/ASScoreCard'
 import ASTopWreckers from './top-wreckers/ASTopWreckers'
 
@@ -8,24 +9,17 @@ import { URL } from '.././../../constants/api-constants'
 
 import { styles } from './assessment-styles'
 
-interface Wrecker {
-  id: string
-  title: string
-  progress: string
-  description: string
-}
-
 const Assessment = () => {
-  const [top3Wreckers, setTop3Wreckers] = useState<Wrecker[]>([])
+  const [top3Wreckers, setTop3Wreckers] = useState<IWreckerDataType[]>([])
   const [averageProgress, setAverageProgress] = useState<number>(0)
 
-  const getTop3Wreckers = (data: Wrecker[]) => {
+  const getTop3Wreckers = (data: IWreckerDataType[]) => {
     const sortedWreckers = data.sort((a, b) => parseInt(b.progress) - parseInt(a.progress))
     const top3Wreckers = sortedWreckers.slice(0, 3)
     setTop3Wreckers(top3Wreckers)
   }
 
-  const getAverageProgressValue = (data: Wrecker[]) => {
+  const getAverageProgressValue = (data: IWreckerDataType[]) => {
     if (data.length === 0) return 0
     const totalProgress = data.reduce((acc, data) => acc + Number(data.progress), 0)
     const average = totalProgress / data.length
@@ -39,7 +33,7 @@ const Assessment = () => {
       getTop3Wreckers(data)
       getAverageProgressValue(data)
     } catch (error) {
-      console.warn(error, 'Occurred!')
+      console.error(error, 'Occurred!')
     }
   }
 

@@ -3,9 +3,9 @@ import { StyleSheet, ViewStyle } from 'react-native'
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 
-interface IStyles{
-  outerContainer:ViewStyle,
-  innerContainer:ViewStyle
+interface IStyles {
+  outerContainer: ViewStyle
+  innerContainer: ViewStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({

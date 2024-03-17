@@ -1,28 +1,28 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from "react-native";
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
-import { COLORS } from "../../theme/colors";
-import { Spacing } from "../../theme/spacing";
+import { COLORS } from '../../theme/colors'
+import { Spacing } from '../../theme/spacing'
 
-interface IStyles{
-  container:ViewStyle,
-  icon:ImageStyle,
-  text:TextStyle
+interface IStyles {
+  container: ViewStyle
+  icon: ImageStyle
+  text: TextStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
-    container: {
-      alignItems: 'center',
-      justifyContent: 'space-between'
-    },
-    icon: {
-      backgroundColor: COLORS.white,
-      borderRadius: Spacing.space_48,
-      height: Spacing.space_76,
-      width: Spacing.space_76,
-    },
-    text: {
-      color: COLORS.white,
-      fontSize: Spacing.space_14,
-      lineHeight: Spacing.space_32,
-    },
-  })
+  container: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  icon: {
+    backgroundColor: COLORS.white,
+    borderRadius: Spacing.space_48,
+    height: Spacing.space_76,
+    width: Spacing.space_76,
+  },
+  text: {
+    color: COLORS.white,
+    fontSize: Spacing.space_14,
+    lineHeight: Spacing.space_32,
+  },
+})

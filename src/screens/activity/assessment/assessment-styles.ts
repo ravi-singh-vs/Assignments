@@ -3,8 +3,8 @@ import { StyleSheet, ViewStyle } from 'react-native'
 import { COLORS } from '../../../theme/colors'
 import { Spacing } from '../../../theme/spacing'
 
-interface IStyles{
-  container:ViewStyle
+interface IStyles {
+  container: ViewStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({

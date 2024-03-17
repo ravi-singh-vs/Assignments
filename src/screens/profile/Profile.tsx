@@ -13,12 +13,10 @@ import {
 } from 'react-native'
 
 import ASProfileNavigation from './profile-navigations/ASProfileNavigation'
-import arrowLeft from '../../assets/icons/arrow-left.png'
-import arrowRight from '../../assets/icons/arrow-right.png'
-import profileImage from '../../assets/images/profile-hero.png'
+
+import { ProfileIcons } from '../../constants/profile-constants'
 
 import { styles } from './profile-styles'
-
 
 const MyWebViewComponent = () => {
   return <WebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />
@@ -46,10 +44,13 @@ const Profile = () => {
 
   return (
     <View>
-      <ImageBackground source={profileImage} style={styles.background} resizeMode="cover">
+      <ImageBackground
+        source={ProfileIcons['ProfileImage']}
+        style={styles.background}
+        resizeMode="cover">
         <View style={styles.header}>
           <TouchableOpacity onPress={handleBackArrowOnPress}>
-            <Image style={styles.icon} source={arrowLeft} />
+            <Image style={styles.icon} source={ProfileIcons['ArrowLeft']} />
           </TouchableOpacity>
           <Text style={styles.text}>Profile</Text>
         </View>
@@ -67,7 +68,8 @@ const Profile = () => {
             <ASProfileNavigation
               title={item}
               setShowWebView={setShowWebView}
-              arrowRight={arrowRight}></ASProfileNavigation>
+              arrowRight={ProfileIcons['ArrowRight']}
+            />
           )}
         />
       </View>

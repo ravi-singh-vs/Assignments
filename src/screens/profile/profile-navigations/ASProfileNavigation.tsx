@@ -1,13 +1,9 @@
 import React from 'react'
-import { Image, ImageSourcePropType, Text, TouchableOpacity } from 'react-native'
+import { Image, Text, TouchableOpacity } from 'react-native'
+
+import { IProfileNavigationProps } from '../../../types/profile-types'
 
 import { styles } from './asProfileNavigtaion-styles'
-
-interface IProfileNavigationProps {
-  title: string
-  arrowRight: ImageSourcePropType
-  setShowWebView: (value: boolean) => void
-}
 
 const ASProfileNavigation = ({ title, arrowRight, setShowWebView }: IProfileNavigationProps) => {
   const handleOnPress = () => {

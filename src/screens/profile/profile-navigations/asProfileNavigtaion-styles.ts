@@ -4,10 +4,10 @@ import { COLORS } from '../../../theme/colors'
 import { Spacing } from '../../../theme/spacing'
 import { Typography } from '../../../theme/typography'
 
-interface IStyles{
-  container:ViewStyle,
-  icon:ImageStyle,
-  text:TextStyle
+interface IStyles {
+  container: ViewStyle
+  icon: ImageStyle
+  text: TextStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({

@@ -4,16 +4,17 @@ import { COLORS } from '../../../../theme/colors'
 import { Spacing } from '../../../../theme/spacing'
 import { Typography } from '../../../../theme/typography'
 
-interface IStyles{
-  container:ViewStyle,
-  subContainer:ViewStyle,
-  iconContainer:ViewStyle,
-  scoreContainer:ViewStyle,
-  outerContainer:ViewStyle,
-  innerContainer:ViewStyle,
-  icon:ImageStyle,
-  text:TextStyle,
-  scoreText:TextStyle
+interface IStyles {
+  container: ViewStyle
+  subContainer: ViewStyle
+  iconContainer: ViewStyle
+  scoreContainer: ViewStyle
+  outerContainer: ViewStyle
+  innerContainer: ViewStyle
+  icon: ImageStyle
+  text: TextStyle
+  score: TextStyle
+  scoreText: TextStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
@@ -54,10 +55,14 @@ export const styles = StyleSheet.create<IStyles>({
     lineHeight: Spacing.space_24,
     paddingVertical: Spacing.space_4,
   },
-  scoreText: {
+  score: {
     fontFamily: Typography.secondary['bold'],
     fontSize: Spacing.space_32,
     lineHeight: Spacing.space_48,
     marginBottom: Spacing.space_8,
+  },
+  scoreText: {
+    color: COLORS.white,
+    textAlign: 'center',
   },
 })

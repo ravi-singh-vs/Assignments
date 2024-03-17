@@ -18,19 +18,19 @@ interface IStyles{
 
 export const styles = StyleSheet.create<IStyles>({
     overlay: {
-      backgroundColor: '#00000066',
+      backgroundColor: COLORS.modalOverlay,
       flex: Spacing.space_1,
     },
     container: {
       alignItems: 'center',
       backgroundColor: COLORS.white,
       borderRadius: Spacing.space_24,
-      height: 450,
+      height: Spacing.space_450,
       justifyContent: 'center',
       left: Spacing.space_38,
       position: 'absolute',
       top: Spacing.space_148,
-      width: 325,
+      width: Spacing.space_325,
     },
     subContainer: {
       justifyContent: 'space-between',
