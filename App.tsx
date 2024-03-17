@@ -7,7 +7,7 @@ import { COLORS } from './src/theme/colors'
 const App = () => {
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
+      <StatusBar backgroundColor={'transparent'} translucent barStyle="dark-content" />
       <StackNavigator />
     </NavigationContainer>
   )
