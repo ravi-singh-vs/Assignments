@@ -1,13 +1,12 @@
 import { StyleSheet } from 'react-native'
-import { ResizeMode } from '../../../../constants/common-constants'
+import { Spacing } from '../../../../theme/spacing'
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: Spacing.space_1,
   },
-  image: {
-    resizeMode: ResizeMode.Contain,
-    width: '100%',
-    height: '100%',
+
+  subContainer: {
+    flex: Spacing.space_1,
   },
 })

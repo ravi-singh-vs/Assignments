@@ -1,4 +1,16 @@
+
 import { IProgressDataType } from "../types/activity-types"
+
+import compassion from '../assets/icons/compassion.png'
+import courage from '../assets/icons/courage.png'
+import curiosity from '../assets/icons/curiosity.png'
+import distractor from '../assets/icons/distractor.png'
+import overthinkerGrey from '../assets/icons/overthinker-grey.png'
+import overthinker from '../assets/icons/overthinker.png'
+import procrastinator from '../assets/icons/procrastinator.png'
+import arrowRight from '../assets/icons/arrow-right.png'
+import Survivng from '../assets/icons/surviving.png'
+import thriving from '../assets/icons/thriving.png'
 
 export const PROGRESS_DATA: IProgressDataType[] = [
   {
@@ -46,12 +58,12 @@ export const PROGRESS_DATA: IProgressDataType[] = [
 ]
 
 export const PROGRESS_CARD_IMAGE_SOURCE: { [key: string]: number } = {
-  Overthinker: require('../assets/icons/overthinker.png'),
-  Courage: require('../assets/icons/courage.png'),
-  Compassion: require('../assets/icons/compassion.png'),
-  Curiosity: require('../assets/icons/curiosity.png'),
-  Procrastinator: require('../assets/icons/procrastinator.png'),
-  Distractor: require('../assets/icons/distractor.png'),
+  Procrastinator: procrastinator,
+  Overthinker: overthinker,
+  Courage: courage,
+  Compassion: compassion,
+  Curiosity: curiosity,
+  Distractor: distractor,
 }
 
 export const QUESTIONS_DATA =  [
@@ -64,3 +76,21 @@ export const QUESTIONS_DATA =  [
 export const allReflectionsImage =require('../assets/images/all-reflections.png')
 
 
+export enum WreckerImage {
+  Procrastinator= procrastinator,
+  Overthinker= overthinkerGrey,
+  Courage= courage,
+  Compassion= compassion,
+  Curiosity= curiosity,
+  Distractor= distractor,
+}
+
+export enum ScoreCardIcons{
+  Surviving=Survivng,
+  Thriving=thriving,
+}
+
+export enum ViewAllWreckers{
+  ArrowRight=arrowRight,
+  Distractor=distractor
+}
