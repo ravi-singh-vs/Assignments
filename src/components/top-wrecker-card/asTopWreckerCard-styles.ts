@@ -9,7 +9,7 @@ interface IStyles{
   text:TextStyle
 }
 
-export const styles = StyleSheet.create({
+export const styles = StyleSheet.create<IStyles>({
     container: {
       alignItems: 'center',
       justifyContent: 'space-between'
