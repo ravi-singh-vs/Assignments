@@ -2,7 +2,7 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
-import { palette } from '../../theme/palette'
+
 interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
@@ -54,7 +54,7 @@ export const styles: IStyles = StyleSheet.create({
   },
   challengeText: {
     fontFamily: Typography.primary.bold,
-    color: palette.shark['500'],
+    color: COLORS.neutral['500'],
   },
   tickIcon: {
     height: Spacing.space_16,

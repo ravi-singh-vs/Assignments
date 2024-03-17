@@ -20,3 +20,6 @@ export const DASHBOARD_HEADER_DATA = {
   Pessimist: require('../assets/icons/pessimist-white.png'),
   Distractor: require('../assets/icons/distractor-white.png'),
 }
+
+export const dashboardBackgroundImage = require('../assets/images/dashboard-background.png')
+export const masterImageIcon = require('../assets/icons/overthinker-grey.png')

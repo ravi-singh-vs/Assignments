@@ -1,8 +1,14 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
+
+import { nextButtonIcon } from '../../constants/common-constants'
+import { IReflectionCard } from '../../types/reflection-types'
 import { styles } from './asReflectionCard-styles'
 
-const ASReflectionCard = (props: any) => {
+interface IASReflectionCard {
+  item: IReflectionCard
+}
+const ASReflectionCard = (props: IASReflectionCard) => {
   const { date, title } = props.item
   return (
     <View style={styles.container}>
@@ -10,7 +16,7 @@ const ASReflectionCard = (props: any) => {
       <View style={styles.subContainer}>
         <Text style={styles.date}>{title}</Text>
         <View style={styles.image}>
-          <Image source={require('../../assets/icons/next.png')} style={styles.forwardArrow} />
+          <Image source={nextButtonIcon} style={styles.forwardArrow} />
         </View>
       </View>
     </View>

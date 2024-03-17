@@ -1,15 +1,12 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 
-import { DASHBOARD_LIST_DATA } from '../../constants/dashboard-constants'
 import ASPlayButton from '../play-button/ASPlayButton'
-import { IDashboardData } from '../../types/dashboard-types'
-import { styles } from './asDashboardCard-styles'
 
-const PLAY_BUTTON = require('../../assets/icons/audio.png')
-const COMPLETED_TICK = require('../../assets/icons/complete.png')
-const BOOKMARK = require('../../assets/icons/marked-favourite.png')
-const REMOVE_BOOKMARK = require('../../assets/icons/not-marked-favourite.png')
+import { DASHBOARD_LIST_DATA } from '../../constants/dashboard-constants'
+import { IDashboardData, TDashboardCardTitle } from '../../types/dashboard-types'
+import { completedTickIcon, notBookmarkedIcon } from '../../constants/common-constants'
+import { styles } from './asDashboardCard-styles'
 
 interface IASDashboardCardProps {
   data: IDashboardData
@@ -18,9 +15,9 @@ interface IASDashboardCardProps {
 const ASDashboardCard = ({ data }: IASDashboardCardProps) => {
   const { id, title, startingTime, endingTime } = data
 
-  const imageSrc = DASHBOARD_LIST_DATA[title as keyof typeof DASHBOARD_LIST_DATA].image
-  const backgroundColor =
-    DASHBOARD_LIST_DATA[title as keyof typeof DASHBOARD_LIST_DATA].backgroundColor
+  let titleIndex: TDashboardCardTitle = title as TDashboardCardTitle
+  const imageSrc = DASHBOARD_LIST_DATA[titleIndex].image
+  const backgroundColor = DASHBOARD_LIST_DATA[titleIndex].backgroundColor
   return (
     <View style={[styles.container, { backgroundColor }]}>
       <View style={styles.subContainer}>
@@ -32,9 +29,9 @@ const ASDashboardCard = ({ data }: IASDashboardCardProps) => {
             <View style={styles.headerSubContainer}>
               <View style={styles.headerSubContainerLeft}>
                 <Text style={styles.challengeText}>Challenge {id}</Text>
-                <Image source={COMPLETED_TICK} style={styles.tickIcon} />
+                <Image source={completedTickIcon} style={styles.tickIcon} />
               </View>
-              <Image source={REMOVE_BOOKMARK} style={styles.bookmarkIcon} />
+              <Image source={notBookmarkedIcon} style={styles.bookmarkIcon} />
             </View>
             <Text style={styles.title}>{title}</Text>
           </View>

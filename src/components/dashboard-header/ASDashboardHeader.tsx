@@ -2,24 +2,29 @@ import { View, Text, ImageBackground, Image } from 'react-native'
 import React from 'react'
 
 import { getCurrentDate } from '../../utils/common-utils'
-import { DASHBOARD_HEADER_DATA } from '../../constants/dashboard-constants'
+import {
+  DASHBOARD_HEADER_DATA,
+  dashboardBackgroundImage,
+} from '../../constants/dashboard-constants'
+import { ResizeMode, calendarIcon } from '../../constants/common-constants'
+import { TDashboardHeader } from '../../types/dashboard-types'
 import { styles } from './asDashboardHeader-styles'
-
-const HERO = require('../../assets/images/hero.png')
-const CALENDAR_ICON = require('../../assets/icons/calendar.png')
 
 interface IASDashboardHeaderProps {
   title: string
 }
 const ASDashboardHeader = (props: IASDashboardHeaderProps) => {
   const { title } = props
-  const imageSource = DASHBOARD_HEADER_DATA[title as keyof typeof DASHBOARD_HEADER_DATA]
+  const imageSource = DASHBOARD_HEADER_DATA[title as TDashboardHeader]
   const currentDate = getCurrentDate()
   return (
-    <ImageBackground source={HERO} style={styles.imageBackground} resizeMode="cover">
+    <ImageBackground
+      source={dashboardBackgroundImage}
+      style={styles.imageBackground}
+      resizeMode={ResizeMode.Cover}>
       <View style={styles.container}>
         <View style={styles.subContainer}>
-          <Image source={CALENDAR_ICON} style={styles.image} />
+          <Image source={calendarIcon} style={styles.image} />
           <Text style={styles.text}>{currentDate}</Text>
         </View>
         <View style={styles.bottomSubContainer}>

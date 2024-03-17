@@ -3,11 +3,11 @@ import React, { useState } from 'react'
 
 import WebView from 'react-native-webview'
 
+import { playButtonIcon } from '../../constants/common-constants'
 import { styles } from './asPlayButton-styles'
 
 const ASPlayButton = () => {
   const [modalVisible, setModalVisible] = useState(false)
-  const PLAY_BUTTON = require('../../assets/icons/audio.png')
   return (
     <TouchableOpacity style={styles.container} onPress={() => setModalVisible(true)}>
       <Modal
@@ -17,7 +17,7 @@ const ASPlayButton = () => {
         transparent={true}>
         <WebView source={{ uri: 'https://youtu.be/iYM2zFP3Zn0?feature=shared' }} />
       </Modal>
-      <Image source={PLAY_BUTTON} style={styles.image} />
+      <Image source={playButtonIcon} style={styles.image} />
     </TouchableOpacity>
   )
 }

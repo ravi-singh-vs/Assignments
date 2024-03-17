@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
   container: {
     borderRadius: Spacing.space_50,
     backgroundColor: COLORS.white,
-    elevation: 5,
+    elevation: Spacing.space_4,
+    shadowColor: COLORS.neutral[600],
   },
   image: {
     height: Spacing.space_12,
