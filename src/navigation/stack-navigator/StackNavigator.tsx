@@ -1,7 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack'
 
-import TabNavigator from '../tab-navigator/TabNavigator'
 import Reflection from '../../screens/activity/progress/reflection/Reflection'
+import ReflectionOfTheDay from '../../screens/activity/progress/reflection-of-the-day/ReflectionOfTheDay'
+import TabNavigator from '../tab-navigator/TabNavigator'
 import { StackNavigatorParams } from '../../types/stackNavigator-types'
 
 const Stack = createStackNavigator<StackNavigatorParams>()
@@ -18,8 +19,13 @@ const StackNavigator = () => {
         options={{ animationEnabled: true, gestureDirection: 'horizontal' }}
       />
       <Stack.Screen
-        name="MyReflections"
+        name="Reflection"
         component={Reflection}
+        options={{ animationEnabled: true, gestureDirection: 'horizontal' }}
+      />
+      <Stack.Screen
+        name="ReflectionOfTheDay"
+        component={ReflectionOfTheDay}
         options={{ animationEnabled: true, gestureDirection: 'horizontal' }}
       />
     </Stack.Navigator>

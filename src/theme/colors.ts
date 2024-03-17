@@ -9,6 +9,7 @@ const Colors = {
   success: palette.genoa,
   white: palette.white,
   tundora: palette.tundora,
+  charcoal : palette.charcoal,
   dark: palette.black,
   dactiveCardButtonGradient: palette.dActiveCardButtonGradient,
   dactiveCardTitleGradient: palette.dActiveCardTitleGradient,

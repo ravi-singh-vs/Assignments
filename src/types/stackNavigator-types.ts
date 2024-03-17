@@ -1,4 +1,5 @@
 export type StackNavigatorParams = {
-    TabNavigator: undefined
-    MyReflections: undefined
+    TabNavigator: undefined;
+    Reflection: undefined;
+    ReflectionOfTheDay : undefined;
 }

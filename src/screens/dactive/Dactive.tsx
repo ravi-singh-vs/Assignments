@@ -9,6 +9,7 @@ import { IDactiveDataType } from '../../types/dactive-types'
 import { API_ENDPOINTS } from '../../constants/api-constants'
 
 import { styles } from './dactive-styles'
+import { greenBackButtonImage } from '../../constants/common-constants'
 
 const Dactive = () => {
   const [DActiveData, setDActiveData] = useState<IDactiveDataType[]>([])
@@ -26,7 +27,7 @@ const Dactive = () => {
   }, [])
   return (
     <View style={styles.container}>
-      <Header headerTitle="D-active" />
+      <Header headerTitle="D-active" backButtonImage={greenBackButtonImage} />
       <View style={styles.subContainer}>
         {
           <FlatList

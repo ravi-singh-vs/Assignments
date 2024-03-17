@@ -1,6 +1,6 @@
 import { IProgressDataType } from "../types/activity-types"
 
-export const progressData : IProgressDataType[] = [
+export const PROGRESS_DATA: IProgressDataType[] = [
   {
     id: '1',
     title: 'Overthinker',
@@ -54,4 +54,13 @@ export const PROGRESS_CARD_IMAGE_SOURCE: { [key: string]: number } = {
   Distractor: require('../assets/icons/distractor.png'),
 }
 
-export const DACTIVE_CARD_BUTTON_TIME_DATA: number[] = [2, 4, 8]
+export const QUESTIONS_DATA =  [
+  'Your Name ?',
+  'Your Favorite Sports ? ',
+  'Your Biggest Fear ?',
+  'Your Biggest Strength ? ',
+]
+
+export const allReflectionsImage =require('../assets/images/all-reflections.png')
+
+

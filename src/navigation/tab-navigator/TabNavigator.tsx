@@ -76,7 +76,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              source={require('../..//assets/icons/nav-profile.png')}
+              source={require('../../assets/icons/nav-profile.png')}
               style={styles.icon}
               resizeMode={ResizeMode.Contain}
             />

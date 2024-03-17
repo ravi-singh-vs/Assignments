@@ -8,7 +8,7 @@ import { getNotificationsDativeData } from '../../services/api/get-notifications
 import { INotificationDataType } from '../../types/notification-types'
 
 import { API_ENDPOINTS } from '../../constants/api-constants'
-import { settingsIcon } from '../../constants/notifications-constants'
+import { greenBackButtonImage } from '../../constants/common-constants'
 
 import { styles } from './notifications-styles'
 
@@ -35,7 +35,7 @@ const Notifications = () => {
   }
   return (
     <View style={styles.container}>
-      <Header headerTitle="Notifications" image={settingsIcon} />
+      <Header headerTitle="Notifications" backButtonImage={greenBackButtonImage} />
       <FlatList
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.subContainer}

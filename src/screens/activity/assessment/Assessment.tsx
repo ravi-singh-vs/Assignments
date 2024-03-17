@@ -4,7 +4,7 @@ import React from 'react'
 const Assessment = () => {
   return (
     <View>
-      <Text>Assessment</Text>
+      
     </View>
   )
 }

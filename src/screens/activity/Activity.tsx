@@ -8,27 +8,27 @@ import Assessment from './assessment/Assessment'
 import { styles } from './activity-styles'
 
 const Activity = () => {
-  const [activeTab, setActiveTab] = useState('progress')
+  const [activeButton, setActiveButton] = useState<string>('Progress')
+
+  const renderButton = (buttonName: string) => {
+    return (
+      <TouchableOpacity
+        style={[styles.button, activeButton === buttonName && styles.activeButton]}
+        onPress={() => setActiveButton(buttonName)}>
+        <Text style={[styles.label, activeButton === buttonName && styles.activeButtonLabel]}>
+          {buttonName}
+        </Text>
+      </TouchableOpacity>
+    )
+  }
   return (
     <View style={styles.container}>
       <ASHeader headerTitle="Your Activity" />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={[styles.button, activeTab === 'progress' && styles.activeTab]}
-          onPress={() => setActiveTab('progress')}>
-          <Text style={[styles.text, activeTab === 'progress' && styles.activeTabText]}>
-            Progress
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[styles.button, activeTab === 'assessment' && styles.activeTab]}
-          onPress={() => setActiveTab('assessment')}>
-          <Text style={[styles.text, activeTab === 'assessment' && styles.activeTabText]}>
-            Assessments
-          </Text>
-        </TouchableOpacity>
+        {renderButton('Progress')}
+        {renderButton('Assessment')}
       </View>
-      {activeTab === 'progress' ? <Progress /> : <Assessment />}
+      {activeButton === 'Progress' ? <Progress /> : <Assessment />}
     </View>
   )
 }

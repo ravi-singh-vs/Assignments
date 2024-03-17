@@ -14,4 +14,8 @@ export const SECONDS_IN_MONTH = SECONDS_IN_WEEK * 4
 export const SECONDS_IN_YEAR = SECONDS_IN_MONTH * 12
 
 
-export const nextButtonIcon = require('../assets/icons/next.png')
+export const nextButtonImage = require('../assets/icons/next.png');
+
+export const whiteBackButtonImage = require('../assets/icons/backWhite.png')
+
+export const greenBackButtonImage = require('../assets/icons/backGreen.png')
