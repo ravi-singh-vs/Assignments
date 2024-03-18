@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { FlatList, View, Text } from 'react-native'
+import { FlatList, View, Text, SafeAreaView } from 'react-native'
 
 import Header from '../../components/header/ASHeader'
 import ASDActiveCard from '../../components/dactive-card/ASDactiveCard'
@@ -20,7 +20,7 @@ const Dactive = () => {
   }, [])
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header headerTitle="D-active" backButtonIcon={greenBackButtonIcon} />
       <View style={styles.subContainer}>
         {
@@ -33,7 +33,7 @@ const Dactive = () => {
           />
         }
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

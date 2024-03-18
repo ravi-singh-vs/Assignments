@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, Alert, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { Text, View, Alert, ScrollView, KeyboardAvoidingView, SafeAreaView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import * as Progress from 'react-native-progress'
 
@@ -63,7 +63,7 @@ const ReflectionOfTheDay = () => {
     navigation.goBack()
   }
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ASHeader
         headerTitle="Day1"
         backButtonIcon={whiteBackButtonIcon}
@@ -99,7 +99,7 @@ const ReflectionOfTheDay = () => {
           <View style={[styles.bottomBar, styles.bottomBar2]} />
         </ScrollView>
       </KeyboardAvoidingView>
-    </View>
+    </SafeAreaView>
   )
 }
 

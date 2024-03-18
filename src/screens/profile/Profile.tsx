@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BackHandler, FlatList, ImageBackground, Text, View } from 'react-native'
+import { BackHandler, FlatList, ImageBackground, SafeAreaView, Text, View } from 'react-native'
 import WebView from 'react-native-webview'
 
 import ASProfileNavigation from '../../components/profile-navigations/ASProfileNavigation'
@@ -32,7 +32,7 @@ const Profile = () => {
   if (showWebView) return <MyWebViewComponent />
 
   return (
-    <View>
+    <SafeAreaView>
       <ImageBackground
         source={ProfileIcons['ProfileImage']}
         style={styles.image}
@@ -65,7 +65,7 @@ const Profile = () => {
           ListEmptyComponent={() => <Text>Loading...</Text>}
         />
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

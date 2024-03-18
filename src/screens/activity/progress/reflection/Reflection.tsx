@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, ImageBackground, FlatList, Text } from 'react-native'
+import { ImageBackground, FlatList, Text, SafeAreaView } from 'react-native'
 
 import ASHeader from '../../../../components/header/ASHeader'
 import ASReflectionCard from '../../../../components/reflection-card/ASReflectionCard'
@@ -22,7 +22,7 @@ const Reflection = () => {
   }, [])
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
         source={reflectionBackgroundImage}
         style={styles.image}
@@ -40,7 +40,7 @@ const Reflection = () => {
           ListEmptyComponent={() => <Text>Loading...</Text>}
         />
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   )
 }
 
