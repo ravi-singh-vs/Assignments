@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, Alert, ScrollView, KeyboardAvoidingView, SafeAreaView } from 'react-native'
+import { Text, View, Alert, ScrollView, KeyboardAvoidingView, StatusBar } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import * as Progress from 'react-native-progress'
 
@@ -63,7 +63,8 @@ const ReflectionOfTheDay = () => {
     navigation.goBack()
   }
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <StatusBar backgroundColor={'transparent'} translucent barStyle={'light-content'} />
       <ASHeader
         headerTitle="Day1"
         backButtonIcon={whiteBackButtonIcon}
@@ -85,6 +86,7 @@ const ReflectionOfTheDay = () => {
               width={Spacing.space_300}
               height={Spacing.space_8}
               color={COLORS.primary[300]}
+              style={styles.progressBar}
             />
           </View>
           <ASQuestionCard
@@ -99,7 +101,7 @@ const ReflectionOfTheDay = () => {
           <View style={[styles.bottomBar, styles.bottomBar2]} />
         </ScrollView>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </View>
   )
 }
 

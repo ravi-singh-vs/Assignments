@@ -5,6 +5,7 @@ import {
   ImageBackground,
   Modal,
   SafeAreaView,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
@@ -47,7 +48,8 @@ const Profile = () => {
   if (showWebView) return <MyWebViewComponent />
 
   return (
-    <SafeAreaView>
+    <View>
+      <StatusBar backgroundColor={'transparent'} translucent barStyle={'light-content'} />
       <ImageBackground
         source={ProfileIcons['ProfileImage']}
         style={styles.image}
@@ -80,7 +82,7 @@ const Profile = () => {
           ListEmptyComponent={() => <Text>Loading...</Text>}
         />
       </View>
-    </SafeAreaView>
+    </View>
   )
 }
 

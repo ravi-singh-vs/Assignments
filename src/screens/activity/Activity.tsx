@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
+import { SafeAreaView, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 
 import ASHeader from '../../components/header/ASHeader'
 import Progress from './progress/Progress'
@@ -15,6 +15,7 @@ const Activity = () => {
       <TouchableOpacity
         style={[styles.button, activeButton === buttonName && styles.activeButton]}
         onPress={() => setActiveButton(buttonName)}>
+        <StatusBar barStyle={'dark-content'} />
         <Text style={[styles.label, activeButton === buttonName && styles.activeButtonLabel]}>
           {buttonName}
         </Text>

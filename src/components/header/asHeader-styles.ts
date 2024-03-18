@@ -1,4 +1,4 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { ImageStyle, StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
@@ -26,6 +26,7 @@ export const styles = StyleSheet.create<IStyles>({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: Spacing.space_16,
+    paddingTop: StatusBar.currentHeight,
   },
   backButtonIcon: {
     width: Spacing.space_9,
