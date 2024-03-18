@@ -4,10 +4,10 @@ import { Image, Pressable, Text } from 'react-native'
 import ASLoadingBar from '../loading-bar/ASLoadingBar'
 import ASModal from '../modal/ASModal'
 import { Typography } from '../../theme/typography'
-
 import { WreckerImage } from '../../constants/activity-constants'
 
 import { styles } from './asTopWreckerCard-styles'
+
 
 interface IASTopWreckerCardProps {
   image: string
@@ -36,6 +36,8 @@ const ASTopWreckerCard = ({ image, percent, title, description }: IASTopWreckerC
       <Image style={styles.icon} source={WreckerImage[image]} />
       <Text style={[styles.text, { fontFamily: Typography.secondary['bold'] }]}>{percent}%</Text>
       <ASLoadingBar loadingLevel={percent} />
+      
+
       <Text style={[styles.text, { fontFamily: Typography.primary['bold'] }]}>{title}</Text>
     </Pressable>
   )
