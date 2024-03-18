@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { FlatList, View } from 'react-native'
+import { FlatList, SafeAreaView } from 'react-native'
 
 import Header from '../../components/header/ASHeader'
 import ASNotificationCard from '../../components/notification-card/ASNotificationCard'
@@ -25,7 +25,7 @@ const Notifications = () => {
     dispatch(fetchNotifications())
   }
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header headerTitle="Notifications" backButtonIcon={greenBackButtonIcon} />
       <FlatList
         showsVerticalScrollIndicator={false}
@@ -33,11 +33,11 @@ const Notifications = () => {
         ListEmptyComponent={<EmptyView />}
         data={notificationsData}
         renderItem={({ item }: { item: INotificationDataType }) => <ASNotificationCard {...item} />}
-        keyExtractor={(item: INotificationDataType) => item?.id}
+        keyExtractor={(item: INotificationDataType) => item.id}
         refreshing={loading}
         onRefresh={onRefresh}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 

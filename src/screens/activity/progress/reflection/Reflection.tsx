@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, ImageBackground, FlatList, Text } from 'react-native'
+import { ImageBackground, FlatList, Text, SafeAreaView } from 'react-native'
 
 import ASHeader from '../../../../components/header/ASHeader'
 import ASReflectionCard from '../../../../components/reflection-card/ASReflectionCard'
@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../../../redux/store'
 import { fetchReflectionData, getReflectionData } from '../../../../redux/slices/relections-slice'
 import { IReflectionDataType } from '../../../../types/reflection-types'
 
-import { ResizeMode, backButtonGreenIcon } from '../../../../constants/common-constants'
+import { ResizeMode, greenBackButtonIcon } from '../../../../constants/common-constants'
 import { reflectionBackgroundImage } from '../../../../constants/reflection-constants'
 
 import { styles } from './reflection-styles'
@@ -22,25 +22,25 @@ const Reflection = () => {
   }, [])
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
         source={reflectionBackgroundImage}
         style={styles.image}
         resizeMode={ResizeMode.Stretch}>
         <ASHeader
           headerTitle="My Reflections"
-          backButtonIcon={backButtonGreenIcon}
+          backButtonIcon={greenBackButtonIcon}
           canGoToPreviousScreen={true}
         />
         <FlatList
           data={reflectionData}
           renderItem={({ item }: { item: IReflectionDataType }) => <ASReflectionCard {...item} />}
           showsVerticalScrollIndicator={false}
-          keyExtractor={item => String(item?.id)}
+          keyExtractor={item => String(item.id)}
           ListEmptyComponent={() => <Text>Loading...</Text>}
         />
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   )
 }
 

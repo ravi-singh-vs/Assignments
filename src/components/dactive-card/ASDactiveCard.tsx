@@ -7,6 +7,7 @@ import ASButton from '../button/ASButton'
 import { DACTIVE_CARD_BUTTON_TIME_DATA, DACTIVE_CARD_INFO } from '../../constants/dactive-constants'
 
 import { styles } from './asDactiveCard-styles'
+import { ResizeMode } from '../../constants/common-constants'
 
 interface IASDactiveCardProps {
   title: string
@@ -25,8 +26,11 @@ const ASDActiveCard = (props: IASDactiveCardProps) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={imageSource} style={styles.image}>
-        <LinearGradient locations={[0, 0.8792, 1]} colors={COLORS.dactiveCardTitleGradient}>
+      <ImageBackground source={imageSource}>
+        <LinearGradient
+          locations={[0, 0.8792, 1]}
+          colors={COLORS.dactiveCardTitleGradient}
+          style={styles.textContainer}>
           <Text style={[styles.title, { color }]}>{title}</Text>
         </LinearGradient>
         <LinearGradient
@@ -38,8 +42,9 @@ const ASDActiveCard = (props: IASDactiveCardProps) => {
           end={{
             x: 0.5,
             y: 1,
-          }}>
-          <View style={styles.buttonContainer}>{renderDactiveCardButtons()}</View>
+          }}
+          style={styles.buttonContainer}>
+          {renderDactiveCardButtons()}
         </LinearGradient>
       </ImageBackground>
     </View>

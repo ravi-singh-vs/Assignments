@@ -25,8 +25,8 @@ const Dashboard = () => {
       <ASDashboardMasteryCard />
       <FlatList
         data={dashboardData}
-        keyExtractor={(item: IDashboardDataType) => String(item?.id)}
-        renderItem={({ item }: { item: IDashboardDataType }) => <ASDashboardCard {...item}/>}
+        keyExtractor={(item: IDashboardDataType) => String(item.id)}
+        renderItem={({ item }: { item: IDashboardDataType }) => <ASDashboardCard {...item} />}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.subContainer}
         ListEmptyComponent={() => <Text>Loading...</Text>}

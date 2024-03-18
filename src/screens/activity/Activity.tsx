@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
 
 import ASHeader from '../../components/header/ASHeader'
 import Progress from './progress/Progress'
@@ -22,14 +22,14 @@ const Activity = () => {
     )
   }
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ASHeader headerTitle="Your Activity" />
       <View style={styles.buttonContainer}>
         {renderButton('Progress')}
         {renderButton('Assessment')}
       </View>
       {activeButton === 'Progress' ? <Progress /> : <Assessment />}
-    </View>
+    </SafeAreaView>
   )
 }
 

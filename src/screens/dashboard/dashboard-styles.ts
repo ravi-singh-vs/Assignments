@@ -9,7 +9,6 @@ interface IStyles {
 }
 export const styles: IStyles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     backgroundColor: COLORS.white,
     flex: Spacing.space_1,
     marginBottom: Spacing.space_88,
@@ -17,8 +16,8 @@ export const styles: IStyles = StyleSheet.create({
   subContainer: {
     flexGrow: Spacing.space_1,
     gap: Spacing.space_12,
-    marginTop: Spacing.space_12,
     paddingBottom: Spacing.space_16,
-    width: Spacing.space_336,
+    paddingHorizontal: Spacing.space_20,
+    paddingVertical: Spacing.space_16,
   },
 })

@@ -1,4 +1,4 @@
-import { ImageStyle, StyleSheet, ViewStyle } from 'react-native'
+import { ImageStyle, Platform, StyleSheet, ViewStyle } from 'react-native'
 
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create<Styles>({
   tabBar: {
     borderTopLeftRadius: Spacing.space_16,
     borderTopRightRadius: Spacing.space_16,
-    height: Spacing.space_88,
+    height: Platform.OS === 'android' ? Spacing.space_88 : Spacing.space_100,
     paddingHorizontal: Spacing.space_24,
     paddingVertical: Spacing.space_20,
     position: 'absolute',
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create<Styles>({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: Spacing.space_100,
-    marginBottom: Spacing.space_20,
+    marginBottom: Platform.OS === 'android' ? Spacing.space_20 : Spacing.space_0,
   },
   activeIcon: {
     backgroundColor: COLORS.primary[100],

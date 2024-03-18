@@ -10,6 +10,8 @@ interface IStyles {
   infoContainer: ViewStyle
   name: TextStyle
   data: TextStyle
+  closeButton: ViewStyle
+  text: TextStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
@@ -37,5 +39,15 @@ export const styles = StyleSheet.create<IStyles>({
     fontFamily: Typography.primary['medium'],
     fontSize: Spacing.space_14,
     lineHeight: Spacing.space_24,
+  },
+  closeButton: {
+    paddingVertical: Spacing.space_16,
+    backgroundColor: COLORS.neutral[500],
+    marginBottom: Spacing.space_10,
+  },
+  text: {
+    textAlign: 'center',
+    color: COLORS.white,
+    fontSize: Spacing.space_14,
   },
 })
