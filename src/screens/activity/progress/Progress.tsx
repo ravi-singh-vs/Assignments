@@ -1,16 +1,17 @@
-import { useEffect } from 'react'
-import { View, Text, TouchableOpacity, ImageBackground, FlatList } from 'react-native'
 import { useNavigation } from '@react-navigation/core'
 import { StackNavigationProp } from '@react-navigation/stack'
+import { useEffect } from 'react'
+import { FlatList, ImageBackground, Text, TouchableOpacity, View } from 'react-native'
 
+import ASLoader from '../../../components/loader/ASLoader'
 import ASProgressCard from '../../../components/progress-card/ASProgressCard'
-import { useAppDispatch, useAppSelector } from '../../../redux/store'
 import { fetchProgressData, getProgressData } from '../../../redux/slices/progress-slice'
+import { useAppDispatch, useAppSelector } from '../../../redux/store'
 import { IProgressDataType } from '../../../types/activity-types'
 import { StackNavigatorParams } from '../../../types/stackNavigator-types'
 
-import { Screens } from '../../../constants/navigation-constants'
 import { allReflectionsImage } from '../../../constants/activity-constants'
+import { Screens } from '../../../constants/navigation-constants'
 
 import { styles } from './progress-styles'
 
@@ -32,7 +33,7 @@ const Progress = () => {
     <View style={styles.container}>
       <FlatList
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={() => <Text>Loading...</Text>}
+        ListEmptyComponent={() => <ASLoader/>}
         data={sortedProgressData}
         renderItem={({ item }: { item: IProgressDataType }) => <ASProgressCard {...item} />}
         keyExtractor={item => item.id}

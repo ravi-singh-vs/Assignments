@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { ActivityIndicator, Image, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Text, TouchableOpacity, View } from 'react-native'
 
+import { IWreckerDataType } from '../../types/activity-types'
+import ASLoader from '../loader/ASLoader'
 import ASModal from '../modal/ASModal'
 import ASTopWreckerCard from '../top-wrecker-card/ASTopWreckerCard'
-import { COLORS } from '../../theme/colors'
-import { IWreckerDataType } from '../../types/activity-types'
 
 import { ViewAllWreckers } from '../../constants/activity-constants'
 import { ResizeMode } from '../../constants/common-constants'
@@ -39,7 +39,7 @@ const ASTopWreckers = (props: IASTopWreckersProps) => {
             )
           })
         ) : (
-          <ActivityIndicator size="large" color={COLORS.white} />
+          <ASLoader />
         )}
       </View>
       <TouchableOpacity style={styles.subContainer} onPress={handleAllWreckerPress}>
