@@ -30,7 +30,6 @@ export const styles = StyleSheet.create<IStyles>({
     paddingVertical: Spacing.space_8,
     textAlign: 'center',
   },
-
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',

@@ -1,17 +1,25 @@
-import { View, Text, Image } from 'react-native'
 import React from 'react'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 
+import { IReflectionDataType as IASReflectionCardProps } from '../../types/reflection-types'
+import { StackNavigatorParams } from '../../types/stackNavigator-types'
+
+import { Screens } from '../../constants/navigation-constants'
 import { nextButtonIcon } from '../../constants/common-constants'
-import { IReflectionCard } from '../../types/reflection-types'
+
 import { styles } from './asReflectionCard-styles'
 
-interface IASReflectionCard {
-  item: IReflectionCard
-}
-const ASReflectionCard = (props: IASReflectionCard) => {
-  const { date, title } = props.item
+const ASReflectionCard = (props: IASReflectionCardProps) => {
+  const { date, title } = props
+
+  const navigation = useNavigation<StackNavigationProp<StackNavigatorParams>>()
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate(Screens.ReflectionOfTheDay)}>
       <Text style={styles.title}>{date}</Text>
       <View style={styles.subContainer}>
         <Text style={styles.date}>{title}</Text>
@@ -19,7 +27,7 @@ const ASReflectionCard = (props: IASReflectionCard) => {
           <Image source={nextButtonIcon} style={styles.forwardArrow} />
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 

@@ -1,5 +1,5 @@
-import { View, Text, ImageBackground, Image } from 'react-native'
 import React from 'react'
+import { View, Text, ImageBackground, Image } from 'react-native'
 
 import { getCurrentDate } from '../../utils/common-utils'
 import {
@@ -8,6 +8,7 @@ import {
 } from '../../constants/dashboard-constants'
 import { ResizeMode, calendarIcon } from '../../constants/common-constants'
 import { TDashboardHeader } from '../../types/dashboard-types'
+
 import { styles } from './asDashboardHeader-styles'
 
 interface IASDashboardHeaderProps {

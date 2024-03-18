@@ -31,8 +31,7 @@ export const getTimeInfo = (timestamp: number) => {
   return timeAgo
 }
 
-
-export function getCurrentDate() {
+export const getCurrentDate = () =>{
   const date = new Date()
   const formattedDate = date
     .toLocaleDateString('en-GB', {

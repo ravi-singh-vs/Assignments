@@ -4,6 +4,6 @@ export const NOTIFICATION_IMAGE_SOURCE: { [key: string]: number } = {
   'D-active': require('../assets/icons/dactive.png'),
 }
 
-export const notificationIcon: number = require('../assets/icons/notification.png')
+export const notificationImage: number = require('../assets/icons/notification.png');
 
-export const settingsIcon: number = require('../assets/icons/settings.png')
+

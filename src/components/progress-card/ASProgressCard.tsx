@@ -1,24 +1,40 @@
+import { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import * as Progress from 'react-native-progress'
 
-import { IProgressDataType as IASProgressCardProps } from '../../types/activity-types'
+import ASModal from '../modal/ASModal'
 import { COLORS } from '../../theme/colors'
 import { Spacing } from '../../theme/spacing'
+import { IProgressDataType as IASProgressCardProps } from '../../types/activity-types'
 
 import { PROGRESS_CARD_IMAGE_SOURCE } from '../../constants/activity-constants'
-import { nextButtonIcon } from '../../constants/common-constants'
+import { ResizeMode, nextButtonIcon } from '../../constants/common-constants'
 
 import { styles } from './asProgressCard-styles'
 
 const ASProgressCard = (props: IASProgressCardProps) => {
-  const { title, progress } = props
+  const { title, progress, description } = props
 
   const image = PROGRESS_CARD_IMAGE_SOURCE[title]
 
+  const [showModal, setShowModal] = useState(false)
+
+  const handleCardPress = () => {
+    setShowModal(true)
+  }
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handleCardPress}>
+      <ASModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        icon={image}
+        progress={progress}
+        description={description}
+        title={title}
+      />
       <View style={styles.subContainer}>
-        <Image source={image} style={styles.image} />
+        <Image source={image} style={styles.image} resizeMode={ResizeMode.Contain} />
         <Text style={styles.title}>{title}</Text>
       </View>
       <View style={styles.detailContainer}>
@@ -26,14 +42,16 @@ const ASProgressCard = (props: IASProgressCardProps) => {
         <Progress.Pie
           progress={Number(progress) / 100}
           size={Spacing.space_20}
-          style={styles.chart}
+          style={styles.pieChart}
           color={COLORS.secondary[700]}
         />
-        <TouchableOpacity style={styles.button}>
-          <Image source={nextButtonIcon} style={styles.buttonImage} />
-        </TouchableOpacity>
+        <Image
+          source={nextButtonIcon}
+          style={styles.nextButtonIcon}
+          resizeMode={ResizeMode.Contain}
+        />
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 

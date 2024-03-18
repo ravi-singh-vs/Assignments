@@ -1,9 +1,9 @@
-import { Image, Modal, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-
+import { Image, Modal, TouchableOpacity } from 'react-native'
 import WebView from 'react-native-webview'
 
 import { playButtonIcon } from '../../constants/common-constants'
+
 import { styles } from './asPlayButton-styles'
 
 const ASPlayButton = () => {

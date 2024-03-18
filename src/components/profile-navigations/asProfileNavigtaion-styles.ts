@@ -1,25 +1,25 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
-import { COLORS } from '../../../theme/colors'
-import { Spacing } from '../../../theme/spacing'
-import { Typography } from '../../../theme/typography'
+import { COLORS } from '../../theme/colors'
+import { Spacing } from '../../theme/spacing'
+import { Typography } from '../../theme/typography'
 
 interface IStyles {
   container: ViewStyle
-  icon: ImageStyle
+  image: ImageStyle
   text: TextStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
   container: {
-    borderBottomWidth: 0.7,
+    borderBottomWidth: Spacing.space_1,
     borderColor: COLORS.primary['100'],
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: Spacing.space_8,
     paddingVertical: Spacing.space_20,
   },
-  icon: {
+  image: {
     height: Spacing.space_16,
     width: Spacing.space_16,
   },

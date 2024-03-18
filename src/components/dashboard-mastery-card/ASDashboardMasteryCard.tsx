@@ -1,10 +1,11 @@
-import { View, Text, Image } from 'react-native'
 import React from 'react'
+import { View, Text, Image } from 'react-native'
 
 import ASPlayButton from '../play-button/ASPlayButton'
 
-import { bookmarkedIcon, completedTickIcon } from '../../constants/common-constants'
+import { favouriteIcon, completedTickIcon } from '../../constants/common-constants'
 import { masterImageIcon } from '../../constants/dashboard-constants'
+
 import { styles } from './asDashboardMasteryCard-styles'
 
 const ASDashboardMasteryCard = () => {
@@ -20,7 +21,7 @@ const ASDashboardMasteryCard = () => {
               <Text style={styles.listenText}>Listen</Text>
               <Image source={completedTickIcon} style={styles.icon} />
             </View>
-            <Image source={bookmarkedIcon} style={styles.icon} />
+            <Image source={favouriteIcon} style={styles.icon} />
           </View>
           <Text style={styles.title}>Mastery of the Day</Text>
         </View>
