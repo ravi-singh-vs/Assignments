@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { FlatList, SafeAreaView, View } from 'react-native'
+import { FlatList, View, Text, StatusBar } from 'react-native'
 
 import ASDActiveCard from '../../components/dactive-card/ASDactiveCard'
 import Header from '../../components/header/ASHeader'
@@ -21,7 +21,8 @@ const Dactive = () => {
   }, [])
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <StatusBar barStyle={'dark-content'} />
       <Header headerTitle="D-active" backButtonIcon={greenBackButtonIcon} />
       <View style={styles.subContainer}>
         <FlatList
@@ -29,10 +30,10 @@ const Dactive = () => {
           data={dactiveData}
           renderItem={({ item }: { item: IDactiveDataType }) => <ASDActiveCard {...item} />}
           keyExtractor={(item: IDactiveDataType) => item.id}
-          ListEmptyComponent={() => <ASLoader/>}
+          ListEmptyComponent={() => <ASLoader />}
         />
       </View>
-    </SafeAreaView>
+    </View>
   )
 }
 

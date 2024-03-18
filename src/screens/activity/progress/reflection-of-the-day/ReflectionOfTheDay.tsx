@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, Alert, ScrollView, KeyboardAvoidingView, SafeAreaView } from 'react-native'
+import { Text, View, Alert, ScrollView, KeyboardAvoidingView, StatusBar } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import * as Progress from 'react-native-progress'
 
@@ -63,7 +63,8 @@ const ReflectionOfTheDay = () => {
     navigation.goBack()
   }
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
+      <StatusBar backgroundColor={'transparent'} translucent barStyle={'light-content'} />
       <ASHeader
         headerTitle="Day1"
         backButtonIcon={whiteBackButtonIcon}
@@ -71,35 +72,35 @@ const ReflectionOfTheDay = () => {
         color={COLORS.white}
         canGoToPreviousScreen={true}
       />
+      <View style={styles.questionBarContainer}>
+        <Text style={styles.questionNumberText}>
+          {currentQuestionNumber + 1} / {QUESTIONS_DATA.length}
+        </Text>
+        <Progress.Bar
+          progress={(currentQuestionNumber + 1) / QUESTIONS_DATA.length}
+          width={Spacing.space_300}
+          height={Spacing.space_8}
+          color={COLORS.primary[300]}
+          style={styles.progressBar}
+        />
+      </View>
       <KeyboardAvoidingView
         style={styles.subContainer}
         behavior="padding"
-        keyboardVerticalOffset={10}>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.questionBarContainer}>
-            <Text style={styles.questionNumberText}>
-              {currentQuestionNumber + 1} / {QUESTIONS_DATA.length}
-            </Text>
-            <Progress.Bar
-              progress={(currentQuestionNumber + 1) / QUESTIONS_DATA.length}
-              width={Spacing.space_300}
-              height={Spacing.space_8}
-              color={COLORS.primary[300]}
-            />
-          </View>
-          <ASQuestionCard
-            currentQuestionNumber={currentQuestionNumber}
-            input={input}
-            setInput={setInput}
-            handleNext={handleNext}
-            handlePrevious={handlePrevious}
-            handleSubmit={handleSubmit}
-          />
-          <View style={[styles.bottomBar, styles.bottomBar1]} />
-          <View style={[styles.bottomBar, styles.bottomBar2]} />
-        </ScrollView>
+        keyboardVerticalOffset={Spacing.space_100}
+        enabled>
+        <ASQuestionCard
+          currentQuestionNumber={currentQuestionNumber}
+          input={input}
+          setInput={setInput}
+          handleNext={handleNext}
+          handlePrevious={handlePrevious}
+          handleSubmit={handleSubmit}
+        />
+        <View style={[styles.bottomBar, styles.bottomBar1]} />
+        <View style={[styles.bottomBar, styles.bottomBar2]} />
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </ScrollView>
   )
 }
 

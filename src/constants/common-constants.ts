@@ -1,3 +1,5 @@
+import { Platform } from 'react-native'
+
 export enum ResizeMode {
   Cover = 'cover',
   Contain = 'contain',
@@ -21,5 +23,3 @@ export const favouriteIcon = require('../assets/icons/marked-favourite.png')
 export const notFavouriteIcon = require('../assets/icons/not-marked-favourite.png')
 export const calendarIcon = require('../assets/icons/calendar.png')
 export const playButtonIcon = require('../assets/icons/audio.png')
-
-// const Sc

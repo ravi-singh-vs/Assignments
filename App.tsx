@@ -1,4 +1,4 @@
-import { StatusBar } from 'react-native'
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Provider } from 'react-redux'
@@ -11,12 +11,17 @@ const App = () => {
     <Provider store={store}>
       <SafeAreaProvider>
         <NavigationContainer>
-          <StatusBar backgroundColor={'transparent'} barStyle="dark-content" />
-          <StackNavigator />
+          <SafeAreaView style={styles.container}>
+            <StatusBar backgroundColor={'transparent'} barStyle="dark-content" />
+            <StackNavigator />
+          </SafeAreaView>
         </NavigationContainer>
       </SafeAreaProvider>
     </Provider>
   )
 }
 
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+})
 export default App

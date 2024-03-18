@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { FlatList, SafeAreaView } from 'react-native'
+import { FlatList, Platform, StatusBar, Text, View } from 'react-native'
 
 import ASDashboardCard from '../../components/dashboard-card/ASDashboardCard'
 import ASDashboardHeader from '../../components/dashboard-header/ASDashboardHeader'
@@ -21,7 +21,12 @@ const Dashboard = () => {
   }, [])
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <StatusBar
+        backgroundColor={'transparent'}
+        translucent
+        barStyle={Platform.OS === 'android' ? 'light-content' : 'dark-content'}
+      />
       <ASDashboardHeader title="Overthinker" />
       <ASDashboardMasteryCard />
       <FlatList
@@ -32,7 +37,7 @@ const Dashboard = () => {
         contentContainerStyle={styles.subContainer}
         ListEmptyComponent={() => <ASLoader />}
       />
-    </SafeAreaView>
+    </View>
   )
 }
 

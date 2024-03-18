@@ -20,8 +20,8 @@ const ASQuestionCard = (props: IASQuestionCardProps) => {
   const renderButton = (style: ViewStyle, onPress: () => void, label: string) => {
     return (
       <TouchableOpacity
-        style={[style, { opacity: !input?.trim() ? 0.3 : 1 }]}
-        disabled={!input?.trim()}
+        style={[style, { opacity: label !== 'Previous' && !input?.trim() ? 0.3 : 1 }]}
+        disabled={label !== 'Previous' && !input?.trim()}
         onPress={onPress}>
         <Text style={styles.label}>{label}</Text>
       </TouchableOpacity>
@@ -37,7 +37,7 @@ const ASQuestionCard = (props: IASQuestionCardProps) => {
           value={input}
           style={styles.inputField}
           multiline
-          numberOfLines={15}
+          numberOfLines={10}
           placeholder="Enter your response ..."
         />
       </View>

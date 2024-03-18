@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View } from 'react-native'
+import { StatusBar, View } from 'react-native'
 
 import ASScoreCard from '../../../components/score-card/ASScoreCard'
 import ASTopWreckers from '../../../components/top-wreckers/ASTopWreckers'
@@ -43,6 +43,7 @@ const Assessment = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle={'dark-content'} />
       <ASScoreCard average={averageProgress} />
       <ASTopWreckers wreckers={top3Wreckers} />
     </View>

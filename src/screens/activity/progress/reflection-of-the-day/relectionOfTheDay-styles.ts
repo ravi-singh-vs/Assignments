@@ -10,6 +10,7 @@ interface IStyles {
   questionBarContainer: ViewStyle
   questionNumberText: TextStyle
   subContainer: ViewStyle
+  progressBar: ViewStyle
 }
 export const styles = StyleSheet.create<IStyles>({
   container: {
@@ -43,5 +44,8 @@ export const styles = StyleSheet.create<IStyles>({
   bottomBar2: {
     backgroundColor: COLORS.primary[500],
     marginHorizontal: Spacing.space_20,
+  },
+  progressBar: {
+    backgroundColor: COLORS.white,
   },
 })

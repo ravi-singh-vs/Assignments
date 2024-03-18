@@ -38,9 +38,6 @@ export const styles = StyleSheet.create<IStyles>({
     paddingHorizontal: Spacing.space_10,
   },
   inputField: {
-    borderColor: COLORS.neutral[100],
-    borderRadius: Spacing.space_8,
-    borderWidth: Spacing.space_1,
     color: COLORS.neutral[700],
     fontFamily: Typography.primary['medium'],
     fontSize: Spacing.space_16,
