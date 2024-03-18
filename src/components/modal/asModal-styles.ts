@@ -35,17 +35,16 @@ export const styles = StyleSheet.create<IStyles>({
   },
   subContainer: {
     justifyContent: 'space-between',
-    paddingVertical: Spacing.space_12,
+    paddingVertical: Spacing.space_9,
   },
   wreckerContainer: {
     marginHorizontal: Spacing.space_9,
-    paddingVertical: Spacing.space_8,
+    paddingVertical: Spacing.space_9,
   },
   loadingContainer: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
-    marginHorizontal: Spacing.space_90,
     gap: Spacing.space_8,
   },
   title: {

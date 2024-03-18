@@ -11,16 +11,18 @@ import { ResizeMode, greenBackButtonIcon } from '../../../../constants/common-co
 import { reflectionBackgroundImage } from '../../../../constants/reflection-constants'
 
 import { styles } from './reflection-styles'
+import ASLoader from '../../../../components/loader/ASLoader'
 
 const Reflection = () => {
   const dispatch = useAppDispatch()
 
-  const { reflectionData } = useAppSelector(getReflectionData)
+  const { reflectionData, loading } = useAppSelector(getReflectionData)
 
   useEffect(() => {
     dispatch(fetchReflectionData())
   }, [])
 
+  if (loading) return <ASLoader />
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground

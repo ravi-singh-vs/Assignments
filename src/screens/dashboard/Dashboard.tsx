@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { FlatList, Platform, StatusBar, Text, View } from 'react-native'
 
+import ASDashboardCard from '../../components/dashboard-card/ASDashboardCard'
 import ASDashboardHeader from '../../components/dashboard-header/ASDashboardHeader'
 import ASDashboardMasteryCard from '../../components/dashboard-mastery-card/ASDashboardMasteryCard'
-import ASDashboardCard from '../../components/dashboard-card/ASDashboardCard'
-import { useAppDispatch, useAppSelector } from '../../redux/store'
+import ASLoader from '../../components/loader/ASLoader'
 import { fetchDashboardData, getDashboardData } from '../../redux/slices/dashboard-slice'
+import { useAppDispatch, useAppSelector } from '../../redux/store'
 import { IDashboardDataType } from '../../types/dashboard-types'
 
 import { styles } from './dashboard-styles'
@@ -34,7 +35,7 @@ const Dashboard = () => {
         renderItem={({ item }: { item: IDashboardDataType }) => <ASDashboardCard {...item} />}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.subContainer}
-        ListEmptyComponent={() => <Text>Loading...</Text>}
+        ListEmptyComponent={() => <ASLoader />}
       />
     </View>
   )

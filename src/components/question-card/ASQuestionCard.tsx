@@ -37,7 +37,7 @@ const ASQuestionCard = (props: IASQuestionCardProps) => {
           value={input}
           style={styles.inputField}
           multiline
-          numberOfLines={15}
+          numberOfLines={10}
           placeholder="Enter your response ..."
         />
       </View>
