@@ -12,7 +12,7 @@ interface IStyles {
   detailContainer: ViewStyle
   text: TextStyle
   pieChart: ImageStyle
-  nextButtonImage: ImageStyle
+  nextButtonIcon: ImageStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
@@ -58,7 +58,7 @@ export const styles = StyleSheet.create<IStyles>({
     marginLeft: Spacing.space_8,
     marginRight: Spacing.space_16,
   },
-  nextButtonImage: {
+  nextButtonIcon: {
     height: Spacing.space_16,
     width: Spacing.space_16,
   },

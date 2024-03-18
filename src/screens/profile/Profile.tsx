@@ -1,20 +1,13 @@
+import React, { useEffect, useState } from 'react'
+import { BackHandler, FlatList, ImageBackground, Text, View } from 'react-native'
 import WebView from 'react-native-webview'
 
-import React, { useEffect, useState } from 'react'
-import {
-  Alert,
-  BackHandler,
-  FlatList,
-  Image,
-  ImageBackground,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native'
+import ASProfileNavigation from '../../components/profile-navigations/ASProfileNavigation'
 
-import ASProfileNavigation from './profile-navigations/ASProfileNavigation'
-
-import { ProfileIcons } from '../../constants/profile-constants'
+import ASHeader from '../../components/header/ASHeader'
+import { COLORS } from '../../theme/colors'
+import { ResizeMode, whiteBackButtonIcon } from '../../constants/common-constants'
+import { PROFILE_NAVIGATION_DATA, ProfileIcons } from '../../constants/profile-constants'
 
 import { styles } from './profile-styles'
 
@@ -23,12 +16,8 @@ const MyWebViewComponent = () => {
 }
 
 const Profile = () => {
-  const [showWebView, setShowWebView] = useState(false)
-  const data = ['Notification settings', 'Support', 'Terms & Conditions', 'Privacy Policy', 'FAQ']
+  const [showWebView, setShowWebView] = useState<boolean>(false)
 
-  const handleBackArrowOnPress = () => {
-    Alert.alert('Back Button Functionality !')
-  }
   const handleBackButtonClick = () => {
     setShowWebView(false)
     return true
@@ -46,14 +35,14 @@ const Profile = () => {
     <View>
       <ImageBackground
         source={ProfileIcons['ProfileImage']}
-        style={styles.background}
-        resizeMode="cover">
-        <View style={styles.header}>
-          <TouchableOpacity onPress={handleBackArrowOnPress}>
-            <Image style={styles.icon} source={ProfileIcons['ArrowLeft']} />
-          </TouchableOpacity>
-          <Text style={styles.text}>Profile</Text>
-        </View>
+        style={styles.image}
+        resizeMode={ResizeMode.Cover}>
+        <ASHeader
+          headerTitle="Profile"
+          backgroundColor="transparent"
+          color={COLORS.white}
+          backButtonIcon={whiteBackButtonIcon}
+        />
         <View style={styles.infoContainer}>
           <Text style={styles.name}>Rohan Sharma</Text>
           <Text style={styles.data}>rohan@gmail.com</Text>
@@ -63,7 +52,7 @@ const Profile = () => {
 
       <View style={styles.container}>
         <FlatList
-          data={data}
+          data={PROFILE_NAVIGATION_DATA}
           renderItem={({ item }) => (
             <ASProfileNavigation
               title={item}
@@ -71,6 +60,9 @@ const Profile = () => {
               arrowRight={ProfileIcons['ArrowRight']}
             />
           )}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={item => item}
+          ListEmptyComponent={() => <Text>Loading...</Text>}
         />
       </View>
     </View>

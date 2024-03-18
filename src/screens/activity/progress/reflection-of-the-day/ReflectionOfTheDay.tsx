@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, Alert, ScrollView } from 'react-native'
+import { Text, View, Alert, ScrollView, KeyboardAvoidingView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import * as Progress from 'react-native-progress'
 
 import ASHeader from '../../../../components/header/ASHeader'
 import ASQuestionCard from '../../../../components/question-card/ASQuestionCard'
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
-import { TabNavigatorParams } from '../../../../types/tabNavigator-types'
 import { COLORS } from '../../../../theme/colors'
+import { Spacing } from '../../../../theme/spacing'
+import { TabNavigatorParams } from '../../../../types/tabNavigator-types'
 
 import { QUESTIONS_DATA } from '../../../../constants/activity-constants'
-import { whiteBackButtonImage } from '../../../../constants/common-constants'
+import { whiteBackButtonIcon } from '../../../../constants/common-constants'
 
 import { styles } from './relectionOfTheDay-styles'
 
@@ -65,12 +66,15 @@ const ReflectionOfTheDay = () => {
     <View style={styles.container}>
       <ASHeader
         headerTitle="Day1"
-        backButtonImage={whiteBackButtonImage}
+        backButtonIcon={whiteBackButtonIcon}
         backgroundColor={COLORS.primary[600]}
         color={COLORS.white}
         canGoToPreviousScreen={true}
       />
-      <View style={styles.subContainer}>
+      <KeyboardAvoidingView
+        style={styles.subContainer}
+        behavior="padding"
+        keyboardVerticalOffset={10}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.questionBarContainer}>
             <Text style={styles.questionNumberText}>
@@ -78,8 +82,8 @@ const ReflectionOfTheDay = () => {
             </Text>
             <Progress.Bar
               progress={(currentQuestionNumber + 1) / QUESTIONS_DATA.length}
-              width={300}
-              height={8}
+              width={Spacing.space_300}
+              height={Spacing.space_8}
               color={COLORS.primary[300]}
             />
           </View>
@@ -94,7 +98,7 @@ const ReflectionOfTheDay = () => {
           <View style={[styles.bottomBar, styles.bottomBar1]} />
           <View style={[styles.bottomBar, styles.bottomBar2]} />
         </ScrollView>
-      </View>
+      </KeyboardAvoidingView>
     </View>
   )
 }

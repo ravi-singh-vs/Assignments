@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
 import { ActivityIndicator, Image, Text, TouchableOpacity, View } from 'react-native'
 
-import ASModal from '../../../../components/modal/ASModal'
-import ASTopWreckerCard from '../../../../components/top-wrecker-card/ASTopWreckerCard'
-import { COLORS } from '../../../../theme/colors'
-import { IASTopWreckersProps } from '../../../../types/activity-types'
+import ASModal from '../modal/ASModal'
+import ASTopWreckerCard from '../top-wrecker-card/ASTopWreckerCard'
+import { COLORS } from '../../theme/colors'
+import { IWreckerDataType } from '../../types/activity-types'
 
-import { ViewAllWreckers } from '../../../../constants/activity-constants'
+import { ViewAllWreckers } from '../../constants/activity-constants'
+import { ResizeMode } from '../../constants/common-constants'
 
 import { styles } from './asTopWreckers-styles'
 
-const ASTopWreckers = ({ wreckers }: IASTopWreckersProps) => {
+interface IASTopWreckersProps {
+  wreckers: IWreckerDataType[]
+}
+const ASTopWreckers = (props: IASTopWreckersProps) => {
+  const { wreckers } = props
   const [visible, setVisible] = useState(false)
 
   const handleAllWreckerPress = () => {
@@ -46,7 +51,11 @@ const ASTopWreckers = ({ wreckers }: IASTopWreckersProps) => {
           description="All Wreckers will be updated !"
         />
         <Text style={styles.allWreckerText}>View All Wreckers</Text>
-        <Image style={styles.icon} source={ViewAllWreckers['ArrowRight']} />
+        <Image
+          style={styles.icon}
+          source={ViewAllWreckers['ArrowRight']}
+          resizeMode={ResizeMode.Contain}
+        />
       </TouchableOpacity>
     </View>
   )

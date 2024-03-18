@@ -1,4 +1,5 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
@@ -12,7 +13,8 @@ interface IStyles {
   headerContainer: ViewStyle
   headerSubContainer: ViewStyle
   headerSubContainerLeft: ViewStyle
-  bookmarkIcon: ImageStyle
+  favouriteIcon: ImageStyle
+  notFavouriteIcon: ImageStyle
   challengeText: TextStyle
   tickIcon: ImageStyle
   title: TextStyle
@@ -20,13 +22,13 @@ interface IStyles {
   duration: TextStyle
 }
 
-export const styles: IStyles = StyleSheet.create({
+export const styles = StyleSheet.create<IStyles>({
   container: {
+    borderRadius: Spacing.space_16,
     flex: Spacing.space_1,
+    gap: Spacing.space_16,
     justifyContent: 'center',
     padding: Spacing.space_16,
-    borderRadius: Spacing.space_16,
-    gap: Spacing.space_16,
   },
   subContainer: {
     flexDirection: 'row',
@@ -39,22 +41,27 @@ export const styles: IStyles = StyleSheet.create({
     gap: Spacing.space_4,
   },
   headerSubContainer: {
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
-  bookmarkIcon: {
+  favouriteIcon: {
+    height: Spacing.space_16,
+    width: Spacing.space_16,
+  },
+  notFavouriteIcon: {
     height: Spacing.space_16,
     width: Spacing.space_16,
   },
   headerSubContainerLeft: {
+    alignItems: 'center',
     flexDirection: 'row',
     gap: Spacing.space_8,
-    alignItems: 'center',
   },
   challengeText: {
-    fontFamily: Typography.primary.bold,
     color: COLORS.neutral['500'],
+    fontFamily: Typography.primary.bold,
+    fontSize: Spacing.space_12,
   },
   tickIcon: {
     height: Spacing.space_16,
@@ -65,21 +72,21 @@ export const styles: IStyles = StyleSheet.create({
     width: Spacing.space_52,
   },
   imageContainer: {
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
     paddingHorizontal: Spacing.space_8,
     paddingVertical: Spacing.space_16,
   },
   title: {
-    fontSize: Spacing.space_16,
-    fontFamily: Typography.secondary.bold,
     color: COLORS.neutral['700'],
+    fontFamily: Typography.secondary.bold,
+    fontSize: Spacing.space_16,
     lineHeight: Spacing.space_24,
   },
   bottomContainer: {
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
   duration: {
     color: COLORS.neutral['500'],
@@ -88,14 +95,14 @@ export const styles: IStyles = StyleSheet.create({
     lineHeight: Spacing.space_18,
   },
   bottomSubContainer: {
+    backgroundColor: COLORS.white,
+    borderRadius: Spacing.space_50,
     elevation: Spacing.space_4,
     shadowColor: COLORS.neutral[600],
-    borderRadius: Spacing.space_50,
-    backgroundColor: COLORS.white,
   },
   bottomSubContainerImage: {
     height: Spacing.space_12,
-    width: Spacing.space_12,
     margin: Spacing.space_12,
+    width: Spacing.space_12,
   },
 })

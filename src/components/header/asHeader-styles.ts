@@ -7,7 +7,7 @@ import { Typography } from '../../theme/typography'
 import { ResizeMode } from '../../constants/common-constants'
 
 interface IStyles {
-  backButtonImage: ImageStyle
+  backButtonIcon: ImageStyle
   emptyContainer: ViewStyle
   header: ViewStyle
   image: ImageStyle
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create<IStyles>({
     justifyContent: 'space-between',
     paddingVertical: Spacing.space_16,
   },
-  backButtonImage: {
+  backButtonIcon: {
     width: Spacing.space_9,
     resizeMode: ResizeMode.Contain,
     marginHorizontal: Spacing.space_24,

@@ -1,40 +1,35 @@
-import { useEffect, useState } from 'react'
-import { FlatList, View } from 'react-native'
+import { useEffect } from 'react'
+import { FlatList, View, Text } from 'react-native'
 
 import Header from '../../components/header/ASHeader'
 import ASDActiveCard from '../../components/dactive-card/ASDactiveCard'
-import { getNotificationsDativeData } from '../../services/api/get-notifications-dactive-data'
+import { useAppDispatch, useAppSelector } from '../../redux/store'
+import { fetchDactiveData, getDactiveData } from '../../redux/slices/dactive-slice'
 import { IDactiveDataType } from '../../types/dactive-types'
 
-import { API_ENDPOINTS } from '../../constants/api-constants'
+import { greenBackButtonIcon } from '../../constants/common-constants'
 
 import { styles } from './dactive-styles'
-import { greenBackButtonImage } from '../../constants/common-constants'
 
 const Dactive = () => {
-  const [DActiveData, setDActiveData] = useState<IDactiveDataType[]>([])
+  const dispatch = useAppDispatch()
+  const { dactiveData } = useAppSelector(getDactiveData)
 
-  const getDActiveData = async () => {
-    const res = await getNotificationsDativeData(API_ENDPOINTS.DACTIVE_API_ENDPOINT)
-    if (res.success) {
-      setDActiveData(res.data)
-    } else {
-      console.error(res.error)
-    }
-  }
   useEffect(() => {
-    getDActiveData()
+    dispatch(fetchDactiveData())
   }, [])
+
   return (
     <View style={styles.container}>
-      <Header headerTitle="D-active" backButtonImage={greenBackButtonImage} />
+      <Header headerTitle="D-active" backButtonIcon={greenBackButtonIcon} />
       <View style={styles.subContainer}>
         {
           <FlatList
             showsVerticalScrollIndicator={false}
-            data={DActiveData}
+            data={dactiveData}
             renderItem={({ item }: { item: IDactiveDataType }) => <ASDActiveCard {...item} />}
-            keyExtractor={(item: IDactiveDataType) => item.id}
+            keyExtractor={(item: IDactiveDataType) => item?.id}
+            ListEmptyComponent={() => <Text>Loading...</Text>}
           />
         }
       </View>

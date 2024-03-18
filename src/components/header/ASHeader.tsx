@@ -1,15 +1,17 @@
-import { Image, Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native'
+import { Image, ImageSourcePropType, Text, TouchableOpacity, View } from 'react-native'
 import { useNavigation } from '@react-navigation/core'
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
 
+import { COLORS } from '../../theme/colors'
 import { TabNavigatorParams } from '../../types/tabNavigator-types'
 
+import { Screens } from '../../constants/navigation-constants'
+
 import { styles } from './asHeader-styles'
-import { COLORS } from '../../theme/colors'
 
 interface IASHeaderProps {
   headerTitle: string
-  backButtonImage?: number
+  backButtonIcon?: ImageSourcePropType
   canGoToPreviousScreen?: boolean
   backgroundColor?: string
   color?: string
@@ -19,19 +21,19 @@ const ASHeader = (props: IASHeaderProps) => {
   const navigation = useNavigation<BottomTabNavigationProp<TabNavigatorParams>>()
   const {
     headerTitle,
-    backButtonImage,
+    backButtonIcon,
     canGoToPreviousScreen = false,
     backgroundColor = COLORS.white,
     color = COLORS.neutral[700],
   } = props
   return (
     <View style={[styles.header, { backgroundColor: backgroundColor }]}>
-      {backButtonImage ? (
+      {backButtonIcon ? (
         <TouchableOpacity
           onPress={() =>
-            canGoToPreviousScreen ? navigation.goBack() : navigation.navigate('Dashboard')
+            canGoToPreviousScreen ? navigation.goBack() : navigation.navigate(Screens.Dashboard)
           }>
-          <Image source={backButtonImage} style={styles.backButtonImage} />
+          <Image source={backButtonIcon} style={styles.backButtonIcon} />
         </TouchableOpacity>
       ) : (
         <View style={styles.emptyContainer} />

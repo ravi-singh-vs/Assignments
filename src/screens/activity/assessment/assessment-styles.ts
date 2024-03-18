@@ -14,5 +14,6 @@ export const styles = StyleSheet.create<IStyles>({
     borderTopRightRadius: Spacing.space_16,
     marginTop: Spacing.space_30,
     paddingVertical: Spacing.space_32,
+    flex: Spacing.space_1,
   },
 })

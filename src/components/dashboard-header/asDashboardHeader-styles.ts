@@ -1,25 +1,26 @@
 import { ImageStyle, StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+
 import { Spacing } from '../../theme/spacing'
 import { Typography } from '../../theme/typography'
 import { COLORS } from '../../theme/colors'
 
 interface IStyles {
-  container: ViewStyle
-  subContainer: ViewStyle
-  imageBackground: ImageStyle
-  image: ImageStyle
-  text: TextStyle
   bottomSubContainer: ViewStyle
-  textContainer: ViewStyle
-  title: TextStyle
+  container: ViewStyle
   days: TextStyle
   heroImage: ImageStyle
+  image: ImageStyle
+  imageBackground: ImageStyle
+  subContainer: ViewStyle
+  text: TextStyle
+  textContainer: ViewStyle
+  title: TextStyle
 }
-export const styles: IStyles = StyleSheet.create({
+export const styles = StyleSheet.create<IStyles>({
   imageBackground: {
-    width: '100%',
     height: Spacing.space_248,
     justifyContent: 'space-between',
+    width: '100%',
   },
 
   container: {
@@ -27,9 +28,9 @@ export const styles: IStyles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
   },
   subContainer: {
+    alignItems: 'center',
     flexDirection: 'row',
     gap: Spacing.space_12,
-    alignItems: 'center',
     padding: Spacing.space_20,
   },
   image: {
@@ -37,13 +38,13 @@ export const styles: IStyles = StyleSheet.create({
     width: Spacing.space_16,
   },
   text: {
+    color: COLORS.white,
     fontFamily: Typography.primary.bold,
     fontSize: Spacing.space_14,
-    color: COLORS.white,
   },
   bottomSubContainer: {
-    flexDirection: 'row',
     alignItems: 'flex-end',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: Spacing.space_20,
   },
@@ -52,14 +53,14 @@ export const styles: IStyles = StyleSheet.create({
     width: Spacing.space_148,
   },
   title: {
-    fontFamily: Typography.secondary.bold,
     color: COLORS.secondary[100],
+    fontFamily: Typography.secondary.bold,
     fontSize: Spacing.space_24,
   },
   days: {
+    color: COLORS.white,
     fontFamily: Typography.primary.bold,
     fontSize: Spacing.space_14,
-    color: COLORS.white,
   },
   textContainer: {
     marginBottom: Spacing.space_24,

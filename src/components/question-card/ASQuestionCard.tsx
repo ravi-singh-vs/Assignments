@@ -5,7 +5,7 @@ import { QUESTIONS_DATA } from '../../constants/activity-constants'
 
 import { styles } from './asQuestionCard-styles'
 
-interface IASQuestionCard {
+interface IASQuestionCardProps {
   input: string
   setInput: Dispatch<React.SetStateAction<string>>
   currentQuestionNumber: number
@@ -14,7 +14,7 @@ interface IASQuestionCard {
   handleSubmit: () => void
 }
 
-const ASQuestionCard = (props: IASQuestionCard) => {
+const ASQuestionCard = (props: IASQuestionCardProps) => {
   const { input, setInput, currentQuestionNumber, handleNext, handlePrevious, handleSubmit } = props
 
   const renderButton = (style: ViewStyle, onPress: () => void, label: string) => {

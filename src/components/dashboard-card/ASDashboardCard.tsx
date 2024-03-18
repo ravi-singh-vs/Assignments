@@ -1,23 +1,30 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 
 import ASPlayButton from '../play-button/ASPlayButton'
+import {
+  IDashboardDataType as IASDashboardCardProps,
+  TDashboardCardTitle,
+} from '../../types/dashboard-types'
 
 import { DASHBOARD_LIST_DATA } from '../../constants/dashboard-constants'
-import { IDashboardData, TDashboardCardTitle } from '../../types/dashboard-types'
-import { completedTickIcon, notBookmarkedIcon } from '../../constants/common-constants'
+import {
+  ResizeMode,
+  completedTickIcon,
+  favouriteIcon,
+  notFavouriteIcon,
+} from '../../constants/common-constants'
+
 import { styles } from './asDashboardCard-styles'
 
-interface IASDashboardCardProps {
-  data: IDashboardData
-}
+const ASDashboardCard = (props: IASDashboardCardProps) => {
+  const { id, title, startingTime, endingTime, isCompleted, isFav } = props
+  const [isFavourite, setIsFavourite] = useState<boolean>(Boolean(isFav))
 
-const ASDashboardCard = ({ data }: IASDashboardCardProps) => {
-  const { id, title, startingTime, endingTime } = data
-
-  let titleIndex: TDashboardCardTitle = title as TDashboardCardTitle
+  let titleIndex = title as TDashboardCardTitle
   const imageSrc = DASHBOARD_LIST_DATA[titleIndex].image
   const backgroundColor = DASHBOARD_LIST_DATA[titleIndex].backgroundColor
+
   return (
     <View style={[styles.container, { backgroundColor }]}>
       <View style={styles.subContainer}>
@@ -29,9 +36,29 @@ const ASDashboardCard = ({ data }: IASDashboardCardProps) => {
             <View style={styles.headerSubContainer}>
               <View style={styles.headerSubContainerLeft}>
                 <Text style={styles.challengeText}>Challenge {id}</Text>
-                <Image source={completedTickIcon} style={styles.tickIcon} />
+                {JSON.parse(isCompleted) && (
+                  <Image
+                    source={completedTickIcon}
+                    style={styles.tickIcon}
+                    resizeMode={ResizeMode.Contain}
+                  />
+                )}
               </View>
-              <Image source={notBookmarkedIcon} style={styles.bookmarkIcon} />
+              <TouchableOpacity onPress={() => setIsFavourite(prev => !prev)}>
+                {isFavourite ? (
+                  <Image
+                    source={notFavouriteIcon}
+                    style={styles.favouriteIcon}
+                    resizeMode={ResizeMode.Contain}
+                  />
+                ) : (
+                  <Image
+                    source={favouriteIcon}
+                    style={styles.notFavouriteIcon}
+                    resizeMode={ResizeMode.Contain}
+                  />
+                )}
+              </TouchableOpacity>
             </View>
             <Text style={styles.title}>{title}</Text>
           </View>
