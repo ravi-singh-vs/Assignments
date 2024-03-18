@@ -14,7 +14,6 @@ interface IStyles {
   headerSubContainer: ViewStyle
   headerSubContainerLeft: ViewStyle
   favouriteIcon: ImageStyle
-  notFavouriteIcon: ImageStyle
   challengeText: TextStyle
   tickIcon: ImageStyle
   title: TextStyle
@@ -46,10 +45,6 @@ export const styles = StyleSheet.create<IStyles>({
     justifyContent: 'space-between',
   },
   favouriteIcon: {
-    height: Spacing.space_16,
-    width: Spacing.space_16,
-  },
-  notFavouriteIcon: {
     height: Spacing.space_16,
     width: Spacing.space_16,
   },

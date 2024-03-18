@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { BackHandler, FlatList, ImageBackground, SafeAreaView, Text, View } from 'react-native'
+import {
+  BackHandler,
+  FlatList,
+  ImageBackground,
+  Modal,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import WebView from 'react-native-webview'
 
 import ASProfileNavigation from '../../components/profile-navigations/ASProfileNavigation'
@@ -11,13 +20,19 @@ import { PROFILE_NAVIGATION_DATA, ProfileIcons } from '../../constants/profile-c
 
 import { styles } from './profile-styles'
 
-const MyWebViewComponent = () => {
-  return <WebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />
-}
-
 const Profile = () => {
   const [showWebView, setShowWebView] = useState<boolean>(false)
 
+  const MyWebViewComponent = () => {
+    return (
+      <Modal visible={true} transparent animationType="slide">
+        <WebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }}></WebView>
+        <TouchableOpacity onPress={() => setShowWebView(false)} style={styles.closeButton}>
+          <Text style={styles.text}>Close</Text>
+        </TouchableOpacity>
+      </Modal>
+    )
+  }
   const handleBackButtonClick = () => {
     setShowWebView(false)
     return true

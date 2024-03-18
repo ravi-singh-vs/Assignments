@@ -33,7 +33,7 @@ const Notifications = () => {
         ListEmptyComponent={<EmptyView />}
         data={notificationsData}
         renderItem={({ item }: { item: INotificationDataType }) => <ASNotificationCard {...item} />}
-        keyExtractor={(item: INotificationDataType) => item?.id}
+        keyExtractor={(item: INotificationDataType) => item.id}
         refreshing={loading}
         onRefresh={onRefresh}
       />

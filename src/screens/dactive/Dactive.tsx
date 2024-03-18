@@ -23,15 +23,13 @@ const Dactive = () => {
     <SafeAreaView style={styles.container}>
       <Header headerTitle="D-active" backButtonIcon={greenBackButtonIcon} />
       <View style={styles.subContainer}>
-        {
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={dactiveData}
-            renderItem={({ item }: { item: IDactiveDataType }) => <ASDActiveCard {...item} />}
-            keyExtractor={(item: IDactiveDataType) => item?.id}
-            ListEmptyComponent={() => <Text>Loading...</Text>}
-          />
-        }
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={dactiveData}
+          renderItem={({ item }: { item: IDactiveDataType }) => <ASDActiveCard {...item} />}
+          keyExtractor={(item: IDactiveDataType) => item.id}
+          ListEmptyComponent={() => <Text>Loading...</Text>}
+        />
       </View>
     </SafeAreaView>
   )

@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../../../redux/store'
 import { fetchReflectionData, getReflectionData } from '../../../../redux/slices/relections-slice'
 import { IReflectionDataType } from '../../../../types/reflection-types'
 
-import { ResizeMode, backButtonGreenIcon } from '../../../../constants/common-constants'
+import { ResizeMode, greenBackButtonIcon } from '../../../../constants/common-constants'
 import { reflectionBackgroundImage } from '../../../../constants/reflection-constants'
 
 import { styles } from './reflection-styles'
@@ -29,14 +29,14 @@ const Reflection = () => {
         resizeMode={ResizeMode.Stretch}>
         <ASHeader
           headerTitle="My Reflections"
-          backButtonIcon={backButtonGreenIcon}
+          backButtonIcon={greenBackButtonIcon}
           canGoToPreviousScreen={true}
         />
         <FlatList
           data={reflectionData}
           renderItem={({ item }: { item: IReflectionDataType }) => <ASReflectionCard {...item} />}
           showsVerticalScrollIndicator={false}
-          keyExtractor={item => String(item?.id)}
+          keyExtractor={item => String(item.id)}
           ListEmptyComponent={() => <Text>Loading...</Text>}
         />
       </ImageBackground>

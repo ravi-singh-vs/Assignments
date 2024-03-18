@@ -19,11 +19,20 @@ import { styles } from './asDashboardCard-styles'
 
 const ASDashboardCard = (props: IASDashboardCardProps) => {
   const { id, title, startingTime, endingTime, isCompleted, isFav } = props
-  const [isFavourite, setIsFavourite] = useState<boolean>(Boolean(isFav))
+
+  //JSON.parse is used because the field isFav is of string type in API
+  const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))
 
   let titleIndex = title as TDashboardCardTitle
   const imageSrc = DASHBOARD_LIST_DATA[titleIndex].image
   const backgroundColor = DASHBOARD_LIST_DATA[titleIndex].backgroundColor
+
+  const renderFavouriteIcon = () => {
+    const imageSource = isFavourite ? favouriteIcon : notFavouriteIcon
+    return (
+      <Image source={imageSource} style={styles.favouriteIcon} resizeMode={ResizeMode.Contain} />
+    )
+  }
 
   return (
     <View style={[styles.container, { backgroundColor }]}>
@@ -45,19 +54,7 @@ const ASDashboardCard = (props: IASDashboardCardProps) => {
                 )}
               </View>
               <TouchableOpacity onPress={() => setIsFavourite(prev => !prev)}>
-                {isFavourite ? (
-                  <Image
-                    source={notFavouriteIcon}
-                    style={styles.favouriteIcon}
-                    resizeMode={ResizeMode.Contain}
-                  />
-                ) : (
-                  <Image
-                    source={favouriteIcon}
-                    style={styles.notFavouriteIcon}
-                    resizeMode={ResizeMode.Contain}
-                  />
-                )}
+                {renderFavouriteIcon()}
               </TouchableOpacity>
             </View>
             <Text style={styles.title}>{title}</Text>
