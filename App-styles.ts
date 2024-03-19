@@ -1,6 +1,5 @@
 import { StyleSheet, ViewStyle } from 'react-native'
-
-import { Spacing } from '../../theme/spacing'
+import { Spacing } from './src/theme/spacing'
 
 interface IStyles {
   container: ViewStyle
@@ -8,9 +7,7 @@ interface IStyles {
 
 export const styles = StyleSheet.create<IStyles>({
   container: {
-    alignItems: 'center',
-    backgroundColor: 'white',
-    flex:Spacing.space_1,
-    justifyContent: 'center',
+    flex: Spacing.space_1,
   },
 })
+

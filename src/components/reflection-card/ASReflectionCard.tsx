@@ -7,7 +7,7 @@ import { IReflectionDataType as IASReflectionCardProps } from '../../types/refle
 import { StackNavigatorParams } from '../../types/stackNavigator-types'
 
 import { Screens } from '../../constants/navigation-constants'
-import { nextArrowIcon } from '../../constants/common-constants'
+import { ResizeMode, nextArrowIcon } from '../../constants/common-constants'
 
 import { styles } from './asReflectionCard-styles'
 
@@ -24,7 +24,11 @@ const ASReflectionCard = (props: IASReflectionCardProps) => {
       <View style={styles.subContainer}>
         <Text style={styles.date}>{title}</Text>
         <View style={styles.image}>
-          <Image source={nextArrowIcon} style={styles.forwardArrow} />
+          <Image
+            source={nextArrowIcon}
+            style={styles.forwardArrow}
+            resizeMode={ResizeMode.Contain}
+          />
         </View>
       </View>
     </TouchableOpacity>

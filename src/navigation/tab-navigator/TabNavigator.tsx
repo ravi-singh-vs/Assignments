@@ -7,9 +7,9 @@ import Dactive from '../../screens/dactive/Dactive'
 import Activity from '../../screens/activity/Activity'
 import Notifications from '../../screens/notifications/Notifications'
 import Profile from '../../screens/profile/Profile'
-import { Screens, TAB_ICON_SOURCE } from '../../constants/navigation-constants'
 import { TabNavigatorParams } from '../../types/tabNavigator-types'
 
+import { Screens, TAB_ICON_SOURCE } from '../../constants/navigation-constants'
 import { ResizeMode } from '../../constants/common-constants'
 
 import { styles } from './tabNavigator-styles'

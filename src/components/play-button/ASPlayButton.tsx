@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Image, Modal, TouchableOpacity, Text } from 'react-native'
+import { Image, Modal, Text, TouchableOpacity } from 'react-native'
 import WebView from 'react-native-webview'
 
 import { playButtonIcon } from '../../constants/common-constants'
@@ -7,7 +7,7 @@ import { playButtonIcon } from '../../constants/common-constants'
 import { styles } from './asPlayButton-styles'
 
 const ASPlayButton = () => {
-  const [modalVisible, setModalVisible] = useState(false)
+  const [modalVisible, setModalVisible] = useState<boolean>(false)
   return (
     <TouchableOpacity style={styles.container} onPress={() => setModalVisible(true)}>
       <Modal

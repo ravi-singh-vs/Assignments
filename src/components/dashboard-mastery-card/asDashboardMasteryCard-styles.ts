@@ -56,7 +56,6 @@ export const styles: IStyles = StyleSheet.create({
   },
   detailBottomContainer: {
     alignItems: 'center',
-    borderColor: 'blue',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
