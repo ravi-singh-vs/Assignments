@@ -4,8 +4,6 @@ import { Typography } from '../../theme/typography'
 import { COLORS } from '../../theme/colors'
 import { Spacing } from '../../theme/spacing'
 
-import { ResizeMode } from '../../constants/common-constants'
-
 interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
@@ -45,6 +43,5 @@ export const styles = StyleSheet.create<IStyles>({
   },
   forwardArrow: {
     flex: Spacing.space_1,
-    resizeMode: ResizeMode.Contain,
   },
 })

@@ -3,8 +3,8 @@ import { View, Text, Image } from 'react-native'
 
 import ASPlayButton from '../play-button/ASPlayButton'
 
-import { favouriteIcon, completedTickIcon } from '../../constants/common-constants'
-import { masterImageIcon } from '../../constants/dashboard-constants'
+import { completedTickIcon, favouriteIcon } from '../../constants/common-constants'
+import { overthinkerImage } from '../../constants/dashboard-constants'
 
 import { styles } from './asDashboardMasteryCard-styles'
 
@@ -12,7 +12,7 @@ const ASDashboardMasteryCard = () => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={masterImageIcon} style={styles.image} />
+        <Image source={overthinkerImage} style={styles.image} />
       </View>
       <View style={styles.detailContainer}>
         <View style={styles.detailTopContainer}>

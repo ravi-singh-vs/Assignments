@@ -24,4 +24,4 @@ export const DASHBOARD_HEADER_DATA: { [key: string]: number } = {
 
 export const dashboardBackgroundImage = require('../assets/images/dashboard-background.png')
 
-export const masterImageIcon = require('../assets/icons/overthinker-grey.png')
+export const overthinkerImage = require('../assets/icons/overthinker-grey.png')

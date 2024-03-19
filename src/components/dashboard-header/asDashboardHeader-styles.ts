@@ -8,8 +8,8 @@ interface IStyles {
   bottomSubContainer: ViewStyle
   container: ViewStyle
   days: TextStyle
-  heroImage: ImageStyle
   image: ImageStyle
+  calenderIconImage: ImageStyle
   imageBackground: ImageStyle
   subContainer: ViewStyle
   text: TextStyle
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create<IStyles>({
     gap: Spacing.space_12,
     padding: Spacing.space_20,
   },
-  image: {
+  calenderIconImage: {
     height: Spacing.space_16,
     width: Spacing.space_16,
   },
@@ -48,7 +48,7 @@ export const styles = StyleSheet.create<IStyles>({
     justifyContent: 'space-between',
     paddingHorizontal: Spacing.space_20,
   },
-  heroImage: {
+  image: {
     height: Spacing.space_148,
     width: Spacing.space_148,
   },
