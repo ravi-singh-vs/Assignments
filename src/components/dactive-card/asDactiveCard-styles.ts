@@ -1,4 +1,4 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS } from '../../theme/colors'
 import { Spacing } from '../../theme/spacing'
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create<IStyles>({
     borderRadius: Spacing.space_16,
     flex: Spacing.space_1,
     marginBottom: Spacing.space_20,
-    overflow: 'hidden', // to hide overflow of image for setting border radius
+    overflow: 'hidden',
   },
   textContainer: {
     paddingHorizontal: Spacing.space_16,

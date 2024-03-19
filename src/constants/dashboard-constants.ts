@@ -1,6 +1,7 @@
 import { COLORS } from '../theme/colors'
+import { IDashboardCardInfoType } from '../types/dashboard-types'
 
-export const DASHBOARD_LIST_DATA = {
+export const DASHBOARD_CARD_INFO: IDashboardCardInfoType = {
   'D-active': {
     image: require('../assets/icons/dactive.png'),
     backgroundColor: COLORS.secondary[100],

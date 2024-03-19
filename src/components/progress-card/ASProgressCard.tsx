@@ -8,7 +8,7 @@ import { Spacing } from '../../theme/spacing'
 import { IProgressDataType as IASProgressCardProps } from '../../types/activity-types'
 
 import { PROGRESS_CARD_IMAGE_SOURCE } from '../../constants/activity-constants'
-import { ResizeMode, nextButtonIcon } from '../../constants/common-constants'
+import { ResizeMode, nextArrowIcon } from '../../constants/common-constants'
 
 import { styles } from './asProgressCard-styles'
 
@@ -46,8 +46,8 @@ const ASProgressCard = (props: IASProgressCardProps) => {
           color={COLORS.secondary[700]}
         />
         <Image
-          source={nextButtonIcon}
-          style={styles.nextButtonIcon}
+          source={nextArrowIcon}
+          style={styles.nextArrowIcon}
           resizeMode={ResizeMode.Contain}
         />
       </View>

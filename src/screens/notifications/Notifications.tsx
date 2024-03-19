@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/store'
 import { fetchNotifications, getNotifications } from '../../redux/slices/notifications-slice'
 import { INotificationDataType } from '../../types/notification-types'
 
-import { greenBackButtonIcon } from '../../constants/common-constants'
+import { greenBackArrowIcon } from '../../constants/common-constants'
 
 import { styles } from './notifications-styles'
 
@@ -27,7 +27,7 @@ const Notifications = () => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
-      <Header headerTitle="Notifications" backButtonIcon={greenBackButtonIcon} />
+      <Header headerTitle="Notifications" backButtonIcon={greenBackArrowIcon} />
       <FlatList
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.subContainer}

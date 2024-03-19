@@ -8,7 +8,7 @@ import { fetchDactiveData, getDactiveData } from '../../redux/slices/dactive-sli
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 import { IDactiveDataType } from '../../types/dactive-types'
 
-import { greenBackButtonIcon } from '../../constants/common-constants'
+import { greenBackArrowIcon } from '../../constants/common-constants'
 
 import { styles } from './dactive-styles'
 
@@ -23,7 +23,7 @@ const Dactive = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} />
-      <Header headerTitle="D-active" backButtonIcon={greenBackButtonIcon} />
+      <Header headerTitle="D-active" backButtonIcon={greenBackArrowIcon} />
       <View style={styles.subContainer}>
         <FlatList
           showsVerticalScrollIndicator={false}
