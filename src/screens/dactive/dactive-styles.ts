@@ -10,14 +10,14 @@ interface IStyles {
 
 export const styles = StyleSheet.create<IStyles>({
   container: {
-    marginBottom: Spacing.space_88,
     backgroundColor: COLORS.white,
     flex: Spacing.space_1,
+    marginBottom: Spacing.space_88,
   },
   subContainer: {
     flex: Spacing.space_1,
     justifyContent: 'center',
-    paddingHorizontal: Spacing.space_20,
     marginTop: Spacing.space_24,
+    paddingHorizontal: Spacing.space_20,
   },
 })

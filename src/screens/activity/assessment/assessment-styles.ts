@@ -12,8 +12,8 @@ export const styles = StyleSheet.create<IStyles>({
     backgroundColor: COLORS.primary['500'],
     borderTopLeftRadius: Spacing.space_16,
     borderTopRightRadius: Spacing.space_16,
+    flex: Spacing.space_1,
     marginTop: Spacing.space_30,
     paddingVertical: Spacing.space_32,
-    flex: Spacing.space_1,
   },
 })

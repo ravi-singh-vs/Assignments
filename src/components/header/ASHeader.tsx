@@ -6,6 +6,7 @@ import { COLORS } from '../../theme/colors'
 import { TabNavigatorParams } from '../../types/tabNavigator-types'
 
 import { Screens } from '../../constants/navigation-constants'
+import { ResizeMode } from '../../constants/common-constants'
 
 import { styles } from './asHeader-styles'
 
@@ -33,7 +34,11 @@ const ASHeader = (props: IASHeaderProps) => {
           onPress={() =>
             canGoToPreviousScreen ? navigation.goBack() : navigation.navigate(Screens.Dashboard)
           }>
-          <Image source={backButtonIcon} style={styles.backButtonIcon} />
+          <Image
+            source={backButtonIcon}
+            style={styles.backButtonIcon}
+            resizeMode={ResizeMode.Contain}
+          />
         </TouchableOpacity>
       ) : (
         <View style={styles.emptyContainer} />

@@ -17,7 +17,7 @@ const ASProgressCard = (props: IASProgressCardProps) => {
 
   const image = PROGRESS_CARD_IMAGE_SOURCE[title]
 
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   const handleCardPress = () => {
     setShowModal(true)

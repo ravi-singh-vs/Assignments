@@ -39,7 +39,7 @@ const Reflection = () => {
           renderItem={({ item }: { item: IReflectionDataType }) => <ASReflectionCard {...item} />}
           showsVerticalScrollIndicator={false}
           keyExtractor={item => String(item.id)}
-          ListEmptyComponent={() => <Text>Loading...</Text>}
+          ListEmptyComponent={() => <ASLoader />}
         />
       </ImageBackground>
     </SafeAreaView>
