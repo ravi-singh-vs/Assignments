@@ -16,7 +16,7 @@ interface IASTopWreckersProps {
 }
 const ASTopWreckers = (props: IASTopWreckersProps) => {
   const { wreckers } = props
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState<boolean>(false)
 
   const handleAllWreckerPress = () => {
     setVisible(true)

@@ -3,6 +3,7 @@ import { ImageBackground, FlatList, Text, SafeAreaView } from 'react-native'
 
 import ASHeader from '../../../../components/header/ASHeader'
 import ASReflectionCard from '../../../../components/reflection-card/ASReflectionCard'
+import ASLoader from '../../../../components/loader/ASLoader'
 import { useAppDispatch, useAppSelector } from '../../../../redux/store'
 import { fetchReflectionData, getReflectionData } from '../../../../redux/slices/relections-slice'
 import { IReflectionDataType } from '../../../../types/reflection-types'
@@ -11,7 +12,6 @@ import { ResizeMode, greenBackArrowIcon } from '../../../../constants/common-con
 import { reflectionBackgroundImage } from '../../../../constants/reflection-constants'
 
 import { styles } from './reflection-styles'
-import ASLoader from '../../../../components/loader/ASLoader'
 
 const Reflection = () => {
   const dispatch = useAppDispatch()
@@ -39,7 +39,7 @@ const Reflection = () => {
           renderItem={({ item }: { item: IReflectionDataType }) => <ASReflectionCard {...item} />}
           showsVerticalScrollIndicator={false}
           keyExtractor={item => String(item.id)}
-          ListEmptyComponent={() => <Text>Loading...</Text>}
+          ListEmptyComponent={() => <ASLoader />}
         />
       </ImageBackground>
     </SafeAreaView>

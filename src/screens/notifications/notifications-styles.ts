@@ -10,9 +10,9 @@ interface IStyles {
 
 export const styles = StyleSheet.create<IStyles>({
   container: {
-    marginBottom: Spacing.space_88,
-    flex: Spacing.space_1,
     backgroundColor: COLORS.white,
+    flex: Spacing.space_1,
+    marginBottom: Spacing.space_88,
   },
   subContainer: {
     flexGrow: Spacing.space_1,

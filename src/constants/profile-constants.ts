@@ -8,7 +8,7 @@ export enum ProfileIcons {
   ProfileImage = profileImage,
 }
 
-export const PROFILE_NAVIGATION_DATA = [
+export const PROFILE_NAVIGATION_DATA: string[] = [
   'Notification settings',
   'Support',
   'Terms & Conditions',

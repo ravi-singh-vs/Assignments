@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, ImageBackground, Image } from 'react-native'
 
 import { getCurrentDate } from '../../utils/common-utils'
+
 import {
   DASHBOARD_HEADER_DATA,
   dashboardBackgroundImage,

@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/core'
-import { StackNavigationProp } from '@react-navigation/stack'
 import { useEffect } from 'react'
 import { FlatList, ImageBackground, Text, TouchableOpacity, View } from 'react-native'
+import { useNavigation } from '@react-navigation/core'
+import { StackNavigationProp } from '@react-navigation/stack'
 
 import ASLoader from '../../../components/loader/ASLoader'
 import ASProgressCard from '../../../components/progress-card/ASProgressCard'
@@ -33,7 +33,7 @@ const Progress = () => {
     <View style={styles.container}>
       <FlatList
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={() => <ASLoader/>}
+        ListEmptyComponent={() => <ASLoader />}
         data={sortedProgressData}
         renderItem={({ item }: { item: IProgressDataType }) => <ASProgressCard {...item} />}
         keyExtractor={item => item.id}

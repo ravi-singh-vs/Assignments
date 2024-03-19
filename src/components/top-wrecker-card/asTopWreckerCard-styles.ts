@@ -7,7 +7,7 @@ interface IStyles {
   container: ViewStyle
   icon: ImageStyle
   text: TextStyle
-  progressBar : ViewStyle;
+  progressBar: ViewStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
@@ -26,7 +26,7 @@ export const styles = StyleSheet.create<IStyles>({
     fontSize: Spacing.space_14,
     lineHeight: Spacing.space_32,
   },
-  progressBar : {
-    backgroundColor : COLORS.secondary[300]
-  }
+  progressBar: {
+    backgroundColor: COLORS.secondary[300],
+  },
 })
