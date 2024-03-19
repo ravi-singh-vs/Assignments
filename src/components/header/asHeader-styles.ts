@@ -1,4 +1,4 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { ImageStyle, StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
@@ -7,11 +7,11 @@ import { Typography } from '../../theme/typography'
 import { ResizeMode } from '../../constants/common-constants'
 
 interface IStyles {
+  backButtonIcon: ImageStyle
   emptyContainer: ViewStyle
   header: ViewStyle
   image: ImageStyle
   title: TextStyle
-  backButtonImage: ImageStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
@@ -26,12 +26,13 @@ export const styles = StyleSheet.create<IStyles>({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: Spacing.space_16,
+    paddingTop: StatusBar.currentHeight,
   },
-  backButtonImage: {
+  backButtonIcon: {
     width: Spacing.space_9,
-    height: Spacing.space_18,
     resizeMode: ResizeMode.Contain,
     marginHorizontal: Spacing.space_24,
+    height: Spacing.space_18,
   },
   image: {
     height: Spacing.space_24,
@@ -43,6 +44,7 @@ export const styles = StyleSheet.create<IStyles>({
     flex: Spacing.space_1,
     fontFamily: Typography['secondary'].bold,
     fontSize: Spacing.space_18,
+    lineHeight: Spacing.space_24,
     textAlign: 'center',
   },
 })

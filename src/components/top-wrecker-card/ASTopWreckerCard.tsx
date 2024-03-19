@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { Image, Pressable, Text } from 'react-native'
+import * as Progress from 'react-native-progress'
 
-import ASLoadingBar from '../loading-bar/ASLoadingBar'
 import ASModal from '../modal/ASModal'
+import { Spacing } from '../../theme/spacing'
+import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
+
+import { ResizeMode } from '../../constants/common-constants'
 import { WreckerImage } from '../../constants/activity-constants'
 
 import { styles } from './asTopWreckerCard-styles'
@@ -16,13 +20,13 @@ interface IASTopWreckerCardProps {
   description: string
 }
 
-const ASTopWreckerCard = ({ image, percent, title, description }: IASTopWreckerCardProps) => {
-  const [showModal, setShowModal] = useState(false)
+const ASTopWreckerCard = (props: IASTopWreckerCardProps) => {
+  const { image, percent, title, description } = props
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   const handleCardPress = () => {
     setShowModal(true)
   }
-
   return (
     <Pressable style={styles.container} onPress={handleCardPress}>
       <ASModal
@@ -33,11 +37,15 @@ const ASTopWreckerCard = ({ image, percent, title, description }: IASTopWreckerC
         description={description}
         title={title}
       />
-      <Image style={styles.icon} source={WreckerImage[image]} />
+      <Image style={styles.icon} source={WreckerImage[image]} resizeMode={ResizeMode.Center} />
       <Text style={[styles.text, { fontFamily: Typography.secondary['bold'] }]}>{percent}%</Text>
-      <ASLoadingBar loadingLevel={percent} />
-      
-
+      <Progress.Bar
+        progress={Number(percent) / 100}
+        width={Spacing.space_50}
+        height={Spacing.space_12}
+        color={COLORS.secondary[500]}
+        style={styles.progressBar}
+      />
       <Text style={[styles.text, { fontFamily: Typography.primary['bold'] }]}>{title}</Text>
     </Pressable>
   )

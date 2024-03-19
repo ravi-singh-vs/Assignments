@@ -1,17 +1,20 @@
-import LinearGradient from 'react-native-linear-gradient'
-
 import React from 'react'
 import { Image, Text, View } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 
-import { COLORS } from '../../../../theme/colors'
-import { palette } from '../../../../theme/palette'
-import { IASScoreCardProps } from '../../../../types/activity-types'
+import { COLORS } from '../../theme/colors'
+import { palette } from '../../theme/palette'
 
-import { ScoreCardIcons } from '../../../../constants/activity-constants'
+import { ScoreCardIcons } from '../../constants/activity-constants'
 
 import { styles } from './asScoreCard-styles'
 
-const ASScoreCard = ({ average }: IASScoreCardProps) => {
+interface IASScoreCardProps {
+  average: number
+}
+
+const ASScoreCard = (props: IASScoreCardProps) => {
+  const { average } = props
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>

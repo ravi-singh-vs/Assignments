@@ -43,6 +43,7 @@ export const palette = {
   punch: '#D72B2B',
   white: '#FFFFFF',
   tundora: '#454545',
+  charcoal: '#2B3F57',
   black: '#000000',
   modalOverlay:'#00000066',
   //TODO : Use colors from palette

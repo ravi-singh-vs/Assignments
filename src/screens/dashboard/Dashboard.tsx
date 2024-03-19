@@ -1,38 +1,43 @@
-import { FlatList, SafeAreaView } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { FlatList, Platform, StatusBar, Text, View } from 'react-native'
 
+import ASDashboardCard from '../../components/dashboard-card/ASDashboardCard'
 import ASDashboardHeader from '../../components/dashboard-header/ASDashboardHeader'
 import ASDashboardMasteryCard from '../../components/dashboard-mastery-card/ASDashboardMasteryCard'
-import ASDashboardCard from '../../components/dashboard-card/ASDashboardCard'
+import ASLoader from '../../components/loader/ASLoader'
+import { fetchDashboardData, getDashboardData } from '../../redux/slices/dashboard-slice'
+import { useAppDispatch, useAppSelector } from '../../redux/store'
+import { IDashboardDataType } from '../../types/dashboard-types'
 
-import { getDashboardData } from '../../services/api/get-dashboard-data'
-import { IDashboardData } from '../../types/dashboard-types'
 import { styles } from './dashboard-styles'
 
-const renderItem = (item: IDashboardData): JSX.Element => <ASDashboardCard data={item} />
 const Dashboard = () => {
-  const [dashboardData, setDashboardData] = useState([])
+  const dispatch = useAppDispatch()
 
-  const fetchDashboardData = async () => {
-    const result = await getDashboardData()
-    if (result.success) setDashboardData(result.data)
-    else console.error(result.error)
-  }
+  const { dashboardData } = useAppSelector(getDashboardData)
+
   useEffect(() => {
-    fetchDashboardData()
+    dispatch(fetchDashboardData())
   }, [])
+
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <StatusBar
+        backgroundColor={'transparent'}
+        translucent
+        barStyle={Platform.OS === 'android' ? 'light-content' : 'dark-content'}
+      />
       <ASDashboardHeader title="Overthinker" />
       <ASDashboardMasteryCard />
       <FlatList
         data={dashboardData}
-        keyExtractor={(item: IDashboardData) => item.id.toString()}
-        renderItem={({ item }) => renderItem(item)}
+        keyExtractor={(item: IDashboardDataType) => String(item.id)}
+        renderItem={({ item }: { item: IDashboardDataType }) => <ASDashboardCard {...item} />}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.subContainer}
+        ListEmptyComponent={() => <ASLoader />}
       />
-    </SafeAreaView>
+    </View>
   )
 }
 

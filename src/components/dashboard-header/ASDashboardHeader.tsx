@@ -1,5 +1,5 @@
-import { View, Text, ImageBackground, Image } from 'react-native'
 import React from 'react'
+import { View, Text, ImageBackground, Image } from 'react-native'
 
 import { getCurrentDate } from '../../utils/common-utils'
 import {
@@ -7,7 +7,7 @@ import {
   dashboardBackgroundImage,
 } from '../../constants/dashboard-constants'
 import { ResizeMode, calendarIcon } from '../../constants/common-constants'
-import { TDashboardHeader } from '../../types/dashboard-types'
+
 import { styles } from './asDashboardHeader-styles'
 
 interface IASDashboardHeaderProps {
@@ -15,7 +15,7 @@ interface IASDashboardHeaderProps {
 }
 const ASDashboardHeader = (props: IASDashboardHeaderProps) => {
   const { title } = props
-  const imageSource = DASHBOARD_HEADER_DATA[title as TDashboardHeader]
+  const imageSource = DASHBOARD_HEADER_DATA[title]
   const currentDate = getCurrentDate()
   return (
     <ImageBackground

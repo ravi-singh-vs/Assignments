@@ -1,12 +1,18 @@
-import { StyleSheet } from 'react-native'
+import { ImageStyle, StyleSheet, ViewStyle } from 'react-native'
+
 import { Spacing } from '../../../../theme/spacing'
 
-export const styles = StyleSheet.create({
+interface IStyles {
+  container: ViewStyle
+  image: ImageStyle
+}
+
+export const styles = StyleSheet.create<IStyles>({
   container: {
     flex: Spacing.space_1,
   },
 
-  subContainer: {
+  image: {
     flex: Spacing.space_1,
   },
 })

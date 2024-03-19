@@ -1,41 +1,37 @@
-import { useEffect, useState } from 'react'
-import { FlatList, View } from 'react-native'
+import { useEffect } from 'react'
+import { FlatList, View, Text, StatusBar } from 'react-native'
 
-import Header from '../../components/header/ASHeader'
 import ASDActiveCard from '../../components/dactive-card/ASDactiveCard'
-import { getNotificationsDativeData } from '../../services/api/get-notifications-dactive-data'
+import Header from '../../components/header/ASHeader'
+import ASLoader from '../../components/loader/ASLoader'
+import { fetchDactiveData, getDactiveData } from '../../redux/slices/dactive-slice'
+import { useAppDispatch, useAppSelector } from '../../redux/store'
 import { IDactiveDataType } from '../../types/dactive-types'
 
-import { API_ENDPOINTS } from '../../constants/api-constants'
+import { greenBackArrowIcon } from '../../constants/common-constants'
 
 import { styles } from './dactive-styles'
 
 const Dactive = () => {
-  const [DActiveData, setDActiveData] = useState<IDactiveDataType[]>([])
+  const dispatch = useAppDispatch()
+  const { dactiveData } = useAppSelector(getDactiveData)
 
-  const getDActiveData = async () => {
-    const res = await getNotificationsDativeData(API_ENDPOINTS.DACTIVE_API_ENDPOINT)
-    if (res.success) {
-      setDActiveData(res.data)
-    } else {
-      console.error(res.error)
-    }
-  }
   useEffect(() => {
-    getDActiveData()
+    dispatch(fetchDactiveData())
   }, [])
+
   return (
     <View style={styles.container}>
-      <Header headerTitle="D-active" />
+      <StatusBar barStyle={'dark-content'} />
+      <Header headerTitle="D-active" backButtonIcon={greenBackArrowIcon} />
       <View style={styles.subContainer}>
-        {
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={DActiveData}
-            renderItem={({ item }: { item: IDactiveDataType }) => <ASDActiveCard {...item} />}
-            keyExtractor={(item: IDactiveDataType) => item.id}
-          />
-        }
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={dactiveData}
+          renderItem={({ item }: { item: IDactiveDataType }) => <ASDActiveCard {...item} />}
+          keyExtractor={(item: IDactiveDataType) => item.id}
+          ListEmptyComponent={() => <ASLoader />}
+        />
       </View>
     </View>
   )

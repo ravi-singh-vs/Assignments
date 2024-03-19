@@ -1,23 +1,37 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 
 import ASPlayButton from '../play-button/ASPlayButton'
+import {
+  IDashboardDataType as IASDashboardCardProps,
+} from '../../types/dashboard-types'
 
-import { DASHBOARD_LIST_DATA } from '../../constants/dashboard-constants'
-import { IDashboardData, TDashboardCardTitle } from '../../types/dashboard-types'
-import { completedTickIcon, notBookmarkedIcon } from '../../constants/common-constants'
+import { DASHBOARD_CARD_INFO } from '../../constants/dashboard-constants'
+import {
+  ResizeMode,
+  completedTickIcon,
+  favouriteIcon,
+  nonFavouriteIcon,
+} from '../../constants/common-constants'
+
 import { styles } from './asDashboardCard-styles'
 
-interface IASDashboardCardProps {
-  data: IDashboardData
-}
+const ASDashboardCard = (props: IASDashboardCardProps) => {
+  const { id, title, startingTime, endingTime, isCompleted, isFav } = props
 
-const ASDashboardCard = ({ data }: IASDashboardCardProps) => {
-  const { id, title, startingTime, endingTime } = data
+  //JSON.parse is used because the field isFav is of string type in API
+  const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))
 
-  let titleIndex: TDashboardCardTitle = title as TDashboardCardTitle
-  const imageSrc = DASHBOARD_LIST_DATA[titleIndex].image
-  const backgroundColor = DASHBOARD_LIST_DATA[titleIndex].backgroundColor
+  const imageSrc =  DASHBOARD_CARD_INFO[title].image
+  const backgroundColor = DASHBOARD_CARD_INFO[title].backgroundColor
+
+  const renderFavouriteIcon = () => {
+    const imageSource = isFavourite ? favouriteIcon : nonFavouriteIcon
+    return (
+      <Image source={imageSource} style={styles.favouriteIcon} resizeMode={ResizeMode.Contain} />
+    )
+  }
+
   return (
     <View style={[styles.container, { backgroundColor }]}>
       <View style={styles.subContainer}>
@@ -29,9 +43,17 @@ const ASDashboardCard = ({ data }: IASDashboardCardProps) => {
             <View style={styles.headerSubContainer}>
               <View style={styles.headerSubContainerLeft}>
                 <Text style={styles.challengeText}>Challenge {id}</Text>
-                <Image source={completedTickIcon} style={styles.tickIcon} />
+                {JSON.parse(isCompleted) && (
+                  <Image
+                    source={completedTickIcon}
+                    style={styles.tickIcon}
+                    resizeMode={ResizeMode.Contain}
+                  />
+                )}
               </View>
-              <Image source={notBookmarkedIcon} style={styles.bookmarkIcon} />
+              <TouchableOpacity onPress={() => setIsFavourite(prev => !prev)}>
+                {renderFavouriteIcon()}
+              </TouchableOpacity>
             </View>
             <Text style={styles.title}>{title}</Text>
           </View>

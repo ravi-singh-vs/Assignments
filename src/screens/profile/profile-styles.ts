@@ -4,43 +4,25 @@ import { COLORS } from '../../theme/colors'
 import { Spacing } from '../../theme/spacing'
 import { Typography } from '../../theme/typography'
 
-interface IStyles{
-  background:ImageStyle,
-  header:ViewStyle,
-  container:ViewStyle,
-  icon:ImageStyle,
-  text:TextStyle,
-  infoContainer:ViewStyle,
-  name:TextStyle,
-  data:TextStyle
+interface IStyles {
+  image: ImageStyle
+  container: ViewStyle
+  infoContainer: ViewStyle
+  name: TextStyle
+  data: TextStyle
+  closeButton: ViewStyle
+  text: TextStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
-  background: {
+  image: {
     paddingBottom: Spacing.space_24,
     width: '100%',
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: 40,
-    paddingVertical: Spacing.space_8,
-  },
+
   container: {
     marginHorizontal: Spacing.space_20,
     marginTop: Spacing.space_28,
-  },
-  icon: {
-    height: Spacing.space_24,
-    width: Spacing.space_24,
-  },
-  text: {
-    color: COLORS.white,
-    fontFamily: Typography.secondary['bold'],
-    fontSize: Spacing.space_18,
-    lineHeight: Spacing.space_24,
-    marginRight: Spacing.space_48,
-    paddingHorizontal: Spacing.space_76,
   },
   infoContainer: {
     marginLeft: Spacing.space_24,
@@ -54,8 +36,18 @@ export const styles = StyleSheet.create<IStyles>({
   },
   data: {
     color: COLORS.white,
-    fontFamily: 'Quicksand-medium',
+    fontFamily: Typography.primary['medium'],
     fontSize: Spacing.space_14,
     lineHeight: Spacing.space_24,
+  },
+  closeButton: {
+    paddingVertical: Spacing.space_16,
+    backgroundColor: COLORS.neutral[500],
+    marginBottom: Spacing.space_10,
+  },
+  text: {
+    textAlign: 'center',
+    color: COLORS.white,
+    fontSize: Spacing.space_14,
   },
 })

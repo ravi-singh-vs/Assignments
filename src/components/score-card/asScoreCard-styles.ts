@@ -1,20 +1,20 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
-import { COLORS } from '../../../../theme/colors'
-import { Spacing } from '../../../../theme/spacing'
-import { Typography } from '../../../../theme/typography'
+import { COLORS } from '../../theme/colors'
+import { Spacing } from '../../theme/spacing'
+import { Typography } from '../../theme/typography'
 
 interface IStyles {
   container: ViewStyle
-  subContainer: ViewStyle
-  iconContainer: ViewStyle
-  scoreContainer: ViewStyle
-  outerContainer: ViewStyle
-  innerContainer: ViewStyle
   icon: ImageStyle
-  text: TextStyle
+  iconContainer: ViewStyle
+  innerContainer: ViewStyle
+  outerContainer: ViewStyle
   score: TextStyle
+  scoreContainer: ViewStyle
   scoreText: TextStyle
+  subContainer: ViewStyle
+  text: TextStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
@@ -36,7 +36,7 @@ export const styles = StyleSheet.create<IStyles>({
   outerContainer: {
     backgroundColor: COLORS.white,
     borderColor: COLORS.white,
-    borderRadius: 100,
+    borderRadius: Spacing.space_100,
     borderWidth: Spacing.space_1,
     height: Spacing.space_12,
     width: Spacing.space_148,

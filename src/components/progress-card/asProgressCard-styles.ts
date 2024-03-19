@@ -4,8 +4,6 @@ import { Spacing } from '../../theme/spacing'
 import { Typography } from '../../theme/typography'
 import { COLORS } from '../../theme/colors'
 
-import { ResizeMode } from '../../constants/common-constants'
-
 interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
@@ -13,54 +11,55 @@ interface IStyles {
   title: TextStyle
   detailContainer: ViewStyle
   text: TextStyle
-  chart: ImageStyle
-  button: ViewStyle
-  buttonImage: ImageStyle
+  pieChart: ImageStyle
+  nextArrowIcon: ImageStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
   container: {
-    paddingVertical: 16,
+    borderBottomColor: COLORS.primary[100],
+    borderBottomWidth: Spacing.space_1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderBottomColor: COLORS.primary[100],
-    borderBottomWidth: 1,
+    paddingVertical: Spacing.space_16,
   },
   subContainer: {
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
   image: {
-    width: Spacing.space_48,
+    backgroundColor: COLORS.accent[50],
+    borderRadius: Spacing.space_100,
     height: Spacing.space_48,
-    resizeMode : ResizeMode.Contain,
-    borderRadius: 100,
+    width: Spacing.space_48,
   },
   title: {
+    color: COLORS.neutral[700],
     fontFamily: Typography['primary'].bold,
     fontSize: Spacing.space_14,
-    marginLeft: 13,
+    lineHeight: Spacing.space_20,
+    marginLeft: Spacing.space_14,
   },
   detailContainer: {
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
   text: {
+    color: COLORS.charcoal,
     fontFamily: Typography['secondary'].bold,
+    fontSize: Spacing.space_14,
+    lineHeight: Spacing.space_20,
   },
-  chart: {
+  pieChart: {
+    backgroundColor: COLORS.secondary[200],
+    borderRadius: Spacing.space_100,
     marginLeft: Spacing.space_8,
     marginRight: Spacing.space_16,
   },
-  button: {
-    width: Spacing.space_16,
+  nextArrowIcon: {
     height: Spacing.space_16,
-  },
-  buttonImage: {
-    width: '100%',
-    height: '100%',
-    resizeMode: ResizeMode.Contain,
+    width: Spacing.space_16,
   },
 })

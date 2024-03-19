@@ -4,12 +4,12 @@ import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 
 interface IStyles {
-  container: ViewStyle
-  buttonContainer: ViewStyle
+  activeButton: ViewStyle
+  activeButtonLabel: TextStyle
   button: ViewStyle
-  text: TextStyle
-  activeTab: ViewStyle
-  activeTabText: TextStyle
+  buttonContainer: ViewStyle
+  container: ViewStyle
+  label: TextStyle
 }
 
 export const styles = StyleSheet.create<IStyles>({
@@ -30,14 +30,14 @@ export const styles = StyleSheet.create<IStyles>({
     paddingHorizontal: Spacing.space_16,
     paddingVertical: Spacing.space_12,
   },
-  text: {
+  label : {
     color: COLORS.primary[500],
     textAlign: 'center',
   },
-  activeTab: {
+  activeButton: {
     backgroundColor: COLORS.primary[500],
   },
-  activeTabText: {
+  activeButtonLabel: {
     color: COLORS.white,
   },
 })

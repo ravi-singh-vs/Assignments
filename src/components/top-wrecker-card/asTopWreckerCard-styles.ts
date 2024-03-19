@@ -1,4 +1,4 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
 
 import { COLORS } from '../../theme/colors'
 import { Spacing } from '../../theme/spacing'
@@ -7,6 +7,7 @@ interface IStyles {
   container: ViewStyle
   icon: ImageStyle
   text: TextStyle
+  progressBar : ViewStyle;
 }
 
 export const styles = StyleSheet.create<IStyles>({
@@ -25,4 +26,7 @@ export const styles = StyleSheet.create<IStyles>({
     fontSize: Spacing.space_14,
     lineHeight: Spacing.space_32,
   },
+  progressBar : {
+    backgroundColor : COLORS.secondary[300]
+  }
 })
