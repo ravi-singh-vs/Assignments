@@ -27,5 +27,9 @@ export const styles = StyleSheet.create<IStyles>({
     backgroundColor: COLORS.neutral[500],
     marginBottom: Spacing.space_10,
   },
-  text: { textAlign: 'center', color: COLORS.white, fontSize: Spacing.space_16 },
+  text: {
+    textAlign: 'center',
+    color: COLORS.white,
+    fontSize: Spacing.space_16,
+  },
 })

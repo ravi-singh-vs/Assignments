@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Image, Modal, TouchableOpacity, Text } from 'react-native'
+import { Image, Modal, Text, TouchableOpacity } from 'react-native'
 import WebView from 'react-native-webview'
 
 import { playButtonIcon } from '../../constants/common-constants'

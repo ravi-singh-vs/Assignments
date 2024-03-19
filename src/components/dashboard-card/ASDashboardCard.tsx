@@ -17,11 +17,9 @@ import { styles } from './asDashboardCard-styles'
 const ASDashboardCard = (props: IASDashboardCardProps) => {
   const { id, title, startingTime, endingTime, isCompleted, isFav } = props
 
-  //JSON.parse is used because the field isFav is of string type in API
   const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))
 
-  const imageSrc = DASHBOARD_CARD_INFO[title].image
-  const backgroundColor = DASHBOARD_CARD_INFO[title].backgroundColor
+  const { image, backgroundColor } = DASHBOARD_CARD_INFO[title]
 
   const renderFavouriteIcon = () => {
     const imageSource = isFavourite ? favouriteIcon : nonFavouriteIcon
@@ -34,7 +32,7 @@ const ASDashboardCard = (props: IASDashboardCardProps) => {
     <View style={[styles.container, { backgroundColor }]}>
       <View style={styles.subContainer}>
         <View style={styles.imageContainer}>
-          <Image source={imageSrc} style={styles.image} />
+          <Image source={image} style={styles.image} />
         </View>
         <View style={styles.detailContainer}>
           <View style={styles.headerContainer}>

@@ -1,13 +1,13 @@
 import React from 'react'
-import { View, Text, ImageBackground, Image } from 'react-native'
+import { Image, ImageBackground, Text, View } from 'react-native'
 
 import { getCurrentDate } from '../../utils/common-utils'
 
+import { calendarIcon, ResizeMode } from '../../constants/common-constants'
 import {
-  DASHBOARD_HEADER_DATA,
   dashboardBackgroundImage,
+  DASHBOARD_HEADER_DATA,
 } from '../../constants/dashboard-constants'
-import { ResizeMode, calendarIcon } from '../../constants/common-constants'
 
 import { styles } from './asDashboardHeader-styles'
 
@@ -25,7 +25,7 @@ const ASDashboardHeader = (props: IASDashboardHeaderProps) => {
       resizeMode={ResizeMode.Cover}>
       <View style={styles.container}>
         <View style={styles.subContainer}>
-          <Image source={calendarIcon} style={styles.image} />
+          <Image source={calendarIcon} style={styles.calenderIconImage} />
           <Text style={styles.text}>{currentDate}</Text>
         </View>
         <View style={styles.bottomSubContainer}>
@@ -33,7 +33,7 @@ const ASDashboardHeader = (props: IASDashboardHeaderProps) => {
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.days}>Day 1 of 24</Text>
           </View>
-          <Image source={imageSource} style={styles.heroImage} />
+          <Image source={imageSource} style={styles.image} />
         </View>
       </View>
     </ImageBackground>
