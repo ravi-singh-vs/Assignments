@@ -9,6 +9,7 @@ export enum ProfileIcons {
 }
 
 export const PROFILE_NAVIGATION_DATA: string[] = [
+
   'Notification settings',
   'Support',
   'Terms & Conditions',

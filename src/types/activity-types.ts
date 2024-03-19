@@ -4,9 +4,6 @@ export interface IProgressDataType {
   progress: string
   description: string
 }
-export interface IWreckerDataType {
-  id: string
-  title: string
-  progress: string
+export interface IWreckerDataType extends IProgressDataType {
   description: string
 }

@@ -1,3 +1,5 @@
+import profileImage from '../assets/images/profile-hero.png'
+
 export enum ResizeMode {
   Cover = 'cover',
   Contain = 'contain',
@@ -21,3 +23,10 @@ export const favouriteIcon = require('../assets/icons/favourite.png')
 export const nonFavouriteIcon = require('../assets/icons/nonfavourite.png')
 export const calendarIcon = require('../assets/icons/calendar.png')
 export const playButtonIcon = require('../assets/icons/play.png')
+
+
+export enum ProfileIcons {
+  ArrowRight = nextArrowIcon,
+  ArrowLeft = whiteBackArrowIcon,
+  ProfileImage = profileImage,
+}

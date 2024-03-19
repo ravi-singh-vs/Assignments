@@ -36,7 +36,7 @@ export const styles = StyleSheet.create<IStyles>({
   outerContainer: {
     backgroundColor: COLORS.white,
     borderColor: COLORS.white,
-    borderRadius: 100,
+    borderRadius: Spacing.space_100,
     borderWidth: Spacing.space_1,
     height: Spacing.space_12,
     width: Spacing.space_148,

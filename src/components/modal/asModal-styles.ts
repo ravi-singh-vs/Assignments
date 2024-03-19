@@ -6,7 +6,7 @@ import { Typography } from '../../theme/typography'
 
 interface IStyles {
   container: ViewStyle
-  icon: ImageStyle
+  image: ImageStyle
   loadingContainer: ViewStyle
   message: TextStyle
   overlay: ViewStyle
@@ -68,7 +68,7 @@ export const styles = StyleSheet.create<IStyles>({
     fontSize: Spacing.space_14,
     lineHeight: Spacing.space_22,
   },
-  icon: {
+  image: {
     height: '50%',
     width: Spacing.space_200,
   },

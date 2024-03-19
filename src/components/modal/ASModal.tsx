@@ -1,6 +1,7 @@
+import * as Progress from 'react-native-progress'
+
 import React from 'react'
 import { Image, ImageSourcePropType, Modal, Text, TouchableOpacity, View } from 'react-native'
-import * as Progress from 'react-native-progress'
 
 import { ResizeMode } from '../../constants/common-constants'
 import { Spacing } from '../../theme/spacing'
@@ -32,7 +33,7 @@ const ASModal = (props: IASModalProps) => {
       }}>
       <TouchableOpacity style={styles.overlay} onPress={handleOnPress} />
       <View style={styles.container}>
-        <Image style={styles.icon} source={icon} resizeMode={ResizeMode.Contain} />
+        <Image style={styles.image} source={icon} resizeMode={ResizeMode.Contain} />
         <View style={styles.subContainer}>
           <View style={styles.wreckerContainer}>
             <Text style={styles.title}>{title}</Text>

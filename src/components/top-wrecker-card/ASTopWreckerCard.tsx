@@ -12,6 +12,7 @@ import { WreckerImage } from '../../constants/activity-constants'
 
 import { styles } from './asTopWreckerCard-styles'
 
+
 interface IASTopWreckerCardProps {
   image: string
   percent: string
@@ -21,7 +22,7 @@ interface IASTopWreckerCardProps {
 
 const ASTopWreckerCard = (props: IASTopWreckerCardProps) => {
   const { image, percent, title, description } = props
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   const handleCardPress = () => {
     setShowModal(true)

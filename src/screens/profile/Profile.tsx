@@ -1,3 +1,5 @@
+import WebView from 'react-native-webview'
+
 import React, { useEffect, useState } from 'react'
 import {
   BackHandler,
@@ -9,17 +11,16 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import WebView from 'react-native-webview'
-
-import ASProfileNavigation from '../../components/profile-navigations/ASProfileNavigation'
 
 import ASHeader from '../../components/header/ASHeader'
+import ASLoader from '../../components/loader/ASLoader'
+import ASProfileNavigation from '../../components/profile-navigations/ASProfileNavigation'
+import { ProfileIcons, ResizeMode, whiteBackArrowIcon } from '../../constants/common-constants'
+import { PROFILE_NAVIGATION_DATA } from '../../constants/profile-constants'
 import { COLORS } from '../../theme/colors'
-import { ResizeMode, whiteBackArrowIcon } from '../../constants/common-constants'
-import { PROFILE_NAVIGATION_DATA, ProfileIcons } from '../../constants/profile-constants'
+
 
 import { styles } from './profile-styles'
-import ASLoader from '../../components/loader/ASLoader'
 
 const Profile = () => {
   const [showWebView, setShowWebView] = useState<boolean>(false)

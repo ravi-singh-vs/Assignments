@@ -10,7 +10,7 @@ export const styles = StyleSheet.create<IStyles>({
   container: {
     alignItems: 'center',
     backgroundColor: 'white',
-    flex: Spacing.space_1,
+    flex:Spacing.space_1,
     justifyContent: 'center',
   },
 })
