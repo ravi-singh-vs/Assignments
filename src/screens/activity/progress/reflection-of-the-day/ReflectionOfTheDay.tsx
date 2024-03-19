@@ -11,7 +11,7 @@ import { Spacing } from '../../../../theme/spacing'
 import { TabNavigatorParams } from '../../../../types/tabNavigator-types'
 
 import { QUESTIONS_DATA } from '../../../../constants/activity-constants'
-import { whiteBackButtonIcon } from '../../../../constants/common-constants'
+import { whiteBackArrowIcon } from '../../../../constants/common-constants'
 
 import { styles } from './relectionOfTheDay-styles'
 
@@ -67,7 +67,7 @@ const ReflectionOfTheDay = () => {
       <StatusBar backgroundColor={'transparent'} translucent barStyle={'light-content'} />
       <ASHeader
         headerTitle="Day1"
-        backButtonIcon={whiteBackButtonIcon}
+        backButtonIcon={whiteBackArrowIcon}
         backgroundColor={COLORS.primary[600]}
         color={COLORS.white}
         canGoToPreviousScreen={true}

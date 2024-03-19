@@ -1,5 +1,5 @@
-import arrowLeft from '../assets/icons/arrow-left-white.png'
-import arrowRight from '../assets/icons/arrow-right.png'
+import arrowLeft from '../assets/icons/arrow-back-white.png'
+import arrowRight from '../assets/icons/arrow-next.png'
 import profileImage from '../assets/images/profile-hero.png'
 
 export enum ProfileIcons {

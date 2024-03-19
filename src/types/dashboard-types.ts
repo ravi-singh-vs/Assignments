@@ -1,4 +1,4 @@
-import { DASHBOARD_HEADER_DATA, DASHBOARD_LIST_DATA } from '../constants/dashboard-constants'
+import { DASHBOARD_HEADER_DATA, DASHBOARD_CARD_INFO } from '../constants/dashboard-constants'
 
 export interface IDashboardDataType {
   id: number
@@ -9,6 +9,11 @@ export interface IDashboardDataType {
   isFav : string
 }
 
-export type TDashboardCardTitle = keyof typeof DASHBOARD_LIST_DATA
+export interface IDashboardCardInfoType {
+  [key: string]: {
+    image: number
+    backgroundColor: string
+  }
+}
+// export type TDashboardCardTitle = keyof typeof DASHBOARD_CARD_INFO
 
-export type TDashboardHeader = keyof typeof DASHBOARD_HEADER_DATA

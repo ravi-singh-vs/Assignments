@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../../../redux/store'
 import { fetchReflectionData, getReflectionData } from '../../../../redux/slices/relections-slice'
 import { IReflectionDataType } from '../../../../types/reflection-types'
 
-import { ResizeMode, greenBackButtonIcon } from '../../../../constants/common-constants'
+import { ResizeMode, greenBackArrowIcon } from '../../../../constants/common-constants'
 import { reflectionBackgroundImage } from '../../../../constants/reflection-constants'
 
 import { styles } from './reflection-styles'
@@ -31,7 +31,7 @@ const Reflection = () => {
         resizeMode={ResizeMode.Stretch}>
         <ASHeader
           headerTitle="My Reflections"
-          backButtonIcon={greenBackButtonIcon}
+          backButtonIcon={greenBackArrowIcon}
           canGoToPreviousScreen={true}
         />
         <FlatList

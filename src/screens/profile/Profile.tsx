@@ -4,7 +4,6 @@ import {
   FlatList,
   ImageBackground,
   Modal,
-  SafeAreaView,
   StatusBar,
   Text,
   TouchableOpacity,
@@ -16,10 +15,11 @@ import ASProfileNavigation from '../../components/profile-navigations/ASProfileN
 
 import ASHeader from '../../components/header/ASHeader'
 import { COLORS } from '../../theme/colors'
-import { ResizeMode, whiteBackButtonIcon } from '../../constants/common-constants'
+import { ResizeMode, whiteBackArrowIcon } from '../../constants/common-constants'
 import { PROFILE_NAVIGATION_DATA, ProfileIcons } from '../../constants/profile-constants'
 
 import { styles } from './profile-styles'
+import ASLoader from '../../components/loader/ASLoader'
 
 const Profile = () => {
   const [showWebView, setShowWebView] = useState<boolean>(false)
@@ -58,7 +58,7 @@ const Profile = () => {
           headerTitle="Profile"
           backgroundColor="transparent"
           color={COLORS.white}
-          backButtonIcon={whiteBackButtonIcon}
+          backButtonIcon={whiteBackArrowIcon}
         />
         <View style={styles.infoContainer}>
           <Text style={styles.name}>Rohan Sharma</Text>
@@ -79,7 +79,7 @@ const Profile = () => {
           )}
           showsVerticalScrollIndicator={false}
           keyExtractor={item => item}
-          ListEmptyComponent={() => <Text>Loading...</Text>}
+          ListEmptyComponent={() => <ASLoader />}
         />
       </View>
     </View>

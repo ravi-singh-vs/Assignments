@@ -6,7 +6,7 @@ import distractor from '../assets/icons/distractor.png'
 import overthinkerGrey from '../assets/icons/overthinker-grey.png'
 import overthinker from '../assets/icons/overthinker.png'
 import procrastinator from '../assets/icons/procrastinator.png'
-import arrowRight from '../assets/icons/arrow-right.png'
+import arrowRight from '../assets/icons/arrow-next.png'
 import Survivng from '../assets/icons/surviving.png'
 import thriving from '../assets/icons/thriving.png'
 
