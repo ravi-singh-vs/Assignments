@@ -7,7 +7,7 @@ import { playButtonIcon } from '../../constants/common-constants'
 import { styles } from './asPlayButton-styles'
 
 const ASPlayButton = () => {
-  const [modalVisible, setModalVisible] = useState(false)
+  const [modalVisible, setModalVisible] = useState<boolean>(false)
   return (
     <TouchableOpacity style={styles.container} onPress={() => setModalVisible(true)}>
       <Modal

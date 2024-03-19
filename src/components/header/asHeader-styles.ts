@@ -3,9 +3,6 @@ import { ImageStyle, StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-n
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
-
-import { ResizeMode } from '../../constants/common-constants'
-
 interface IStyles {
   backButtonIcon: ImageStyle
   emptyContainer: ViewStyle
@@ -30,7 +27,6 @@ export const styles = StyleSheet.create<IStyles>({
   },
   backButtonIcon: {
     width: Spacing.space_9,
-    resizeMode: ResizeMode.Contain,
     marginHorizontal: Spacing.space_24,
     height: Spacing.space_18,
   },

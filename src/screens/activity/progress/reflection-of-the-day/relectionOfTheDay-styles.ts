@@ -1,4 +1,5 @@
-import { StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+
 import { COLORS } from '../../../../theme/colors'
 import { Spacing } from '../../../../theme/spacing'
 

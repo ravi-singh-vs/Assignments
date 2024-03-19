@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 
 import ASPlayButton from '../play-button/ASPlayButton'
-import {
-  IDashboardDataType as IASDashboardCardProps,
-} from '../../types/dashboard-types'
+import { IDashboardDataType as IASDashboardCardProps } from '../../types/dashboard-types'
 
 import { DASHBOARD_CARD_INFO } from '../../constants/dashboard-constants'
 import {
@@ -22,7 +20,7 @@ const ASDashboardCard = (props: IASDashboardCardProps) => {
   //JSON.parse is used because the field isFav is of string type in API
   const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))
 
-  const imageSrc =  DASHBOARD_CARD_INFO[title].image
+  const imageSrc = DASHBOARD_CARD_INFO[title].image
   const backgroundColor = DASHBOARD_CARD_INFO[title].backgroundColor
 
   const renderFavouriteIcon = () => {
