@@ -1,17 +1,17 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { ImageStyle, StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { Spacing } from '../../theme/spacing'
 import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
-
-interface Styles {
+interface IStyles {
+  backButtonIcon: ImageStyle
   emptyContainer: ViewStyle
   header: ViewStyle
   image: ImageStyle
   title: TextStyle
 }
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IStyles>({
   emptyContainer: {
     height: Spacing.space_24,
     marginHorizontal: Spacing.space_24,
@@ -22,8 +22,13 @@ export const styles = StyleSheet.create<Styles>({
     backgroundColor: COLORS.white,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: Spacing.space_16,
     paddingVertical: Spacing.space_16,
+    paddingTop: StatusBar.currentHeight,
+  },
+  backButtonIcon: {
+    width: Spacing.space_9,
+    marginHorizontal: Spacing.space_24,
+    height: Spacing.space_18,
   },
   image: {
     height: Spacing.space_24,
@@ -35,6 +40,7 @@ export const styles = StyleSheet.create<Styles>({
     flex: Spacing.space_1,
     fontFamily: Typography['secondary'].bold,
     fontSize: Spacing.space_18,
+    lineHeight: Spacing.space_24,
     textAlign: 'center',
   },
 })

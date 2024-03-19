@@ -9,9 +9,12 @@ const Colors = {
   success: palette.genoa,
   white: palette.white,
   tundora: palette.tundora,
+  charcoal : palette.charcoal,
   dark: palette.black,
+  modalOverlay:palette.modalOverlay,
   dactiveCardButtonGradient: palette.dActiveCardButtonGradient,
   dactiveCardTitleGradient: palette.dActiveCardTitleGradient,
+  progressBarGradient:palette.progressBarGradient
 }
 
 export const COLORS = Colors

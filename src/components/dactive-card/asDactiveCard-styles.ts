@@ -1,28 +1,28 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS } from '../../theme/colors'
 import { Spacing } from '../../theme/spacing'
 import { Typography } from '../../theme/typography'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
-  image: ImageStyle
+  textContainer: ViewStyle
   title: TextStyle
   buttonContainer: ViewStyle
 }
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IStyles>({
   container: {
     borderRadius: Spacing.space_16,
-    height: Spacing.space_148,
+    flex: Spacing.space_1,
     marginBottom: Spacing.space_20,
-    overflow: 'hidden', // to hide overflow of image for setting border radius
+    overflow: 'hidden',
   },
-  image: {
-    height: '100%',
-    justifyContent: 'space-between',
-    width: '100%',
+  textContainer: {
+    paddingHorizontal: Spacing.space_16,
+    paddingVertical: Spacing.space_8,
   },
+
   title: {
     color: COLORS.secondary[600],
     fontFamily: Typography['secondary'].bold,
@@ -30,10 +30,11 @@ export const styles = StyleSheet.create<Styles>({
     paddingVertical: Spacing.space_8,
     textAlign: 'center',
   },
-
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    paddingVertical: Spacing.space_12,
+    justifyContent: 'space-between',
+    paddingHorizontal: Spacing.space_16,
+    marginTop: Spacing.space_48,
+    paddingVertical: Spacing.space_8,
   },
 })

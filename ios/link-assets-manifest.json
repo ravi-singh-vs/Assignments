@@ -6,6 +6,14 @@
       "sha1": "5516f6527f66fda0b459c7c3f1bc7884d42495e6"
     },
     {
+      "path": "src/assets/fonts/Fraunces_72pt-Regular.ttf",
+      "sha1": "a506fa25287843e30d74ad3fdd0b1519c1d89f42"
+    },
+    {
+      "path": "src/assets/fonts/Fraunces_72pt-SemiBold.ttf",
+      "sha1": "326bcbbea15b5123af89c116e1bb56d45d59584b"
+    },
+    {
       "path": "src/assets/fonts/Quicksand-Bold.ttf",
       "sha1": "07ca4486c80653a7f3abc18145c2f251d5c9989b"
     },

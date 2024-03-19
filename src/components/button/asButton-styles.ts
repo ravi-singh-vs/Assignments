@@ -4,12 +4,12 @@ import { COLORS } from '../../theme/colors'
 import { Typography } from '../../theme/typography'
 import { Spacing } from '../../theme/spacing'
 
-interface Styles {
+interface IStyles {
   button: ViewStyle
   label: TextStyle
 }
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IStyles>({
   button: {
     backgroundColor: COLORS.white,
     borderRadius: Spacing.space_8,
