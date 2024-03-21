@@ -14,7 +14,7 @@ const StackNavigator = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={Screens.Splash}>
+      initialRouteName={Screens.TabNavigator}>
       <Stack.Screen
         name={Screens.Splash}
         component={Splash}

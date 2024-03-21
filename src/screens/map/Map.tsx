@@ -1,31 +1,24 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { View, Text, ScrollView } from 'react-native'
 
 import { WorldMap } from '../../assets'
 
-import { ASHeader, ASLoader, ASTopCountryCard } from '../../components'
-import { useAppDispatch, useAppSelector } from '../../redux/store'
-import { fetchCovidData, getCovidData } from '../../redux/reducers'
+import { ASHeader, ASTopCountryCard } from '../../components'
+import { useAppSelector } from '../../redux/store'
+import { getCovidData } from '../../redux/reducers'
 import { Spacing } from '../../theme'
 import { ICovidDataType } from '../../types'
 
 import { styles } from './map-styles'
 
 const Map = () => {
-  const dispatch = useAppDispatch()
-  const { loading, covidData } = useAppSelector(getCovidData)
-
-  useEffect(() => {
-    dispatch(fetchCovidData())
-  }, [])
+  const { covidData } = useAppSelector(getCovidData)
 
   const sortedCovidData = [...covidData].sort((data1, data2) => {
     const percentage1 = (data1.active / data1.cases) * 100
     const percentage2 = (data2.active / data2.cases) * 100
     return percentage2 - percentage1
   })
-
-  if (loading) return <ASLoader />
 
   return (
     <>
@@ -49,7 +42,7 @@ const Map = () => {
         </View>
         <View style={styles.topCountriesContainer}>
           <Text style={styles.title}>Top Countries</Text>
-          {sortedCovidData.map((data: ICovidDataType) => (
+          {sortedCovidData.slice(0, 3).map((data: ICovidDataType) => (
             <ASTopCountryCard {...data} key={data.country} />
           ))}
         </View>

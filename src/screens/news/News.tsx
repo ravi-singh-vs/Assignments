@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { WebView } from 'react-native-webview'
 
-import { ASHeader } from '../../components'
+import { ASHeader, ASLoader } from '../../components'
 
 import { NEWS_WEBVIEW_URL } from '../../constants'
 
@@ -11,10 +11,12 @@ const News = () => {
     <>
       <ASHeader title="Education" />
       <WebView
+        startInLoadingState
         source={{
           uri: NEWS_WEBVIEW_URL,
         }}
         style={styles.container}
+        renderLoading={ASLoader}
       />
     </>
   )

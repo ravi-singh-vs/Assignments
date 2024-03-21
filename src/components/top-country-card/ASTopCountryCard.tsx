@@ -12,15 +12,15 @@ import { ACTIVE_CASES_PERCENTAGE_THRESHOLD } from '../../constants'
 import { styles } from './asTopCountryCard-styles'
 
 const ASTopCountryCard = (props: IASTopCountryCard) => {
-  const { country, cases, recovered, active } = props
+  const { country, cases, recovered,  population } = props
 
-  const percentage = (active / cases) * 100
+  const percentage = (cases / population) * 100
 
   return (
     <View style={styles.container}>
       <Circle
         size={Spacing.space_80}
-        progress={percentage / 100}
+        progress={Math.floor(percentage) / 100}
         unfilledColor={COLORS.neutral[10]}
         thickness={Spacing.space_8}
         strokeCap="round"

@@ -16,8 +16,8 @@ interface ILoginFormDataType {
   password: string
 }
 interface ILoginFormError {
-  mobileNumberError: boolean
-  passwordError: boolean
+  mobileNumberError: string
+  passwordError: string
 }
 const Login = () => {
   const [loginFormData, setLoginFormData] = useState<ILoginFormDataType>({
@@ -25,39 +25,46 @@ const Login = () => {
     password: '',
   })
   const [error, setError] = useState<ILoginFormError>({
-    mobileNumberError: false,
-    passwordError: false,
+    mobileNumberError: '',
+    passwordError: '',
   })
 
   const navigation = useNavigation<NativeStackNavigationProp<StackNavigatorParams>>()
   const submitHandler = () => {
     const { mobileNumber, password } = loginFormData
-    const numberRegex = /^[789]\d{9}$/
 
-    let isError = false
-    if (!numberRegex.test(mobileNumber)) {
-      isError = true
-      setError(error => ({ ...error, mobileNumberError: true }))
+    if (!mobileNumber) {
+      setError(error => ({ ...error, mobileNumberError: 'Mobile Number is required' }))
     }
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*[^A-Za-z0-9]).+$/
-    if (!passwordRegex.test(password)) {
-      isError = true
-      console.log('hererereerer')
-      setError(error => ({ ...error, passwordError: true }))
-    }
-    if (isError) return
+    if (!password) {
+      setError(error => ({ ...error, passwordError: 'Password is required' }))
+    } else {
+      let isError = false
+      const mobileNumberRegex = /^[789]\d{9}$/
 
-    Alert.alert('Submitted!!')
-    navigation.navigate(Screens.TabNavigator)
-    setLoginFormData({ ...loginFormData, mobileNumber: '', password: '' })
+      if (!mobileNumberRegex.test(mobileNumber)) {
+        isError = true
+        setError(error => ({ ...error, mobileNumberError: 'Invalid Mobile Number' }))
+      }
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+
+      if (!passwordRegex.test(password)) {
+        isError = true
+        setError(error => ({ ...error, passwordError: 'Invalid Password' }))
+      }
+      if (isError) return
+      Alert.alert('Submitted!!')
+      setLoginFormData({ ...loginFormData, mobileNumber: '', password: '' })
+      navigation.navigate(Screens.TabNavigator)
+    }
   }
 
   const handlePasswordChange = (password: string) => {
-    setError(error => ({ ...error, passwordError: false }))
+    setError(error => ({ ...error, passwordError: ' ' }))
     setLoginFormData(data => ({ ...data, password: password }))
   }
   const handleMobileNumberChange = (mobileNumber: string) => {
-    setError(error => ({ ...error, mobileNumberError: false }))
+    setError(error => ({ ...error, mobileNumberError: ' ' }))
     setLoginFormData(data => ({ ...data, mobileNumber: mobileNumber }))
   }
 
@@ -80,9 +87,7 @@ const Login = () => {
             placeholderTextColor={COLORS.neutral[100]}
             style={styles.inputField}
           />
-          <Text style={styles.errorText}>
-            {error.mobileNumberError ? 'Invalid Mobile Number' : ' '}
-          </Text>
+          <Text style={styles.errorText}>{error.mobileNumberError}</Text>
         </View>
         <View style={styles.inputContainer}>
           <Text style={styles.inputFieldLabel}>
@@ -96,11 +101,11 @@ const Login = () => {
             placeholderTextColor={COLORS.neutral[100]}
             style={styles.inputField}
           />
-          <Text style={styles.errorText}>{error.passwordError ? 'Invalid Password' : ' '}</Text>
+          <Text style={styles.errorText}>{error.passwordError}</Text>
         </View>
         <TouchableOpacity style={styles.button} onPress={submitHandler}>
           <Text style={styles.label}>
-            {loginFormData.mobileNumber.trim() && loginFormData.password.trim()
+            {loginFormData.mobileNumber.trim() || loginFormData.password.trim()
               ? 'Submit'
               : 'Sign in with Google'}
           </Text>

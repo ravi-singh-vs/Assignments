@@ -1,14 +1,11 @@
-import { StyleSheet } from 'react-native'
 import React from 'react'
+import { StyleSheet, SafeAreaView } from 'react-native'
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
-import Splash from './src/screens/splash/Splash'
-import Login from './src/screens/login/Login'
-import { SafeAreaView } from 'react-native'
-import { COLORS, Spacing } from './src/theme'
-import Onboarding from './src/screens/onboarding/Onboarding'
+
 import StackNavigator from './src/navigators/stack-navigator/StackNavigator'
 import { Provider } from 'react-redux'
 import { store } from './src/redux/store'
+import { COLORS, Spacing } from './src/theme'
 
 const MyTheme = {
   ...DefaultTheme,

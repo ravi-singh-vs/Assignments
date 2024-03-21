@@ -48,7 +48,7 @@ const Onboarding = () => {
       </View>
       <View style={styles.footer}>
         <TouchableOpacity onPress={skipHandler}>
-          <Text style={styles.label}>skip</Text>
+          <Text style={styles.label}>Skip</Text>
         </TouchableOpacity>
         <View style={[styles.activeScreenIndicatorContainer]}>
           {[...Array(noOfOnboardingScreens)].map((e, screenNumber) => {

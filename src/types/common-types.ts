@@ -13,4 +13,5 @@ export interface ICovidDataType {
   recovered: number
   cases: number
   countryInfo: ICountryInfoType
+  population : number;
 }

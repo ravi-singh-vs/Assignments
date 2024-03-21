@@ -6,10 +6,9 @@ interface IStyles {
   container: ViewStyle
 }
 
-export const styles = StyleSheet.create<IStyles>({
+export const styles: IStyles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: 'white',
     flex: Spacing.space_1,
     justifyContent: 'center',
   },

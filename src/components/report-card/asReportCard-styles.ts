@@ -48,7 +48,7 @@ export const styles: IStyles = StyleSheet.create({
   stats: {
     color: COLORS.neutral[500],
     fontFamily: Typography.secondary['bold'],
-    fontSize: Spacing.space_18,
+    fontSize: Spacing.space_17,
     lineHeight: Spacing.space_22,
     marginRight: Spacing.space_12,
   },

@@ -15,7 +15,7 @@ import { styles } from './home-styles'
 
 const Home = () => {
   const dispatch = useAppDispatch()
-  const { loading, covidData } = useAppSelector(getCovidData)
+  const { covidData } = useAppSelector(getCovidData)
 
   const [page, setPage] = useState<number>(1)
 
@@ -41,9 +41,6 @@ const Home = () => {
   const nextHandler = () => {
     setPage(page === Math.ceil(covidDataLength / LIMIT) ? 1 : page + 1)
   }
-
-  if (loading) return <ASLoader />
-
   return (
     <>
       <ASHeader title="COVID - 19" />
@@ -55,14 +52,20 @@ const Home = () => {
               <Text style={styles.subTitle}>Top five countries</Text>
             </View>
             <View style={styles.buttonContainer}>
-              <TouchableOpacity style={[styles.button]} onPress={previousHandler}>
+              <TouchableOpacity
+                style={[styles.button]}
+                onPress={previousHandler}
+                hitSlop={{ left: 10, right: 10, top: 10, bottom: 10 }}>
                 <Icon
                   name="arrow-left"
                   size={Spacing.space_8}
                   color={page == 1 ? COLORS.neutral[10] : COLORS.neutral[600]}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button} onPress={nextHandler}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={nextHandler}
+                hitSlop={{ left: 10, right: 10, top: 10, bottom: 10 }}>
                 <Icon
                   name="arrow-right"
                   size={Spacing.space_8}
@@ -76,6 +79,7 @@ const Home = () => {
             data={paginatedCovidData}
             renderItem={({ item }) => <ASReportCard {...item} />}
             keyExtractor={item => item.country}
+            ListEmptyComponent={() => <ASLoader />}
           />
         </View>
       </View>
