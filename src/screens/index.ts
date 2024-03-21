@@ -1,0 +1,8 @@
+export {default as Discovery } from './discovery/Discovery'
+export {default as Education} from './education/Education'
+export {default as Home} from './home/Home'
+export {default as Login} from './login/Login'
+export {default as Map} from './map/Map'
+export {default as News} from './news/News'
+export {default as Onboarding} from './onboarding/Onboarding'
+export {default as Splash} from './splash/Splash'

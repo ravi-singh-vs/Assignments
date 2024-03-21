@@ -1,0 +1,5 @@
+export { default as WorldMap } from './images/map.svg'
+export { default as Cough } from './images/cough.svg'
+export { default as Fever } from './images/fever.svg'
+export { default as Logo } from './images/logo.svg'
+export { default as BreathingDifficulty } from './images/breathing-difficulty.svg'

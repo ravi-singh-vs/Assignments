@@ -1,0 +1,1 @@
+export const NEWS_WEBVIEW_URL = 'https://indianexpress.com/about/covid19/'

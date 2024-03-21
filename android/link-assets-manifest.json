@@ -6,12 +6,28 @@
       "sha1": "5516f6527f66fda0b459c7c3f1bc7884d42495e6"
     },
     {
+      "path": "src/assets/fonts/Fraunces_72pt-Regular.ttf",
+      "sha1": "a506fa25287843e30d74ad3fdd0b1519c1d89f42"
+    },
+    {
+      "path": "src/assets/fonts/Fraunces_72pt-SemiBold.ttf",
+      "sha1": "326bcbbea15b5123af89c116e1bb56d45d59584b"
+    },
+    {
       "path": "src/assets/fonts/Quicksand-Bold.ttf",
       "sha1": "07ca4486c80653a7f3abc18145c2f251d5c9989b"
     },
     {
+      "path": "src/assets/fonts/Quicksand-Light.ttf",
+      "sha1": "0d6fe8746125375ffd3ea4de6ecf062643a65c52"
+    },
+    {
       "path": "src/assets/fonts/Quicksand-Medium.ttf",
       "sha1": "9cbdd6785519aa2d85ee58cb5101ea9dbff8652f"
+    },
+    {
+      "path": "src/assets/fonts/Quicksand-Regular.ttf",
+      "sha1": "ba6e4d47926d643a8a4b509b193b3a87c3ea385d"
     },
     {
       "path": "src/assets/fonts/Quicksand-SemiBold.ttf",
