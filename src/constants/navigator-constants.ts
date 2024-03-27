@@ -14,5 +14,5 @@ export enum Screens {
   Login = 'Login',
   Splash = 'Splash',
   Onboarding = 'Onboarding',
-  TabNavigator = 'TabNavigator'
+  TabNavigator = 'TabNavigator',
 }

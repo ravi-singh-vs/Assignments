@@ -5,26 +5,18 @@ import { useNavigation } from '@react-navigation/native'
 
 import { Logo } from '../../assets'
 import { COLORS } from '../../theme'
-import { StackNavigatorParams } from '../../types'
+import { ILoginFormDataType, ILoginFormError, StackNavigatorParams } from '../../types'
 
 import { Screens } from '../../constants'
 
 import { styles } from './login-styles'
 
-interface ILoginFormDataType {
-  mobileNumber: string
-  password: string
-}
-interface ILoginFormError {
-  mobileNumberError: string
-  passwordError: string
-}
 const Login = () => {
   const [loginFormData, setLoginFormData] = useState<ILoginFormDataType>({
     mobileNumber: '',
     password: '',
   })
-  const [error, setError] = useState<ILoginFormError>({
+  const [loginFormError, setLoginFormError] = useState<ILoginFormError>({
     mobileNumberError: '',
     passwordError: '',
   })
@@ -34,37 +26,37 @@ const Login = () => {
     const { mobileNumber, password } = loginFormData
 
     if (!mobileNumber) {
-      setError(error => ({ ...error, mobileNumberError: 'Mobile Number is required' }))
+      setLoginFormError(error => ({ ...error, mobileNumberError: 'Mobile Number is required' }))
     }
     if (!password) {
-      setError(error => ({ ...error, passwordError: 'Password is required' }))
+      setLoginFormError(error => ({ ...error, passwordError: 'Password is required' }))
     } else {
       let isError = false
       const mobileNumberRegex = /^[789]\d{9}$/
 
       if (!mobileNumberRegex.test(mobileNumber)) {
         isError = true
-        setError(error => ({ ...error, mobileNumberError: 'Invalid Mobile Number' }))
+        setLoginFormError(error => ({ ...error, mobileNumberError: 'Invalid Mobile Number' }))
       }
       const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 
       if (!passwordRegex.test(password)) {
         isError = true
-        setError(error => ({ ...error, passwordError: 'Invalid Password' }))
+        setLoginFormError(error => ({ ...error, passwordError: 'Invalid Password' }))
       }
       if (isError) return
-      Alert.alert('Submitted!!')
+      const log = Alert.alert('Logged In!!')
       setLoginFormData({ ...loginFormData, mobileNumber: '', password: '' })
       navigation.navigate(Screens.TabNavigator)
     }
   }
 
   const handlePasswordChange = (password: string) => {
-    setError(error => ({ ...error, passwordError: ' ' }))
+    setLoginFormError(error => ({ ...error, passwordError: ' ' }))
     setLoginFormData(data => ({ ...data, password: password }))
   }
   const handleMobileNumberChange = (mobileNumber: string) => {
-    setError(error => ({ ...error, mobileNumberError: ' ' }))
+    setLoginFormError(error => ({ ...error, mobileNumberError: ' ' }))
     setLoginFormData(data => ({ ...data, mobileNumber: mobileNumber }))
   }
 
@@ -87,7 +79,7 @@ const Login = () => {
             placeholderTextColor={COLORS.neutral[100]}
             style={styles.inputField}
           />
-          <Text style={styles.errorText}>{error.mobileNumberError}</Text>
+          <Text style={styles.errorText}>{loginFormError.mobileNumberError}</Text>
         </View>
         <View style={styles.inputContainer}>
           <Text style={styles.inputFieldLabel}>
@@ -101,7 +93,7 @@ const Login = () => {
             placeholderTextColor={COLORS.neutral[100]}
             style={styles.inputField}
           />
-          <Text style={styles.errorText}>{error.passwordError}</Text>
+          <Text style={styles.errorText}>{loginFormError.passwordError}</Text>
         </View>
         <TouchableOpacity style={styles.button} onPress={submitHandler}>
           <Text style={styles.label}>

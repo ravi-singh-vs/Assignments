@@ -17,7 +17,7 @@ const Onboarding = () => {
 
   const Image = ONBOARDING_SCREEN_DATA[currentScreen].image
 
-  const noOfOnboardingScreens = ONBOARDING_SCREEN_DATA.length
+  const totalOnboardingScreens = ONBOARDING_SCREEN_DATA.length
 
   const skipHandler = () => {
     setDataInAsyncStorage('IS_ONBOARDED', 'true')
@@ -25,12 +25,26 @@ const Onboarding = () => {
   }
 
   const nextHandler = () => {
-    if (currentScreen === noOfOnboardingScreens - 1) {
+    if (currentScreen === totalOnboardingScreens - 1) {
       setDataInAsyncStorage('IS_ONBOARDED', 'true')
       navigation.navigate(Screens.Login)
     } else {
       setCurrentScreen(currentScreen => currentScreen + 1)
     }
+  }
+  const renderActiveScreenIndicators = () => {
+    return [...Array(totalOnboardingScreens)].map((e, screenNumber) => (
+      <View
+        key={screenNumber}
+        style={[
+          styles.activeScreenIndicator,
+          {
+            backgroundColor:
+              currentScreen === screenNumber ? COLORS.primary[50] : COLORS.neutral[10],
+          },
+        ]}
+      />
+    ))
   }
 
   return (
@@ -51,20 +65,7 @@ const Onboarding = () => {
           <Text style={styles.label}>Skip</Text>
         </TouchableOpacity>
         <View style={[styles.activeScreenIndicatorContainer]}>
-          {[...Array(noOfOnboardingScreens)].map((e, screenNumber) => {
-            return (
-              <View
-                key={screenNumber}
-                style={[
-                  styles.activeScreenIndicator,
-                  {
-                    backgroundColor:
-                      currentScreen === screenNumber ? COLORS.primary[50] : COLORS.neutral[10],
-                  },
-                ]}
-              />
-            )
-          })}
+          {renderActiveScreenIndicators()}
         </View>
         <TouchableOpacity onPress={nextHandler}>
           <Text style={styles.label}>Next</Text>

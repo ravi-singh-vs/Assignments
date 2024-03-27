@@ -17,7 +17,7 @@ const ASHeader = (props: IASHeaderProps) => {
   return (
     <>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity>
           <MenuIcon name="menu-outline" size={Spacing.space_28} />
         </TouchableOpacity>
         <Text style={styles.title}>{title}</Text>
@@ -25,8 +25,7 @@ const ASHeader = (props: IASHeaderProps) => {
           <UserIcon name="user-check" size={Spacing.space_28} />
         </TouchableOpacity>
       </View>
-      <ASModal modalVisible={modalVisible} 
-        setModalVisible={setShowModalVisible}/>
+      <ASModal modalVisible={modalVisible} setModalVisible={setShowModalVisible} />
     </>
   )
 }

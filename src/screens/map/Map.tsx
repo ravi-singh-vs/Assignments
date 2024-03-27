@@ -20,6 +20,12 @@ const Map = () => {
     return percentage2 - percentage1
   })
 
+  const renderTopCountries = () => {
+    return sortedCovidData
+      .slice(0, 3)
+      .map((data: ICovidDataType) => <ASTopCountryCard {...data} key={data.country} />)
+  }
+
   return (
     <>
       <ASHeader title="World Wide map" />
@@ -42,9 +48,7 @@ const Map = () => {
         </View>
         <View style={styles.topCountriesContainer}>
           <Text style={styles.title}>Top Countries</Text>
-          {sortedCovidData.slice(0, 3).map((data: ICovidDataType) => (
-            <ASTopCountryCard {...data} key={data.country} />
-          ))}
+          {renderTopCountries()}
         </View>
       </ScrollView>
     </>

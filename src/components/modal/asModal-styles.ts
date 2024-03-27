@@ -39,7 +39,7 @@ export const styles: IStyles = StyleSheet.create({
     paddingVertical: Spacing.space_10,
     marginHorizontal: Spacing.space_10,
     backgroundColor: COLORS.primary[50],
-    borderRadius : Spacing.space_10
+    borderRadius: Spacing.space_10,
   },
   label: {
     fontFamily: Typography.primary['bold'],

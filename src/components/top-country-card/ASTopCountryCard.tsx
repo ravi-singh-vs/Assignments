@@ -12,9 +12,14 @@ import { ACTIVE_CASES_PERCENTAGE_THRESHOLD } from '../../constants'
 import { styles } from './asTopCountryCard-styles'
 
 const ASTopCountryCard = (props: IASTopCountryCard) => {
-  const { country, cases, recovered,  population } = props
+  const { country, cases, recovered, population } = props
 
   const percentage = (cases / population) * 100
+
+  const iconColor =
+    Math.floor(percentage) > ACTIVE_CASES_PERCENTAGE_THRESHOLD
+      ? COLORS.primary[50]
+      : COLORS.success[50]
 
   return (
     <View style={styles.container}>
@@ -36,15 +41,7 @@ const ASTopCountryCard = (props: IASTopCountryCard) => {
           <Text style={styles.stats}>Affected - {cases}</Text>
           <Text style={styles.stats}>Recovered - {recovered}</Text>
         </View>
-        <Icon
-          name="bell"
-          size={Spacing.space_24}
-          color={
-            Math.floor(percentage) > ACTIVE_CASES_PERCENTAGE_THRESHOLD
-              ? COLORS.primary[50]
-              : COLORS.success[50]
-          }
-        />
+        <Icon name="bell" size={Spacing.space_24} color={iconColor} />
       </View>
     </View>
   )

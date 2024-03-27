@@ -9,12 +9,13 @@ import { fetchCovidData, getCovidData } from '../../redux/reducers'
 import { COLORS, Spacing } from '../../theme'
 import { ICovidDataType } from '../../types'
 
-import { LIMIT } from '../../constants'
+import { PAGINATION_LIMIT } from '../../constants'
 
 import { styles } from './home-styles'
 
 const Home = () => {
   const dispatch = useAppDispatch()
+
   const { covidData } = useAppSelector(getCovidData)
 
   const [page, setPage] = useState<number>(1)
@@ -22,11 +23,12 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchCovidData())
   }, [])
+
   const covidDataLength = covidData.length
 
-  const startIdx = (page - 1) * LIMIT
+  const startIdx = (page - 1) * PAGINATION_LIMIT
 
-  const endIdx = Math.min(startIdx + Number(LIMIT), covidDataLength)
+  const endIdx = Math.min(startIdx + Number(PAGINATION_LIMIT), covidDataLength)
 
   const sortedCovidData = [...covidData].sort((data1: ICovidDataType, data2: ICovidDataType) => {
     return data2.cases - data1.cases
@@ -39,8 +41,14 @@ const Home = () => {
     setPage(page - 1)
   }
   const nextHandler = () => {
-    setPage(page === Math.ceil(covidDataLength / LIMIT) ? 1 : page + 1)
+    setPage(page === Math.ceil(covidDataLength / PAGINATION_LIMIT) ? 1 : page + 1)
   }
+
+  const leftArrowIconColor = page == 1 ? COLORS.neutral[10] : COLORS.neutral[600]
+
+  const rightArrowIconColor =
+    page === covidDataLength - 1 ? COLORS.neutral[10] : COLORS.neutral[600]
+
   return (
     <>
       <ASHeader title="COVID - 19" />
@@ -56,21 +64,13 @@ const Home = () => {
                 style={[styles.button]}
                 onPress={previousHandler}
                 hitSlop={{ left: 10, right: 10, top: 10, bottom: 10 }}>
-                <Icon
-                  name="arrow-left"
-                  size={Spacing.space_8}
-                  color={page == 1 ? COLORS.neutral[10] : COLORS.neutral[600]}
-                />
+                <Icon name="arrow-left" size={Spacing.space_8} color={leftArrowIconColor} />
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.button}
                 onPress={nextHandler}
                 hitSlop={{ left: 10, right: 10, top: 10, bottom: 10 }}>
-                <Icon
-                  name="arrow-right"
-                  size={Spacing.space_8}
-                  color={page === covidDataLength - 1 ? COLORS.neutral[10] : COLORS.neutral[600]}
-                />
+                <Icon name="arrow-right" size={Spacing.space_8} color={rightArrowIconColor} />
               </TouchableOpacity>
             </View>
           </View>

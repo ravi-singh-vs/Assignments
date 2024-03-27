@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import type { TypedUseSelectorHook } from 'react-redux'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { covidDataReducer } from './reducers'
 
 export const store = configureStore({
